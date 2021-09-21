@@ -41,7 +41,7 @@ Module Main
             Console.Read()
         End Try
         Console.WriteLine("Now starting frpc.exe...")
-        Shell("cmd /c " & path & "\frpc.exe" & " -c " + path + "\frpc.ini")
+        Shell(path & "\frpc.exe" & " -c " + path + "\frpc.ini")
     End Sub
 
 End Module
