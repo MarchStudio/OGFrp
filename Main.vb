@@ -19,10 +19,8 @@ Module Main
     Dim path As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\OGFrp"
 
     Sub Main()
-        Dim fs As Object
-        Dim f As Object
-        Set fs = CreateObject("Scripting.FileSystemObject")
-        Set f = oFileSystem.GetFile(path + "\frpc.ini")
+        Dim fs As Object = CreateObject("Scripting.FileSystemObject")
+        Dim f As Object = fs.GetFile(path + "\frpc.ini")
         Console.WriteLine("OGfrp is now running.")
         Console.WriteLine(CreateFolder(path))
         Dim ini As String
