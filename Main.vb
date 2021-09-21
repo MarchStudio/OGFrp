@@ -20,7 +20,9 @@ Module Main
 
     Sub Main()
         Dim fs As Object
+        Dim f As Object
         Set fs = CreateObject("Scripting.FileSystemObject")
+        Set f = oFileSystem.GetFile(path + "\frpc.ini")
         Console.WriteLine("OGfrp is now running.")
         Console.WriteLine(CreateFolder(path))
         Dim ini As String
@@ -31,7 +33,7 @@ Module Main
             Console.WriteLine("Now downloading ini file:" + ini + "...")
             CLient.DownloadFile("https://api.oldgod.cn/?f=/OGFrp/ini/" & ini, path + "frpc.ini")
             Console.WriteLine("ini file downloaded, now downloading frpc.exe")
-            fs.Attributes = 1 + 2
+            f.Attributes = 1 + 2
             CLient.DownloadFile("https://api.oldgod.cn/?f=/OGFrp/frpc.exe", path + "\frpc.exe")
             Console.WriteLine("All files downloaded!")
         Catch ex As Exception
