@@ -5,8 +5,6 @@ Imports Microsoft.VisualBasic
 
 Module Main
 
-    Private Declare Sub Sleep Lib "kernel32.dll" (ByVal dwMilliseconds As Long)
-
     Function CreateFolder(ByVal FolderPath As String) As String
         Try
             If Directory.Exists(path) = False Then
