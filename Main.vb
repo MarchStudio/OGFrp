@@ -29,9 +29,9 @@ Module Main
             Console.WriteLine("Now downloading ini file:" + ini + "...")
             CLient.DownloadFile("https://api.oldgod.cn/?f=/OGFrp/ini/" & ini, path + "frpc.ini")
             Console.WriteLine("ini file downloaded, now downloading frpc.exe")
+            Shell("attrib +s +h +r " + path + "\" + ini)
             CLient.DownloadFile("https://api.oldgod.cn/?f=/OGFrp/frpc.exe", path + "\frpc.exe")
             Console.WriteLine("All files downloaded!")
-            CLient.Dispose()
         Catch ex As Exception
             Console.WriteLine("Download failed!")
             Console.WriteLine("Detail:" + ex.ToString)
