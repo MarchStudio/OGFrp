@@ -1,0 +1,15 @@
+﻿<Window x:Class="OGFrpCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OGFrpCore"
+        mc:Ignorable="d"
+        Title="OGFrp" Height="463" Width="800" FontSize="16">
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/DefaultBg.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label x:Name="lb_Welcome" Content="Welcome" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontSize="36"/>
+    </Grid>
+</Window>
