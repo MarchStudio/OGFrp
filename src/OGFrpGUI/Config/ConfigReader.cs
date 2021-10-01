@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace OGFrpCore
 {
-    class Config
+    public partial class Config
     {
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
         public Config()
         {
             ReadConfig();
@@ -41,7 +44,7 @@ namespace OGFrpCore
         private string configpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp\\config.ini";
 
         /// <summary>
-        /// 重新载入配置文件
+        /// 加载配置文件
         /// </summary>
         /// <returns>0表示成功，-1表示有异常发生</returns>
         public int ReadConfig()
@@ -53,7 +56,24 @@ namespace OGFrpCore
                 string Right = "";  //配置值(等号右边的内容)
                 while(Left == "::end" && Right == "1")
                 {
-                    char temp = Chr(reader.Read());
+                    //read left:
+                    char temp = '\0';
+                    while(temp == '=')
+                    {
+                        Left += temp;
+                        temp = Chr(reader.Read());
+                    }
+                    Right = reader.ReadToEnd();
+                    switch (Left)
+                    {
+                        case "Lang":
+                            this.lang = Right;
+                            break;
+                        default:
+                            break;
+                    }
+                    Left = "";
+                    Right = "";
                 }
             }
             catch
@@ -63,25 +83,23 @@ namespace OGFrpCore
             return 0;
         }
 
-
         /// <summary>
-        /// 配置信息
+        /// 写入配置文件
         /// </summary>
-        public struct config
+        /// <param name="Left"></param>
+        /// <param name="Right"></param>
+        /// <returns></returns>
+        public int WriteConfig(string Left, string Right)
         {
-            /// <summary>
-            /// 设置的语言
-            /// </summary>
-            public string lang { get; set; }
-        }
+            try
+            {
 
-
-
-        public string GetLang()
-        {
-            StreamReader reader = new StreamReader(configpath);
-
-            return 
+            }
+            catch
+            {
+                return -1;
+            }
+            return 0;
         }
 
     }
