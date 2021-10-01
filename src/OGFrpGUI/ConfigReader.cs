@@ -16,6 +16,26 @@ namespace OGFrpCore
         }
 
         /// <summary>
+        /// ASCII码转字符
+        /// </summary>
+        /// <param name="asciiCode">ASCII码值</param>
+        /// <returns>ASCII码对应的字符</returns>
+        public static char Chr(int asciiCode)
+        {
+            if (asciiCode >= 0 && asciiCode <= 255)
+            {
+                ASCIIEncoding asciiEncoding = new ASCIIEncoding();
+                byte[] byteArray = new byte[] { (byte)asciiCode };
+                char strCharacter = asciiEncoding.GetString(byteArray)[0];
+                return (strCharacter);
+            }
+            else
+            {
+                throw new Exception("ASCII Code is not valid.");
+            }
+        }
+
+        /// <summary>
         /// config.ini的位置
         /// </summary>
         private string configpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp\\config.ini";
@@ -29,6 +49,12 @@ namespace OGFrpCore
             try
             {
                 StreamReader reader = new StreamReader(configpath);
+                string Left = ""; //配置名(等号左边的内容)
+                string Right = "";  //配置值(等号右边的内容)
+                while(Left == "::end" && Right == "1")
+                {
+                    char temp = Chr(reader.Read());
+                }
             }
             catch
             {
