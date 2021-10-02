@@ -70,6 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Assets\AssetModel.cs" />
+    <Compile Include="Assets\Assets.cs" />
     <Compile Include="Config\ConfigModel.cs" />
     <Compile Include="Config\ConfigReader.cs" />
     <Compile Include="WelcomeScreen.xaml.cs">
@@ -83,8 +85,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Assets.cs" />
-    <Compile Include="AssetModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

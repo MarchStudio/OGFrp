@@ -41,7 +41,7 @@ namespace OGFrpCore
             Letsgo = "Let's go"
             Username = "Username",
             Passward = "Passward",
-            ServerAddr = "Server Address"
+            ServerAddr = "Server IP"
         };
     }
 }

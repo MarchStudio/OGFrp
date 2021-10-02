@@ -67,7 +67,16 @@ namespace OGFrpCore
                     switch (Left)
                     {
                         case "Lang":
-                            this.lang = Right;
+                            this.Lang.Val = Right;
+                            break;
+                        case "Username":
+                            this.Username.Val = Right;
+                            break;
+                        case "Passward":
+                            this.Passward.Val = Right;
+                            break;
+                        case "ServerAddr":
+                            this.ServerAddr.Val = Right;
                             break;
                         default:
                             break;
