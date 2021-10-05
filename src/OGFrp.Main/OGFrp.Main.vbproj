@@ -51,6 +51,7 @@
   <ItemGroup>
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
@@ -69,9 +70,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Visual\LoginBox.xaml.vb">
+      <DependentUpon>LoginBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Visual\Login.xaml.vb">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Page Include="Visual\LoginBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

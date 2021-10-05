@@ -8,13 +8,17 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="LoginGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="70*"/>
+            <RowDefinition Height="78*"/>
             <RowDefinition Height="85.6"/>
-            <RowDefinition Height="38.4"/>
-            <RowDefinition Height="93*"/>
+            <RowDefinition Height="49.6"/>
+            <RowDefinition Height="79*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="BG" Source="Background.png" StretchDirection="DownOnly" Stretch="UniformToFill" Grid.RowSpan="4" Margin="0,0,0,-4.4"/>
-        <Label x:Name="lb_Welcome" Content="Welcome" Margin="0,2,0,1.6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" Foreground="White"/>
-        <Label x:Name="lb_Loading" Content="Loading..." Margin="0" Grid.Row="2" Foreground="White" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Image x:Name="BG" Source="Background.png" StretchDirection="DownOnly" Stretch="UniformToFill" Grid.RowSpan="4" Margin="-5">
+            <Image.Effect>
+                <BlurEffect Radius="0"/>
+            </Image.Effect>
+        </Image>
+        <Label x:Name="lb_Welcome" Content="Welcome" Margin="0,2,0,1.6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="48" Foreground="White"/>
+        <Button x:Name="bt_Letsgo" Content="Let's go!" HorizontalAlignment="Center" Height="Auto" Margin="0" Width="114"  Grid.Row="2"/>
     </Grid>
 </UserControl>

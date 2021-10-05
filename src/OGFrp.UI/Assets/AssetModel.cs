@@ -16,6 +16,10 @@ namespace OGFrp.UI
         /// </summary>
         public string Loading { get; set; }
         /// <summary>
+        /// 欢迎屏幕：Let's go!
+        /// </summary>
+        public string Letsgo { get; set; }
+        /// <summary>
         /// 对话框：是
         /// </summary>
         public string Yes { get; set; }

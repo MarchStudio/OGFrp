@@ -55,5 +55,14 @@ namespace OGFrp.UI
         {
             Name = "ServerAddr"
         };
+
+        /// <summary>
+        /// 设置：记住密码
+        /// </summary>
+        public ConfigModel RmbPsw = new ConfigModel
+        {
+            Name = "RmbPsw"
+        };
+
     }
 }

@@ -21,11 +21,12 @@ namespace OGFrp.UI
             Close = "关闭",
             Yes = "是",
             No = "否",
-            Welcome = "欢迎使用OGFrp！",
+            Welcome = "欢迎使用OGFrp",
             Loading = "正在加载...",
             Username = "用户名",
             Passward = "密码",
-            ServerAddr = "服务器地址"
+            ServerAddr = "服务器地址",
+            Letsgo = "我们开始吧"
         };
 
         /// <summary>
@@ -41,7 +42,8 @@ namespace OGFrp.UI
             Loading = "Loading...",
             Username = "Username",
             Passward = "Passward",
-            ServerAddr = "Server IP"
+            ServerAddr = "Server IP",
+            Letsgo = "Let's go!"
         };
     }
 }
