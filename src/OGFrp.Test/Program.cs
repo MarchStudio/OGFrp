@@ -1,10 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OGFrp.Test
 {
@@ -14,6 +12,7 @@ namespace OGFrp.Test
 
         static void Main(string[] args)
         {
+            /*
             OGFrp.UI.Config Config = new UI.Config();
             Config.Username.Val = "GreatHuang2007";
             Config.Passward.Val = "123";
@@ -27,6 +26,9 @@ namespace OGFrp.Test
             //Config.WriteConfig();
             Process.Start(Config.configpath);
             Console.Read();
+            */
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
