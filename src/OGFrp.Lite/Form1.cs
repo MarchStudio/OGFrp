@@ -106,8 +106,8 @@ namespace OGFrp.Lite
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            launchFrpc(this.TextBox1.Text);
             Config.writeAccessToken(this.TextBox1.Text);
+            launchFrpc(this.TextBox1.Text);
         }
 
         private void Button2_Click(object sender, EventArgs e)
