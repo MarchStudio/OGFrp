@@ -96,6 +96,7 @@ namespace OGFrp.Lite
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Config.CreateFolder();
             Config.loadAccessToken(this.TextBox1);
             this.Button1.Enabled = false;
             this.Button2.Enabled = false;
