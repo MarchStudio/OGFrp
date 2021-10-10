@@ -32,11 +32,11 @@ namespace OGFrp.Lite
             {
                 Net.Download("https://api.ogfrp.cn/win/frpc.exe", path + "\\frpc.exe");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 this.Invoke(new EventHandler(delegate
                 {
-                    if (MessageBox.Show("下载frpc.exe失败，确定要继续吗？（可能会导致一些未知错误）", "OGFrp", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                    if (!(MessageBox.Show("下载frpc.exe失败，确定要继续吗？（可能会导致一些未知错误）", "OGFrp", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK))
                     {
                         Environment.Exit(0);
                     }
