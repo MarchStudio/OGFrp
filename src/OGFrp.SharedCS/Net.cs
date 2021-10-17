@@ -37,6 +37,24 @@ namespace OGFrp.Lite
             return retString;
         }
 
+        /// <summary>
+        /// 获取OGFrp用户的访问密钥
+        /// </summary>
+        /// <param name="Username">用户名</param>
+        /// <param name="Passward">密码</param>
+        /// <returns></returns>
+        public string GetAccessToken(string Username, string Passward)
+        {
+            try
+            {
+                Get();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         public void Download(string source, string localPath, bool forceDownload = false)
         {
             if (forceDownload)

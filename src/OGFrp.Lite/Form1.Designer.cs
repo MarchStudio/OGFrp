@@ -33,6 +33,8 @@ namespace OGFrp.Lite
             this.TextBox1 = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.Button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Button1
@@ -75,11 +77,34 @@ namespace OGFrp.Lite
             this.Button2.UseVisualStyleBackColor = true;
             this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "节点";
+            // 
+            // ComboBox1
+            // 
+            this.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Items.AddRange(new object[] {
+            "hk1.ogfrp.cn",
+            "sh1.ogfrp.cn"});
+            this.ComboBox1.Location = new System.Drawing.Point(257, 54);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(152, 20);
+            this.ComboBox1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 97);
+            this.Controls.Add(this.ComboBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.Button1);
             this.Controls.Add(this.TextBox1);
@@ -98,6 +123,8 @@ namespace OGFrp.Lite
         internal System.Windows.Forms.TextBox TextBox1;
         internal System.Windows.Forms.Label Label1;
         private System.Windows.Forms.Button Button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox ComboBox1;
     }
 }
 

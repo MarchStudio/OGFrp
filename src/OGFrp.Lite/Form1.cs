@@ -76,11 +76,24 @@ namespace OGFrp.Lite
             return;
         }
 
-        private int launchFrpc(string token)
+        private int serverToId(string server)
+        {
+            switch (server)
+            {
+                case "hk1.ogfrp.cn":
+                    return 1;
+                case "sh1.ogfrp.cn":
+                    return 2;
+                default:
+                    return 0;
+            }
+        }
+
+        private int launchFrpc(string token, string server)
         {
             try
             {
-                File.WriteAllText(Config.Path + "\\frpc.ini", Net.Get("https://ogfrp.cn/api/?action=getconf&token=" + this.TextBox1.Text + "&node=1"));
+                File.WriteAllText(Config.Path + "\\frpc.ini", Net.Get("https://ogfrp.cn/api/?action=getconf&token=" + this.TextBox1.Text + "&node=" + serverToId(server)));
                 Interaction.Shell(Config.Path + "\\frpc.exe -c \"" + Config.Path + "\\frpc.ini\"", AppWinStyle.NormalFocus);
                 this.Hide();
                 Interaction.MsgBox("隧道启动成功！", MsgBoxStyle.Information, "OGFrp");
@@ -98,6 +111,7 @@ namespace OGFrp.Lite
         {
             Config.CreateFolder();
             Config.loadAccessToken(this.TextBox1);
+            this.ComboBox1.Text = "hk1.ogfrp.cn";
             this.Button1.Enabled = false;
             this.Button2.Enabled = false;
             this.Button1.Text = "正在下载frpc.exe";
@@ -108,7 +122,7 @@ namespace OGFrp.Lite
         private void Button1_Click(object sender, EventArgs e)
         {
             Config.writeAccessToken(this.TextBox1.Text);
-            launchFrpc(this.TextBox1.Text);
+            launchFrpc(this.TextBox1.Text, this.ComboBox1.Text);
         }
 
         private void Button2_Click(object sender, EventArgs e)
