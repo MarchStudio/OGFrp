@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.VisualBasic;
+using OGFrp.UI;
 
 namespace OGFrp.Lite
 {

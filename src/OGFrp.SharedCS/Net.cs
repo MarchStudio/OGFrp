@@ -5,7 +5,7 @@ using System.Text;
 using System.Net;
 using System.IO;
 
-namespace OGFrp.Lite
+namespace OGFrp.UI
 {
     public class Net
     {
@@ -47,11 +47,11 @@ namespace OGFrp.Lite
         {
             try
             {
-                Get();
+                return Get("https://ogfrp.cn/api/?action=gettoken&username=" + Username + "&password=" + Passward);
             }
             catch (Exception ex)
             {
-
+                return ex.ToString();
             }
         }
 

@@ -21,11 +21,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGFrp.Console.Linux", "src\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGFrp.Console.Shared", "src\OGFrp.Console\OGFrp.Console.Shared\OGFrp.Console.Shared.vcxitems", "{EDE775F7-BC12-40C6-92D2-8EDE4460EAA3}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OGFrp.SharedCS", "src\OGFrp.SharedCS\OGFrp.SharedCS.shproj", "{E7DBE375-CF34-445F-BB78-9E988EE3A6CC}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\OGFrp.Console\OGFrp.Console.Shared\OGFrp.Console.Shared.vcxitems*{53172733-00c5-4af1-8682-b90bb0246317}*SharedItemsImports = 4
+		src\OGFrp.SharedCS\OGFrp.SharedCS.projitems*{5d663d05-bf63-44bb-bb0b-8b14c7e8810a}*SharedItemsImports = 4
+		src\OGFrp.SharedCS\OGFrp.SharedCS.projitems*{be9916d1-32e4-4179-beaa-1eafbe01c819}*SharedItemsImports = 4
 		src\OGFrp.Console\OGFrp.Console.Shared\OGFrp.Console.Shared.vcxitems*{cf6fa26d-9459-4fd8-8d7f-898342329a52}*SharedItemsImports = 4
+		src\OGFrp.SharedCS\OGFrp.SharedCS.projitems*{e7dbe375-cf34-445f-bb78-9e988ee3a6cc}*SharedItemsImports = 13
 		src\OGFrp.Console\OGFrp.Console.Shared\OGFrp.Console.Shared.vcxitems*{ede775f7-bc12-40c6-92d2-8ede4460eaa3}*SharedItemsImports = 9
+		src\OGFrp.SharedCS\OGFrp.SharedCS.projitems*{fce830ca-42af-4f0c-89de-201d427501b6}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
