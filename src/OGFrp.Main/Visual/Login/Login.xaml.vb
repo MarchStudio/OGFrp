@@ -22,7 +22,7 @@ Public Class Login
     WithEvents Timer As New System.Windows.Forms.Timer With
     {
         .Enabled = False,
-        .Interval = 50
+        .Interval = 30
     }
 
     Dim TickTime = 0

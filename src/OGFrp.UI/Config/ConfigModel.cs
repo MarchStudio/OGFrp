@@ -43,9 +43,9 @@ namespace OGFrp.UI
         /// <summary>
         /// 设置：密码
         /// </summary>
-        public ConfigModel Passward = new ConfigModel
+        public ConfigModel Password = new ConfigModel
         {
-            Name = "Passward"
+            Name = "Password"
         };
 
         /// <summary>

@@ -13,7 +13,7 @@
             <RowDefinition Height="49.6"/>
             <RowDefinition Height="79*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="BG" Source="Background.png" StretchDirection="DownOnly" Stretch="UniformToFill" Grid.RowSpan="4" Margin="-5">
+        <Image x:Name="BG" Source="pack://siteoforigin:,,,/Resources/Background.png" StretchDirection="DownOnly" Stretch="UniformToFill" Grid.RowSpan="4" Margin="-5">
             <Image.Effect>
                 <BlurEffect Radius="0"/>
             </Image.Effect>

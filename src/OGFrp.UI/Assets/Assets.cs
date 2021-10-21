@@ -24,9 +24,13 @@ namespace OGFrp.UI
             Welcome = "欢迎使用OGFrp",
             Loading = "正在加载...",
             Username = "用户名",
-            Passward = "密码",
+            Password = "密码",
             ServerAddr = "服务器地址",
-            Letsgo = "我们开始吧"
+            Letsgo = "我们开始吧",
+            Logining = "正在登录",
+            LoginFailed = "登录失败！",
+            UserInfo = "用户信息",
+            AccessToken = "访问密钥"
         };
 
         /// <summary>
@@ -41,9 +45,13 @@ namespace OGFrp.UI
             Welcome = "Welcome to OGFrp!",
             Loading = "Loading...",
             Username = "Username",
-            Passward = "Passward",
+            Password = "Password",
             ServerAddr = "Server IP",
-            Letsgo = "Let's go!"
+            Letsgo = "Let's go!",
+            Logining = "Logining...",
+            LoginFailed = "Login failed!",
+            UserInfo = "User info",
+            AccessToken = "Access Token"
         };
     }
 }

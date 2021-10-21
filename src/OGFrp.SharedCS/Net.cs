@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
+using Microsoft.VisualBasic;
 
 namespace OGFrp.UI
 {
@@ -41,18 +42,11 @@ namespace OGFrp.UI
         /// 获取OGFrp用户的访问密钥
         /// </summary>
         /// <param name="Username">用户名</param>
-        /// <param name="Passward">密码</param>
+        /// <param name="Password">密码</param>
         /// <returns></returns>
-        public string GetAccessToken(string Username, string Passward)
+        public string GetAccessToken(string Username, string Password)
         {
-            try
-            {
-                return Get("https://ogfrp.cn/api/?action=gettoken&username=" + Username + "&password=" + Passward);
-            }
-            catch (Exception ex)
-            {
-                return ex.ToString();
-            }
+            return Get("https://ogfrp.cn/api/?action=gettoken&username=" + Username + "&password=" + Password);
         }
 
         public void Download(string source, string localPath, bool forceDownload = false)
@@ -62,7 +56,8 @@ namespace OGFrp.UI
                 WebClient wc = new WebClient();
                 wc.DownloadFile(source, localPath);
                 wc.Dispose();
-            }else if (!File.Exists(localPath))
+            }
+            else if (!File.Exists(localPath))
             {
                 WebClient wc = new WebClient();
                 wc.DownloadFile(source, localPath);

@@ -42,10 +42,26 @@ namespace OGFrp.UI
         /// <summary>
         /// 登录：密码
         /// </summary>
-        public string Passward { get; set; }
+        public string Password { get; set; }
         /// <summary>
         /// 登录：服务器地址
         /// </summary>
         public string ServerAddr { get; set; }
+        /// <summary>
+        /// 登录：正在登录
+        /// </summary>
+        public string Logining { get; set; }
+        /// <summary>
+        /// 登录：登录失败
+        /// </summary>
+        public string LoginFailed { get; set; }
+        /// <summary>
+        /// 面板：用户信息
+        /// </summary>
+        public string UserInfo { get; set; }
+        /// <summary>
+        /// 面板：Access Token
+        /// </summary>
+        public string AccessToken { get; set; }
     }
 }

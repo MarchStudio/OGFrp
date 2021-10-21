@@ -78,13 +78,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Visual\LoginBox.xaml.vb">
+    <Compile Include="Visual\Panel\MainPage.xaml.vb">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Login\LoginBox.xaml.vb">
       <DependentUpon>LoginBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Visual\Login.xaml.vb">
+    <Compile Include="Visual\Login\Login.xaml.vb">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Page Include="Visual\LoginBox.xaml">
+    <Page Include="Visual\Panel\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Visual\Login\LoginBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,7 +107,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Visual\Login.xaml">
+    <Page Include="Visual\Login\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,10 +163,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OGFrp.Core\OGFrp.Core.vbproj">
-      <Project>{102bd0cc-2972-4229-b39c-2881f345bc8f}</Project>
-      <Name>OGFrp.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OGFrp.UI\OGFrp.UI.csproj">
       <Project>{5d663d05-bf63-44bb-bb0b-8b14c7e8810a}</Project>
       <Name>OGFrp.UI</Name>

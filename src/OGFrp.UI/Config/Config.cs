@@ -15,7 +15,16 @@ namespace OGFrp.UI
         /// </summary>
         public Config()
         {
-            ReadConfig();
+            try
+            {
+                ReadConfig();
+            }
+            catch
+            {
+                this.Lang.Val = "zh_cn";
+                WriteConfig();
+                ReadConfig();
+            }
         }
 
         /// <summary>
@@ -83,8 +92,8 @@ namespace OGFrp.UI
                     case "Username":
                         this.Username.Val = Right;
                         break;
-                    case "Passward":
-                        this.Passward.Val = Right;
+                    case "Password":
+                        this.Password.Val = Right;
                         break;
                     case "ServerAddr":
                         this.ServerAddr.Val = Right;
@@ -106,7 +115,7 @@ namespace OGFrp.UI
                 ConfigModel[] ConfigArray = new ConfigModel[4];
                 ConfigArray[0] = this.Lang;
                 ConfigArray[1] = this.Username;
-                ConfigArray[2] = this.Passward;
+                ConfigArray[2] = this.Password;
                 ConfigArray[3] = this.ServerAddr;
                 StreamWriter writer = new StreamWriter(configpath);
                 string content = null;
