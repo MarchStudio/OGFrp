@@ -5,6 +5,9 @@ using System.Text;
 
 namespace OGFrp.UI
 {
+    /// <summary>
+    /// 语言资源模型
+    /// </summary>
     public class AssetModel
     {
         /// <summary>
@@ -63,5 +66,29 @@ namespace OGFrp.UI
         /// 面板：Access Token
         /// </summary>
         public string AccessToken { get; set; }
+        /// <summary>
+        /// 面板：下载Frpc
+        /// </summary>
+        public string DownloadFrpc { get; set; }
+        /// <summary>
+        /// 面板：下载Frpc中
+        /// </summary>
+        public string DownloadingFrpc { get; set; }
+        /// <summary>
+        /// 面板：已下载Frpc
+        /// </summary>
+        public string DownloadedFrpc { get; set; }
+        /// <summary>
+        /// 下载：下载中
+        /// </summary>
+        public string Downloading { get; set; }
+        /// <summary>
+        /// 下载：下载失败
+        /// </summary>
+        public string DownloadFailed { get; set; }
+        /// <summary>
+        /// 面板：启动frpc
+        /// </summary>
+        public string LaunchFrpc { get; set; }
     }
 }

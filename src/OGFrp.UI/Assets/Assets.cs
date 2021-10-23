@@ -30,7 +30,13 @@ namespace OGFrp.UI
             Logining = "正在登录",
             LoginFailed = "登录失败！",
             UserInfo = "用户信息",
-            AccessToken = "访问密钥"
+            AccessToken = "访问密钥",
+            DownloadFrpc = "下载frpc.exe",
+            DownloadingFrpc = "正在下载frpc.exe",
+            DownloadedFrpc = "frpc.exe下载成功！",
+            Downloading = "正在下载...",
+            DownloadFailed = "下载失败！",
+            LaunchFrpc = "启动隧道"
         };
 
         /// <summary>
@@ -51,7 +57,13 @@ namespace OGFrp.UI
             Logining = "Logining...",
             LoginFailed = "Login failed!",
             UserInfo = "User info",
-            AccessToken = "Access Token"
+            AccessToken = "Access Token",
+            DownloadFrpc = "Download frpc.exe",
+            DownloadingFrpc = "Downloading frpc.exe...",
+            DownloadedFrpc = "Frpc has successfully downloade!",
+            Downloading = "Downloading...",
+            DownloadFailed = "Ops! There seems to be something wrong while downloading.",
+            LaunchFrpc = "Launch Frpc"
         };
     }
 }

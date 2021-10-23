@@ -48,13 +48,12 @@ Public Class LoginBox
         Try
             tempfrm.Invoke(
                 Sub()
-                    Me.Visibility = Visibility.Hidden
                     nextControl._init_(Net.GetAccessToken(Me.tb_Username.Text, Me.tb_Password.Password), Me.tb_Username.Text)
+                    Me.Visibility = Visibility.Hidden
                 End Sub)
         Catch ex As Exception
             tempfrm.Invoke(
                 Sub()
-                    MsgBox(ex.ToString)
                     Me.lb_info.Content = Assets.LoginFailed
                     Me.tb_Username.IsEnabled = True
                     Me.tb_Password.IsEnabled = True

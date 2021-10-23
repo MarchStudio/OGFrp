@@ -7,10 +7,27 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Expander x:Name="ed_UserInfo" Header="UserInfo" Height="93" Margin="10" VerticalAlignment="Top" Width="780" FontSize="20" Foreground="White" IsExpanded="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Expander x:Name="ed_UserInfo" Header="UserInfo" Margin="10" Width="780" FontSize="20" Foreground="White" IsExpanded="True">
             <Grid Background="#BFFFFFFF">
                 <Label x:Name="lb_Username" Content="Label" Height="30" Margin="0" VerticalAlignment="Top" FontSize="16"/>
                 <Label x:Name="lb_AccessToken" Content="Label" Height="30" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="16"/>
+            </Grid>
+        </Expander>
+        <Expander x:Name="ed_FrpPanel" Header="FrpPanel" Margin="10" Width="780" FontSize="20" Foreground="White" IsExpanded="True" Grid.Row="1">
+            <Grid Background="#BFFFFFFF">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button x:Name="bt_dldFrpc" Content="Download frpc" Height="Auto" Margin="10,5" Width="Auto" Grid.Row="1"/>
+                <Button x:Name="bt_launchFrpc" Content="launchFrpc" Height="40" Margin="10,5" Width="Auto" Grid.Row="2"/>
+                <Label x:Name="lb_frpcNotice" Content="Notice" Height="27" Margin="10,2,10,0" VerticalAlignment="Top" FontSize="14" Grid.Row="3"/>
             </Grid>
         </Expander>
     </Grid>

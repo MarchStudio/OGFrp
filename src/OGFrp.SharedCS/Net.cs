@@ -49,25 +49,26 @@ namespace OGFrp.UI
             return Get("https://ogfrp.cn/api/?action=gettoken&username=" + Username + "&password=" + Password);
         }
 
-        public void Download(string source, string localPath, bool forceDownload = false)
+        public int Download(string source, string localPath, bool forceDownload = false)
         {
             if (forceDownload)
             {
                 WebClient wc = new WebClient();
                 wc.DownloadFile(source, localPath);
                 wc.Dispose();
+                return 0;
             }
             else if (!File.Exists(localPath))
             {
                 WebClient wc = new WebClient();
                 wc.DownloadFile(source, localPath);
                 wc.Dispose();
+                return 0;
             }
             else
             {
-                return;
+                return 1;
             }
-            return;
         }
     }
 }

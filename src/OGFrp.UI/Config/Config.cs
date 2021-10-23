@@ -48,6 +48,23 @@ namespace OGFrp.UI
         }
 
         /// <summary>
+        /// Appdata/OGFrp的位置
+        /// </summary>
+        public readonly string FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp";
+
+        /// <summary>
+        /// 创建Appdata文件夹
+        /// </summary>
+        public void CreateFolder()
+        {
+            if (Directory.Exists(FolderPath) == false)
+            {
+                Directory.CreateDirectory(FolderPath);
+            }
+            return;
+        }
+
+        /// <summary>
         /// config.ini的位置
         /// </summary>
         public readonly string configpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp\\config.ini";
@@ -112,6 +129,7 @@ namespace OGFrp.UI
         {
             try
             {
+                CreateFolder();
                 ConfigModel[] ConfigArray = new ConfigModel[4];
                 ConfigArray[0] = this.Lang;
                 ConfigArray[1] = this.Username;
