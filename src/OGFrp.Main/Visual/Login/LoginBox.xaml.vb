@@ -8,9 +8,12 @@ Public Class LoginBox
 
     Dim nextControl As MainPage
 
-    Public Sub _init_(nextControl As MainPage)
+    Dim mainWindow As MainWindow
+
+    Dim Config As New Config()
+
+    Public Sub _init_(nextControl As MainPage, mainWindow As MainWindow)
         Me.nextControl = nextControl
-        Dim Config = New Config()
         Config.ReadConfig()
         Select Case Config.Lang.Val
             Case "zh_cn"
@@ -27,6 +30,11 @@ Public Class LoginBox
         Me.lb_pwdNotice.Content = Assets.Password
         Me.tempfrm.Show()
         Me.tempfrm.Visible = False
+        Me.mainWindow = mainWindow
+        If Not Config.Username.Val = "" Then
+            Me.tb_Username.Text = Config.Username.Val
+            Me.tb_Password.Focus()
+        End If
     End Sub
 
     Dim tempfrm As New Forms.Form With {
@@ -48,7 +56,7 @@ Public Class LoginBox
         Try
             tempfrm.Invoke(
                 Sub()
-                    nextControl._init_(Net.GetAccessToken(Me.tb_Username.Text, Me.tb_Password.Password), Me.tb_Username.Text)
+                    nextControl._init_(Net.GetAccessToken(Me.tb_Username.Text, Me.tb_Password.Password), Me.tb_Username.Text, Me.mainWindow)
                     Me.Visibility = Visibility.Hidden
                 End Sub)
         Catch ex As Exception
@@ -62,7 +70,9 @@ Public Class LoginBox
         End Try
     End Sub
 
-    Private Sub bt_login_Click(sender As Object, e As RoutedEventArgs) Handles bt_login.Click
+    Private Sub bt_login_Click() Handles bt_login.Click
+        Me.Config.Username.Val = Me.tb_Username.Text
+        Config.WriteConfig()
         If Me.tb_Username.Text = vbNullString Or Me.tb_Password.Password = vbNullString Then
             Me.lb_info.Content = Assets.LoginFailed
         Else
@@ -74,6 +84,12 @@ Public Class LoginBox
             Me.lb_info.Content = Assets.Logining
             Dim LoginThread As New Thread(AddressOf login)
             LoginThread.Start()
+        End If
+    End Sub
+
+    Private Sub tb_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles tb_Password.KeyDown
+        If e.Key = Key.Enter Then
+            Me.bt_login_Click()
         End If
     End Sub
 

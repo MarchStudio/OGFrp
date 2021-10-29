@@ -7,17 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="750"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Expander x:Name="ed_UserInfo" Header="UserInfo" Margin="10" Width="780" FontSize="20" Foreground="White" IsExpanded="True">
+        <Expander x:Name="ed_UserInfo" Header="UserInfo" Margin="0,10" FontSize="20" Foreground="White" IsExpanded="True" Grid.Column="1">
             <Grid Background="#BFFFFFFF">
                 <Label x:Name="lb_Username" Content="Label" Height="30" Margin="0" VerticalAlignment="Top" FontSize="16"/>
                 <Label x:Name="lb_AccessToken" Content="Label" Height="30" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="16"/>
             </Grid>
         </Expander>
-        <Expander x:Name="ed_FrpPanel" Header="FrpPanel" Margin="10" Width="780" FontSize="20" Foreground="White" IsExpanded="True" Grid.Row="1">
+        <Expander x:Name="ed_FrpPanel" Header="FrpPanel" Margin="0,10" FontSize="20" Foreground="White" IsExpanded="True" Grid.Row="1" Grid.Column="1">
             <Grid Background="#BFFFFFFF">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5"/>

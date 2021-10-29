@@ -92,7 +92,9 @@ Public Class MainPage
         .ShowInTaskbar = False
     }
 
-    Public Sub _init_(ByVal AccessToken As String, ByVal Username As String)
+    WithEvents mainWindow As MainWindow
+
+    Public Sub _init_(ByVal AccessToken As String, ByVal Username As String, ByVal mainWindow As MainWindow)
         Me.AccessToken = AccessToken
         Config.ReadConfig()
         Select Case Config.Lang.Val
@@ -111,9 +113,34 @@ Public Class MainPage
         Me.lb_frpcNotice.Content = ""
         Me.Visibility = Visibility.Visible
         DownloadFrpc()
+        Me.mainWindow = mainWindow
     End Sub
 
-    Private Sub MainPage_Unloaded(sender As Object, e As RoutedEventArgs) Handles Me.Unloaded
+    Dim launchForm As ServerSelectionWindow
+
+    Dim launchFormOpenFlag As Boolean = False
+
+    Private Sub closeServerForm() Handles mainWindow.MouseEnter, mainWindow.SizeChanged, mainWindow.LocationChanged
+        If launchFormOpenFlag Then
+            launchForm.Dispose()
+            launchFormOpenFlag = False
+        End If
+    End Sub
+
+    Private Sub bt_launchFrpc_Click(sender As Object, e As RoutedEventArgs) Handles bt_launchFrpc.Click
+        launchForm = New ServerSelectionWindow
+        launchFormOpenFlag = True
+        launchForm._init_(Me.AccessToken)
+        launchForm.Width = Me.ActualWidth
+        launchForm.Height = Me.ActualHeight
+        launchForm.Opacity = 0
+        launchForm.Show()
+        launchForm.Opacity = 0.8
+        launchForm.Left = mainWindow.PointToScreen(New Point(0, 0)).X
+        launchForm.Top = mainWindow.PointToScreen(New Point(0, 0)).Y
+    End Sub
+
+    Private Sub MainPage_Unloaded() Handles Me.Unloaded
         End
     End Sub
 End Class

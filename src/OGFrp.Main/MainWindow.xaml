@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OGFrp.Main"
         mc:Ignorable="d"
-        Title="OGFrp" Height="450" Width="800">
+        Title="OGFrp" Height="450" Width="800" MinWidth="800" MinHeight="450">
     <Grid x:Name="grid">
         <local:Login x:Name="Login" Margin="0,0,-0.4,0">
             <local:Login.Background>
