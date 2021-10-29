@@ -87,6 +87,12 @@
     <Compile Include="Visual\Login\Login.xaml.vb">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Visual\Panel\ServerSelectionWindow.Designer.vb">
+      <DependentUpon>ServerSelectionWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visual\Panel\ServerSelectionWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Page Include="Visual\Panel\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +159,9 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual\Panel\ServerSelectionWindow.resx">
+      <DependentUpon>ServerSelectionWindow.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

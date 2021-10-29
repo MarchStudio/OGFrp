@@ -36,7 +36,8 @@ namespace OGFrp.UI
             DownloadedFrpc = "frpc.exe下载成功！",
             Downloading = "正在下载...",
             DownloadFailed = "下载失败！",
-            LaunchFrpc = "启动隧道"
+            LaunchFrpc = "启动隧道",
+            PlzSelectServer = "请选择节点"
         };
 
         /// <summary>
@@ -63,7 +64,8 @@ namespace OGFrp.UI
             DownloadedFrpc = "Frpc has successfully downloade!",
             Downloading = "Downloading...",
             DownloadFailed = "Ops! There seems to be something wrong while downloading.",
-            LaunchFrpc = "Launch Frpc"
+            LaunchFrpc = "Launch Frpc",
+            PlzSelectServer = "Please select a server:"
         };
     }
 }

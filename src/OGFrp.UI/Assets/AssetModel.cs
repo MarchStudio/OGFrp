@@ -90,5 +90,9 @@ namespace OGFrp.UI
         /// 面板：启动frpc
         /// </summary>
         public string LaunchFrpc { get; set; }
+        /// <summary>
+        /// 面板：请选择服务器
+        /// </summary>
+        public string PlzSelectServer { get; set; }
     }
 }
