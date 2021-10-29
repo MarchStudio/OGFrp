@@ -15,11 +15,11 @@
 
 ### 客户端：
 
-<center>平台 | Headless | Simple GUI | Beautiful GUI</center>
+平台 | Headless | Simple GUI | Beautiful GUI
 --- | --- | --- | ---
-Windows | <center>○</center> | <center>✔</center> | <center>○</center>
-Linux | <center>○</center> | <center>-</center> | <center>-</center>
-macOS | <center>-</center> | <center>-</center> | <center>-</center>
+Windows | ○ | √ | ○
+Linux | ○ | - | -
+macOS | - | - | -
 
     “ ✔ ” 表示已经有成熟的客户端
     “ ○ ” 表示已经进行开发，但是尚未有成熟的客户端
