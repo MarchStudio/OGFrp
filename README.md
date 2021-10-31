@@ -7,11 +7,11 @@
 
 ## 简介
 #### 这是我们基于樱花Frps：https://github.com/ZeroDream-CN/SakuraFrp
-樱花Frp Panel面板：https://github.com/ZeroDream-CN/SakuraPanel
-开源的Frp项目：https://github.com/fatedier/frp
-自己进行定制之后的的Frp服务的客户端
-OGFrp官网：https://ogfrp.cn/
-进官网，看提示注册就能使用免费的Frp服务啦~~
+#### 樱花Frp Panel面板：https://github.com/ZeroDream-CN/SakuraPanel
+#### 开源的Frp项目：https://github.com/fatedier/frp
+#### 自己进行定制之后的的Frp服务的客户端
+#### OGFrp官网：https://ogfrp.cn/
+#### 进官网，看提示注册就能使用免费的Frp服务啦~~
 
 ## 关于repo
 #### 本repo代码仅供我们内部进行代码的升级和维护(不出意外的话只有GreatHuang2007在干这事)，和对我们编译的客户端不放心的用户自己进行下载编译；releases的文件基本上都已经过稳定性和安全性测试，可放心下载。
