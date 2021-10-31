@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CrossPlatform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Locals.h" />
   </ItemGroup>
 </Project>

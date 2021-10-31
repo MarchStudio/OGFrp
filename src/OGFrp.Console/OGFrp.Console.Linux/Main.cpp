@@ -2,7 +2,7 @@
 
 using namespace OGFrp::Console;
 
-CrossPlatFormCore cpf(P_Windows);
+CrossPlatFormCore cpf(P_Linux);
 
 int main() {
 	cpf.createFolder();

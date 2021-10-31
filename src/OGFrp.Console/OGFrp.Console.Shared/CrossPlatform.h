@@ -4,25 +4,25 @@
 #include <stdlib.h>
 #include <iostream>
 
-#define Windows (1.0)
-#define Linux_i386 (2.1)
-#define Linux_amr64 (2.2)
-#define Linux_arm64 (2.3)
+#define P_Windows 1
+#define P_Linux 2
+#define F_amd64 1
+#define F_arm64 2
 
 using namespace std;
 
 namespace OGFrp {
     namespace Console {
+
         namespace Files {
 
             //获取OGFrp的Appdata文件夹路径
             const char* getAppdataLoca(int platform) {
-                switch (platform)
-                {
+                switch (platform) {
                 case 1:
-                    return "%appdata%/OGFrp";
+                    return "\"%appdata%\\OGFrp\"";
                 case 2:
-                    return "~/.ogfrp";
+                    return "~/.OGFrp";
                 default:
                     return "\0";
                 }
@@ -31,12 +31,12 @@ namespace OGFrp {
 
         class CrossPlatFormCore {
         private:
-            int Platform = 0;
-            const char *CoreVersion = "1.0.0";
+            const char* CoreVersion = "21.10.1";
+
+            int Platform, Framework;
 
             const char* getPlatform() {
-                switch (Platform)
-                {
+                switch (Platform) {
                 case 1:
                     return "Windows";
                 case 2:
@@ -52,7 +52,7 @@ namespace OGFrp {
             }
 
             void printWelcome() {
-                printf("OGFrp,.Console.\nCross-Platform core version %s.\nRunning on %s.\n", CoreVersion, getPlatform());
+                printf("  ____   _____ ______\n \/ __ \\ \/ ____|  ____|\n| |  | | |  __| |__ _ __ _ __   OGFrp.Console.\n| |  | | | |_ |  __| '__| '_ \\\n| |__| | |__| | |  | |  | |_) | Cross-Platform core version %s.\n \\____\/ \\_____|_|  |_|  | .__\/\n                        | |     Running on %s.\n                        |_|\n\n", CoreVersion, getPlatform());
             }
 
             char token[16] = {0};
@@ -62,28 +62,40 @@ namespace OGFrp {
                 for (int i = 0; i < 16; i++) {
                     scanf("%c", &token[i]);
                 }
+                printf("Launching frpc..\n");
+                launchfrpc();
                 return 0;
             }
 
             //创建ogfrp的Appdata文件夹
             int createFolder() {
-                switch (this->Platform)
-                {
+                switch (this->Platform) {
                 case 1:
-                    system("mkdir %appdata%/OGFrp");
+                    system("mkdir \"%appdata%\\OGFrp\"");
+                    break;
                 case 2:
-                    system("~/.ogfrp");
+                    system("mkdir ~/.OGFrp");
+                    break;
                 default:
                     return -1;
                 }
-                    return 0;
-            }
-
-            int launchfrpc() {
-                
                 return 0;
             }
 
+            int launchfrpc() {
+                switch (this->Platform) {
+                case P_Windows:
+                    system("%appdata%\\OGFrp\\frpc.exe -c %appdata%\\OGFrp\\frpc.ini");
+                    break;
+                case P_Linux:
+                    system("~/OGFrp/frpc -c ~/OGFrp/frpc.ini");
+                    break;
+                default:
+                    printf("Invaild platform.");
+                    break;
+                }
+                return 0;
+            }
         };
     }
 }
