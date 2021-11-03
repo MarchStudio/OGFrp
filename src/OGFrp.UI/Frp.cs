@@ -19,7 +19,7 @@ namespace OGFrp.UI
         {
             try
             {
-                Net.Download("https://api.ogfrp.cn/win/frpc.exe", path + "\\frpc.exe");
+                Net.Download("https://client.ogfrp.cn/frpc/frpc_windows_amd64.exe", path + "\\frpc.exe");
             }
             catch (Exception)
             {
@@ -32,7 +32,7 @@ namespace OGFrp.UI
         {
             try
             {
-                Net.Download("https://api.ogfrp.cn/win/frpc.exe", path + "\\frpc.exe", true);
+                Net.Download("https://client.ogfrp.cn/frpc/frpc_windows_amd64.exe", path + "\\frpc.exe", true);
             }
             catch (Exception ex)
             {
@@ -58,7 +58,7 @@ namespace OGFrp.UI
         {
             try
             {
-                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get("https://ogfrp.cn/api/?action=getconf&token=" + token + "&node=" + serverToId(server)));
+                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get("https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + serverToId(server)));
                 Interaction.Shell(Config.FolderPath + "\\frpc.exe -c \"" + Config.FolderPath + "\\frpc.ini\"", AppWinStyle.NormalFocus);
             }
             catch (Exception ex)

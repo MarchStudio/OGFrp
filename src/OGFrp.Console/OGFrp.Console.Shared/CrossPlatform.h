@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <iostream>
 
+#include "Locals.h"
+
 #define P_Windows 1
 #define P_Linux 2
 #define F_amd64 1
@@ -47,8 +49,12 @@ namespace OGFrp {
             }
 
         public:
-            CrossPlatFormCore(int platform) {
-                this->Platform = platform;
+            CrossPlatFormCore() {
+#ifdef Windows
+                this->Platform = P_Windows;
+#elif defined Linux
+                this->Platform = P_Linux;
+#endif
             }
 
             void printWelcome() {
@@ -88,10 +94,10 @@ namespace OGFrp {
                     system("%appdata%\\OGFrp\\frpc.exe -c %appdata%\\OGFrp\\frpc.ini");
                     break;
                 case P_Linux:
-                    system("~/OGFrp/frpc -c ~/OGFrp/frpc.ini");
+                    system("~/OGFrp/frpc -c ~/.OGFrp/frpc.ini");
                     break;
                 default:
-                    printf("Invaild platform.");
+                    printf("Invaild Platform.");
                     break;
                 }
                 return 0;

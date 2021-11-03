@@ -79,6 +79,17 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Update="D:\OGFrp\src\OGFrp.Console\OGFrp.Console.Shared\cpfMain">
+      <FileType>Document</FileType>
+    </ClInclude>
+    <ClInclude Update="D:\OGFrp\src\OGFrp.Console\OGFrp.Console.Shared\cpfMain.cpp">
+      <FileType>Document</FileType>
+    </ClInclude>
+    <ClInclude Update="D:\OGFrp\src\OGFrp.Console\OGFrp.Console.Shared\cpf_Linux.cpp">
+      <FileType>Document</FileType>
+    </ClInclude>
+  </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

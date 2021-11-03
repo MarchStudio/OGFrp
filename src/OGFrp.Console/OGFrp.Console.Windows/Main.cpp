@@ -1,12 +1,3 @@
-#include "CrossPlatform.h"
+#include "cpfMain.cpp"
 
-using namespace OGFrp::Console;
-
-CrossPlatFormCore cpf(P_Windows);
-
-int main() {
-	cpf.createFolder();
-	cpf.printWelcome();
-	cpf.enter();
-	return 0;
-}
+#define Windows
