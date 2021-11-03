@@ -31,7 +31,7 @@ namespace OGFrp.Lite
         {
             try
             {
-                Net.Download("https://api.ogfrp.cn/win/frpc.exe", path + "\\frpc.exe");
+                Net.Download("https://client.ogfrp.cn/frpc/frpc_windows_amd64", path + "\\frpc.exe");
             }
             catch (Exception)
             {
@@ -56,7 +56,7 @@ namespace OGFrp.Lite
         {
             try
             {
-                Net.Download("https://api.ogfrp.cn/win/frpc.exe", path + "\\frpc.exe", true);
+                Net.Download("https://client.ogfrp.cn/frpc/frpc_windows_amd64", path + "\\frpc.exe", true);
             }
             catch (Exception ex)
             {
@@ -94,7 +94,7 @@ namespace OGFrp.Lite
         {
             try
             {
-                File.WriteAllText(Config.Path + "\\frpc.ini", Net.Get("https://ogfrp.cn/api/?action=getconf&token=" + this.TextBox1.Text + "&node=" + serverToId(server)));
+                File.WriteAllText(Config.Path + "\\frpc.ini", Net.Get("https://api.ogfrp.cn/?action=getconf&token=" + this.TextBox1.Text + "&node=" + serverToId(server)));
                 Interaction.Shell(Config.Path + "\\frpc.exe -c \"" + Config.Path + "\\frpc.ini\"", AppWinStyle.NormalFocus);
                 this.Hide();
                 Interaction.MsgBox("隧道启动成功！", MsgBoxStyle.Information, "OGFrp");

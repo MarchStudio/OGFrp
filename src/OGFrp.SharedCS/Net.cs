@@ -46,7 +46,7 @@ namespace OGFrp.UI
         /// <returns></returns>
         public string GetAccessToken(string Username, string Password)
         {
-            return Get("https://ogfrp.cn/api/?action=gettoken&username=" + Username + "&password=" + Password);
+            return Get("https://api.ogfrp.cn/?action=gettoken&username=" + Username + "&password=" + Password);
         }
 
         public int Download(string source, string localPath, bool forceDownload = false)
