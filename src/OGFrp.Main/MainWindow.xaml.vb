@@ -1,4 +1,5 @@
-﻿Imports OGFrp.UI
+﻿Imports System.ComponentModel
+Imports OGFrp.UI
 
 Class MainWindow
 
@@ -7,4 +8,7 @@ Class MainWindow
         Me.LoginBox._init_(Me.MainPage, Me)
     End Sub
 
+    Private Sub MainWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        End
+    End Sub
 End Class
