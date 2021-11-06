@@ -14,8 +14,9 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)cpf_Linux.cpp" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)CrossPlatform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cpfmain.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CrossPlatformCore.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CrossPlatformHead.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Locals.h" />
   </ItemGroup>
 </Project>

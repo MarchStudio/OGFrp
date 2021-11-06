@@ -35,9 +35,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{cf6fa26d-9459-4fd8-8d7f-898342329a52}</ProjectGuid>
+    <ProjectGuid>{8b2634b6-80d4-4ba2-8248-ce6bc4b93f74}</ProjectGuid>
     <Keyword>Linux</Keyword>
-    <RootNamespace>OGFrp_Console_Linux</RootNamespace>
+    <RootNamespace>OGFrp_Console_Linux_amd64</RootNamespace>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <ApplicationType>Linux</ApplicationType>
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
@@ -78,17 +78,6 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Update="D:\OGFrp\src\OGFrp.Console\OGFrp.Console.Shared\cpfMain">
-      <FileType>Document</FileType>
-    </ClInclude>
-    <ClInclude Update="D:\OGFrp\src\OGFrp.Console\OGFrp.Console.Shared\cpfMain.cpp">
-      <FileType>Document</FileType>
-    </ClInclude>
-    <ClInclude Update="D:\OGFrp\src\OGFrp.Console\OGFrp.Console.Shared\cpf_Linux.cpp">
-      <FileType>Document</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

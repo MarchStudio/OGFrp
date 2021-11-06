@@ -153,6 +153,7 @@
     <ClInclude Update="D:\OGFrp\src\OGFrp.Console\OGFrp.Console.Shared\cpf_Linux.cpp">
       <FileType>Document</FileType>
     </ClInclude>
+    <ClInclude Include="Locals.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
