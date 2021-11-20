@@ -92,7 +92,11 @@ namespace OGFrp.Lite
             this.ComboBox1.FormattingEnabled = true;
             this.ComboBox1.Items.AddRange(new object[] {
             "hk1.ogfrp.cn",
-            "sh1.ogfrp.cn"});
+            "sh1.ogfrp.cn",
+            "ct1.ogfrp.cn",
+            "bj1.ogfrp.cn",
+            "bj2.ogfrp.cn",
+            "hk2.ogfrp.cn"});
             this.ComboBox1.Location = new System.Drawing.Point(257, 54);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(152, 20);

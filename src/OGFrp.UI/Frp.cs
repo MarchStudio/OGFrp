@@ -49,6 +49,14 @@ namespace OGFrp.UI
                     return 1;
                 case "sh1.ogfrp.cn":
                     return 2;
+                case "ct1.ogfrp.cn":
+                    return 4;
+                case "bj1.ogfrp.cn":
+                    return 5;
+                case "bj2.ogfrp.cn":
+                    return 6;
+                case "hk2.ogfrp.cn":
+                    return 7;
                 default:
                     return 0;
             }
