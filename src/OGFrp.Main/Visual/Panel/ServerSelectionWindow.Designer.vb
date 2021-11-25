@@ -67,7 +67,7 @@ Partial Class ServerSelectionWindow
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cb_Server.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_Server.FormattingEnabled = True
-        Me.cb_Server.Items.AddRange(New Object() {"hk1.ogfrp.cn", "sh1.ogfrp.cn"})
+        Me.cb_Server.Items.AddRange(New Object() {"hk1.ogfrp.cn", "sh1.ogfrp.cn", "ct1.ogfrp.cn", "bj1.ogfrp.cn", "bj2.ogfrp.cn", "hk2.ogfrp.cn"})
         Me.cb_Server.Location = New System.Drawing.Point(3, 54)
         Me.cb_Server.Name = "cb_Server"
         Me.cb_Server.Size = New System.Drawing.Size(417, 39)
