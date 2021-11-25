@@ -9,6 +9,11 @@
     <Import_RootNamespace>OGFrp.SharedCS</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)FrpServer\FrpServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FrpServer\FrpServerModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Net.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)FrpServer\" />
   </ItemGroup>
 </Project>
