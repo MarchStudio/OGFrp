@@ -19,6 +19,9 @@ void welcome() {
 	printf("\n");
 	printf("  * Website:   https://ogfrp.cn \n");
 	printf("  * GitHub:    https://github.com/oldgodshen/ogfrp \n");
+	printf("  * Support:   https://jq.qq.com/?_wv=1027&k=whQ4pUD0 \n");
+	printf("\n");
+	printf("Type \"help\" to find more.\n");
 	printf("\n");
 }
 
@@ -52,11 +55,11 @@ void printHelp() {
 	printf("exit               Quit.\n");
 	printf("lsfrps             List available frp servers, access token required.\n");
 	printf("start [serverid]   Start frpc on the specified frp server. | serverid: ID of the frp server\n");
-	printf("token              Print the token you set.");
+	printf("token              Print the token you set.\n");
 	printf("token [token]      Set your OGFrp access token. | token: your OGFrp access token\n");
 }
 
-int shell() {
+int shell(string path) {
 	while (true) {
 		printf("OGFrp> ");
 		string script;
@@ -121,5 +124,5 @@ int main()
 	exePath = path;
 	free(path);
 	welcome();
-	return shell();
+	return shell(exePath);
 }
