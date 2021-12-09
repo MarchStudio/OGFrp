@@ -1,5 +1,3 @@
-#pragma once
-
 #define Version "1.0.211204"
 #define Arch "x86"
 
@@ -9,7 +7,6 @@
 #include <iostream>
 #include <istream>
 #include <string>
-#include <curl/curl.h>
 
 using namespace std;
 
@@ -47,7 +44,7 @@ reipt:
 }
 
 void lsfrps() {
-
+	printf("lsfrps\n");
 }
 
 void printHelp() {
@@ -109,7 +106,7 @@ int shell(string path) {
 			}
 		}
 		else if (cmd == "lsfrps") {
-			system((string() + "curl https://api.ogfrp.cn/?action=getnodes&token=" + token).c_str());
+			lsfrps();
 		}
 		else {
 			printf("%s: Command not found.\n", cmd.c_str());
