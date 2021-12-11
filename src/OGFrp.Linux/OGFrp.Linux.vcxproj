@@ -54,7 +54,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
-    <UseOfStl>libstdc++_static</UseOfStl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -77,20 +76,9 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClCompile Include="Cmds.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Program.cpp" />
-    <ClCompile Include="Shell.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Project.h" />
-  </ItemGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <CustomBuildStep>
-      <Command>g++ ./Program.cpp -o ./OGFrp.Linux</Command>
-      <Outputs>$(ProjectName)</Outputs>
-    </CustomBuildStep>
-  </ItemDefinitionGroup>
+  <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>
