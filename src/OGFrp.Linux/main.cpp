@@ -44,7 +44,7 @@ reipt:
 }
 
 void lsfrps() {
-	printf("lsfrps\n");
+	system(("curl \"https://api.ogfrp.cn/?action=getnodes&token=" + token + "\"").c_str());
 }
 
 void printHelp() {
@@ -114,8 +114,7 @@ int shell(string path) {
 	}
 }
 
-int main()
-{
+int main() {
 	char* path = NULL;
 	path = getcwd(NULL, 0);
 	exePath = path;
