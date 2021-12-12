@@ -54,6 +54,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
+    <UseOfStl>libstdc++_static</UseOfStl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>

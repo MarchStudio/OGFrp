@@ -45,6 +45,7 @@ reipt:
 
 void lsfrps() {
 	system(("curl \"https://api.ogfrp.cn/?action=getnodes&token=" + token + "\"").c_str());
+	printf("\n");
 }
 
 void printHelp() {
@@ -108,8 +109,11 @@ int shell(string path) {
 		else if (cmd == "lsfrps") {
 			lsfrps();
 		}
-		else {
+		else if(cmd != "") {
 			printf("%s: Command not found.\n", cmd.c_str());
+		}
+		else {
+			continue;
 		}
 	}
 }
