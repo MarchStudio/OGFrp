@@ -7,10 +7,13 @@
 #include <iostream>
 #include <istream>
 #include <string>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 using namespace std;
 
 void welcome() {
+	system("mkdir ~/.OGFrp");
 	printf("  ____   _____ ______\n / __ \\ / ____|  ____|\n| |  | | |  __| |__ _ __ _ __\n| |  | | | |_ |  __| '__| '_ \\\n| |__| | |__| | |  | |  | |_) |\n \\____/ \\_____|_|  |_|  | .__/\n                        | |\n                        |_|\n\n");
 	printf("Welcome! OGFrp.Linux (Version %s %s)\n", Version, Arch);
 	printf("\n");
@@ -46,6 +49,11 @@ reipt:
 void lsfrps() {
 	system(("curl \"https://api.ogfrp.cn/?action=getnodes&token=" + token + "\"").c_str());
 	printf("\n");
+}
+
+void startfrpc(string nodeid, string actoken) {
+	system(("curl \"https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + nodeid + "\" -o ~/.OGFrp/frpc.ini").c_str());
+	system((exePath + "/frpc -c ~/.OGFrp/frpc.ini").c_str());
 }
 
 void printHelp() {
@@ -106,10 +114,13 @@ int shell(string path) {
 				}
 			}
 		}
+		else if (cmd == "start") {
+			startfrpc(args, token);
+		}
 		else if (cmd == "lsfrps") {
 			lsfrps();
 		}
-		else if(cmd != "") {
+		else if (cmd != "") {
 			printf("%s: Command not found.\n", cmd.c_str());
 		}
 		else {
