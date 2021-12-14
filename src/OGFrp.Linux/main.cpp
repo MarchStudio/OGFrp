@@ -52,8 +52,10 @@ void lsfrps() {
 }
 
 void startfrpc(string nodeid, string actoken) {
-	system(("curl \"https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + nodeid + "\" -o ~/.OGFrp/frpc.ini").c_str());
-	system((exePath + "/frpc -c ~/.OGFrp/frpc.ini").c_str());
+	string curlsh = "curl \"https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + nodeid + "\" -o ~/.OGFrp/frpc.ini";
+	system(curlsh.c_str());
+	string frpcsh = NULL; //Wait to add.
+	printf(frpcsh.c_str());
 }
 
 void printHelp() {
