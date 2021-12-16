@@ -1,4 +1,4 @@
-#define Version "1.0.211204"
+#define Version "1.0.211216"
 #define Arch "x86"
 
 #include <stdio.h>
@@ -9,6 +9,7 @@
 #include <string>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include "libs.h"
 
 using namespace std;
 
@@ -47,15 +48,26 @@ reipt:
 }
 
 void lsfrps() {
+	printf("\n");
 	system(("curl \"https://api.ogfrp.cn/?action=getnodes&token=" + token + "\"").c_str());
 	printf("\n");
 }
 
 void startfrpc(string nodeid, string actoken) {
-	string curlsh = "curl \"https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + nodeid + "\" -o ~/.OGFrp/frpc.ini";
+	if (nodeid.length() < 1) {
+		printf("Useage: start [serverid]\n");
+		printf("Type \"help\" to find more.\n");
+		return;
+	}
+	cout << "Starting frpc..." << endl;
+	cout << "To stop frpc, please press Ctrl+C" << endl;
+	string iniPath = "~/.OGFrp/frpc.ini";
+	string curlsh = "curl \"https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + nodeid + "\" -o " + iniPath;
 	system(curlsh.c_str());
-	string frpcsh = NULL; //Wait to add.
-	printf(frpcsh.c_str());
+	string frpcsh = exePath + "/frpc -c " + iniPath;
+	system(frpcsh.c_str());
+	printf("\nFrpc exit.\n");
+	return;
 }
 
 void printHelp() {
@@ -103,7 +115,7 @@ int shell(string path) {
 					printf("Token set.\n");
 				}
 				else {
-					printf("The token you entered does not seem to be correct.\nYour frp service may not work properly.\nAre you sure to continue?[y/n]");
+					printf("The token you entered does not seem to be correct.\nYour frp service may not work properly.\nAre you sure to continue?[y/N]");
 					string judge;
 					getline(cin, judge);
 					if (judge == "y") {
@@ -132,10 +144,7 @@ int shell(string path) {
 }
 
 int main() {
-	char* path = NULL;
-	path = getcwd(NULL, 0);
-	exePath = path;
-	free(path);
+	exePath = get_cur_executable_path_();
 	welcome();
 	return shell(exePath);
 }
