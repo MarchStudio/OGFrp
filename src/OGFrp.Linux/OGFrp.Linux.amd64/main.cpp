@@ -1,6 +1,6 @@
 #include "work.cpp"
 
-#define Arch "x86"
+#define Arch "amd64"
 
 OGFrp ogfrp(Arch);
 

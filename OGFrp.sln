@@ -19,12 +19,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OGFrp.Linux", "OGFrp.Linux"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGFrp.Linux.arm64", "src\OGFrp.Linux\OGFrp.Linux.arm64\OGFrp.Linux.arm64.vcxproj", "{87D4E808-FBBF-40FC-B424-A75177945E42}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGFrp.Linux.amd64", "src\OGFrp.Linux\OGFrp.Linux.amd64\OGFrp.Linux.amd64.vcxproj", "{A4444A8B-ED62-49DC-88CB-7B21C08C2511}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\OGFrp.Linux.Common\OGFrp.Linux.Common.vcxitems*{005f7a65-c4a4-4e7f-8a02-a1076b834745}*SharedItemsImports = 4
 		src\OGFrp.SharedCS\OGFrp.SharedCS.projitems*{5d663d05-bf63-44bb-bb0b-8b14c7e8810a}*SharedItemsImports = 4
 		src\OGFrp.Linux.Common\OGFrp.Linux.Common.vcxitems*{86ff10a2-7406-4def-bde6-8d48d9db1eb6}*SharedItemsImports = 9
 		src\OGFrp.Linux.Common\OGFrp.Linux.Common.vcxitems*{87d4e808-fbbf-40fc-b424-a75177945e42}*SharedItemsImports = 4
+		src\OGFrp.Linux.Common\OGFrp.Linux.Common.vcxitems*{a4444a8b-ed62-49dc-88cb-7b21c08c2511}*SharedItemsImports = 4
 		src\OGFrp.SharedCS\OGFrp.SharedCS.projitems*{be9916d1-32e4-4179-beaa-1eafbe01c819}*SharedItemsImports = 4
 		src\OGFrp.SharedCS\OGFrp.SharedCS.projitems*{e7dbe375-cf34-445f-bb78-9e988ee3a6cc}*SharedItemsImports = 13
 	EndGlobalSection
@@ -157,6 +160,34 @@ Global
 		{87D4E808-FBBF-40FC-B424-A75177945E42}.Release|x86.ActiveCfg = Release|x86
 		{87D4E808-FBBF-40FC-B424-A75177945E42}.Release|x86.Build.0 = Release|x86
 		{87D4E808-FBBF-40FC-B424-A75177945E42}.Release|x86.Deploy.0 = Release|x86
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|Any CPU.Build.0 = Debug|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|Any CPU.Deploy.0 = Debug|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|ARM.Build.0 = Debug|ARM
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|ARM64.Build.0 = Debug|ARM64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|x64.ActiveCfg = Debug|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|x64.Build.0 = Debug|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|x64.Deploy.0 = Debug|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|x86.ActiveCfg = Debug|x86
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|x86.Build.0 = Debug|x86
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Debug|x86.Deploy.0 = Debug|x86
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|Any CPU.ActiveCfg = Release|x86
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|ARM.ActiveCfg = Release|ARM
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|ARM.Build.0 = Release|ARM
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|ARM.Deploy.0 = Release|ARM
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|ARM64.ActiveCfg = Release|ARM64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|ARM64.Build.0 = Release|ARM64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|ARM64.Deploy.0 = Release|ARM64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x64.ActiveCfg = Release|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x64.Build.0 = Release|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x64.Deploy.0 = Release|x64
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x86.ActiveCfg = Release|x86
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x86.Build.0 = Release|x86
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +196,7 @@ Global
 		{86FF10A2-7406-4DEF-BDE6-8D48D9DB1EB6} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
 		{005F7A65-C4A4-4E7F-8A02-A1076B834745} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
 		{87D4E808-FBBF-40FC-B424-A75177945E42} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
+		{A4444A8B-ED62-49DC-88CB-7B21C08C2511} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEF304D8-4E56-4599-9E6A-F89EB97D8525}

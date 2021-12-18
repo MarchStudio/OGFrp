@@ -1,3 +1,5 @@
+#define Version "1.0.1217"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -14,24 +16,18 @@ using namespace std;
 class OGFrp {
 
 private:
-	string Version = "Unknown", Arch = "Unknown";
+	string Arch = "Unknown";
 
 public:
 
-	OGFrp(string Version, string Arch) {
-		this->Version = Version;
-		this->Arch = Arch;
-	}
-
-	void setInfo(string Version, string Arch) {
-		this->Version = Version;
+	OGFrp(string Arch) {
 		this->Arch = Arch;
 	}
 
 	void welcome() {
 		system("mkdir ~/.OGFrp");
 		printf("  ____   _____ ______\n / __ \\ / ____|  ____|\n| |  | | |  __| |__ _ __ _ __\n| |  | | | |_ |  __| '__| '_ \\\n| |__| | |__| | |  | |  | |_) |\n \\____/ \\_____|_|  |_|  | .__/\n                        | |\n                        |_|\n\n");
-		printf("Welcome! OGFrp.Linux (Version %s %s)\n", Version.c_str(), Arch.c_str());
+		printf("Welcome! OGFrp.Linux (Version %s %s)\n", Version, Arch.c_str());
 		printf("\n");
 		printf("  * Website:   https://ogfrp.cn \n");
 		printf("  * GitHub:    https://github.com/oldgodshen/ogfrp \n");

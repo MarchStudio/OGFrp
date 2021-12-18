@@ -365,3 +365,6 @@ FodyWeavers.xsd
 src /bin
 src /obj
 src /.vs
+
+#Packer output
+OGFrp.Linux.Pack
