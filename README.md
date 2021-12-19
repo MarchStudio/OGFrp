@@ -23,7 +23,7 @@ OGFrp官网：https://ogfrp.cn 。
 平台 | Headless | Simple GUI | Beautiful GUI
 --- | --- | --- | ---
 Windows | - | √ | √
-Linux | ○ | - | -
+Linux | √ | - | -
 macOS | - | - | - 
 
     “ √ ” 表示已经有成熟的客户端
