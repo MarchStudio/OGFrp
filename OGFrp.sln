@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGFrp.Linux.arm64", "src\OG
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGFrp.Linux.amd64", "src\OGFrp.Linux\OGFrp.Linux.amd64\OGFrp.Linux.amd64.vcxproj", "{A4444A8B-ED62-49DC-88CB-7B21C08C2511}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "OGFrp.Linux.Installer", "src\OGFrp.Linux.Installer\OGFrp.Linux.Installer.pyproj", "{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\OGFrp.Linux.Common\OGFrp.Linux.Common.vcxitems*{005f7a65-c4a4-4e7f-8a02-a1076b834745}*SharedItemsImports = 4
@@ -188,6 +190,16 @@ Global
 		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x86.ActiveCfg = Release|x86
 		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x86.Build.0 = Release|x86
 		{A4444A8B-ED62-49DC-88CB-7B21C08C2511}.Release|x86.Deploy.0 = Release|x86
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Release|ARM.ActiveCfg = Release|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Release|x64.ActiveCfg = Release|Any CPU
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -197,6 +209,7 @@ Global
 		{005F7A65-C4A4-4E7F-8A02-A1076B834745} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
 		{87D4E808-FBBF-40FC-B424-A75177945E42} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
 		{A4444A8B-ED62-49DC-88CB-7B21C08C2511} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
+		{8E53DD2B-A14A-4AF5-89B3-0884F6C04792} = {7AB8D65E-712F-4023-8182-6BA4756F9695}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEF304D8-4E56-4599-9E6A-F89EB97D8525}
