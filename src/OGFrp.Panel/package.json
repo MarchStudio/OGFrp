@@ -1,0 +1,12 @@
+{
+  "name": "ogfrp.panel",
+  "version": "0.0.0",
+  "description": "OGFrp.Panel",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "electron": "^16.0.5"
+  }
+}
