@@ -1,4 +1,6 @@
 @echo off
+echo Be sure you have built OGFrp.Linux.*
+pause
 echo Cleaning Pack Folder...
 rd /s /q OGFrp.Linux.Pack
 echo Creating pack folder...
