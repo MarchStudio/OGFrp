@@ -27,6 +27,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "OGFrp.Panel", "src\OGFrp.Pa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OGFrp.Windows", "OGFrp.Windows", "{93B1954D-D037-4B62-8826-DDCA9B83EC53}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OGFrp.Test", "src\OGFrp.Test\OGFrp.Test.vbproj", "{2F9F1156-4203-48C4-A91A-3EA396FD2E71}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\OGFrp.Linux.Common\OGFrp.Linux.Common.vcxitems*{005f7a65-c4a4-4e7f-8a02-a1076b834745}*SharedItemsImports = 4
@@ -224,6 +226,26 @@ Global
 		{0D47E582-9A58-41C4-B08A-BF7112E980FA}.Release|x64.Build.0 = Release|Any CPU
 		{0D47E582-9A58-41C4-B08A-BF7112E980FA}.Release|x86.ActiveCfg = Release|Any CPU
 		{0D47E582-9A58-41C4-B08A-BF7112E980FA}.Release|x86.Build.0 = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|x64.Build.0 = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Debug|x86.Build.0 = Debug|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|ARM.Build.0 = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|ARM64.Build.0 = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|x64.ActiveCfg = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|x64.Build.0 = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|x86.ActiveCfg = Release|Any CPU
+		{2F9F1156-4203-48C4-A91A-3EA396FD2E71}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

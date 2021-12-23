@@ -9,21 +9,16 @@ namespace OGFrp.UI
         /// <summary>
         /// 节点ID
         /// </summary>
-        public int ID { get; set; }
-
-        /// <summary>
-        /// 节点名称
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 节点描述
-        /// </summary>
-        public string Description { get; set; }
+        public string ID { get; set; }
 
         /// <summary>
         /// 节点IP
         /// </summary>
         public string Address { get; set; }
+
+        public override string ToString()
+        {
+            return ID + "|" + Address;
+        }
     }
 }
