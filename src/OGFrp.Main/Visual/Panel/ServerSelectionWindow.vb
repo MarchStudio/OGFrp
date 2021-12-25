@@ -5,6 +5,8 @@ Public Class ServerSelectionWindow
     Dim Config As New Config
     Dim Assets As New AssetModel
     Dim Frp As New Frp
+    Dim FrpServer As New FrpServer
+    Dim Net As New Net
 
     Dim AccessToken As String
 
@@ -19,11 +21,15 @@ Public Class ServerSelectionWindow
         End Select
         Me.lb_Server.Text = Assets.PlzSelectServer
         Me.bt_launch.Text = Assets.LaunchFrpc
-        Me.cb_Server.Text = "hk1.ogfrp.cn"
+        Dim Content = Net.Get("https://api.ogfrp.cn/?action=getnodesidip&token=" + AccessToken)
+        Dim frpservers = FrpServer.FrpsServerList(Content)
+        Me.cb_Server.DataSource = frpservers
+        Me.cb_Server.DisplayMember = "Address"
     End Sub
 
     Private Sub bt_launch_Click(sender As Object, e As EventArgs) Handles bt_launch.Click
-        Frp.launchFrpc(Me.AccessToken, Me.cb_Server.Text)
+        Dim SelectedServer As FrpServerModel = Me.cb_Server.SelectedItem
+        Frp.launchFrpc(Me.AccessToken, SelectedServer.ID)
         Me.Dispose()
     End Sub
 

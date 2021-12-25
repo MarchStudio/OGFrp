@@ -62,6 +62,32 @@ namespace OGFrp.UI
             }
         }
 
+        /// <summary>
+        /// 启动frpc
+        /// </summary>
+        /// <param name="token">OGFrp用户token</param>
+        /// <param name="server">OGFrp的节点ID</param>
+        /// <returns></returns>
+        public int launchFrpc(string token, int server)
+        {
+            try
+            {
+                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get("https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + server.ToString()));
+                Interaction.Shell(Config.FolderPath + "\\frpc.exe -c \"" + Config.FolderPath + "\\frpc.ini\"", AppWinStyle.NormalFocus);
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        /// <summary>
+        /// 启动frpc
+        /// </summary>
+        /// <param name="token">OGFrp用户token</param>
+        /// <param name="server">OGFrp节点IP</param>
+        /// <returns></returns>
         public int launchFrpc(string token, string server)
         {
             try
