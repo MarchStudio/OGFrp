@@ -41,25 +41,24 @@ namespace OGFrp.UI
             return 0; ;
         }
 
-        public int serverToId(string server)
+        /// <summary>
+        /// 将OGFrp节点IP转换成ID
+        /// </summary>
+        /// <param name="server">节点IP</param>
+        /// <param name="token">OGFrp用户token</param>
+        /// <returns></returns>
+        public int serverToId(string server, string token)
         {
-            switch (server)
+            FrpServer frpServer = new FrpServer();
+            FrpServerModel[] frpServers = frpServer.FrpsServerList(Net.Get("https://api.ogfrp.cn/?action=getnodesidip&token=" + token)).ToArray();
+            for (int i = 0; i < frpServers.Length; i++)
             {
-                case "hk1.ogfrp.cn":
-                    return 1;
-                case "sh1.ogfrp.cn":
-                    return 2;
-                case "ct1.ogfrp.cn":
-                    return 4;
-                case "bj1.ogfrp.cn":
-                    return 5;
-                case "bj2.ogfrp.cn":
-                    return 6;
-                case "hk2.ogfrp.cn":
-                    return 7;
-                default:
-                    return 0;
+                if (frpServers[i].Address == server)
+                {
+                    return int.Parse(frpServers[i].ID);
+                }
             }
+            return -1;
         }
 
         /// <summary>
@@ -92,7 +91,7 @@ namespace OGFrp.UI
         {
             try
             {
-                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get("https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + serverToId(server)));
+                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get("https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + serverToId(server, token)));
                 Interaction.Shell(Config.FolderPath + "\\frpc.exe -c \"" + Config.FolderPath + "\\frpc.ini\"", AppWinStyle.NormalFocus);
             }
             catch (Exception ex)
