@@ -30,6 +30,9 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Linux' ">
+    <OutputPath>bin\Linux\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="package.json" />

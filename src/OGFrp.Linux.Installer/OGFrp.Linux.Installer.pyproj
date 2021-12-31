@@ -21,6 +21,9 @@
     <DebugSymbols>true</DebugSymbols>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Linux' ">
+    <OutputPath>bin\Linux\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="install.py" />
     <Compile Include="uninstall.py" />
