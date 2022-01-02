@@ -45,6 +45,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Linux|x64'">
     <OutputPath>bin\x64\Linux\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Window|AnyCPU'">
+    <OutputPath>bin\Window\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Window|x64'">
+    <OutputPath>bin\x64\Window\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="IronPython, Version=3.4.0.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Scripting, Version=1.3.0.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />

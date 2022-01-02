@@ -11,18 +11,26 @@ def main():
     os.system("mkdir /opt/OGFrp")
     if arch == "x86":
         print("Installing OGFrp.Linux x86 build...")
+        os.system("rm -rf /usr/bin/ogfrp")
+        os.system("rm -rf /usr/bin/frpc")
         os.system("cp " + dirname + "/frpc/i386 /opt/OGFrp/frpc")
         os.system("cp " + dirname + "/program/i386 /opt/OGFrp/OGFrp.Linux")
     elif arch == "amd64":
         print("Installing OGFrp.Linux amd64 build...")
+        os.system("rm -rf /usr/bin/ogfrp")
+        os.system("rm -rf /usr/bin/frpc")
         os.system("cp " + dirname + "/frpc/amd64 /opt/OGFrp/frpc")
         os.system("cp " + dirname + "/program/amd64 /opt/OGFrp/OGFrp.Linux")
     elif arch == "arm":
         print("Installing OGFrp.Linux arm build...") 
+        os.system("rm -rf /usr/bin/ogfrp")
+        os.system("rm -rf /usr/bin/frpc")
         os.system("cp " + dirname + "/frpc/arm /opt/OGFrp/frpc")
         os.system("cp " + dirname + "/program/arm /opt/OGFrp/OGFrp.Linux")
     elif arch == "arm64":
         print("Installing OGFrp.Linux arm64 build...") 
+        os.system("rm -rf /usr/bin/ogfrp")
+        os.system("rm -rf /usr/bin/frpc")
         os.system("cp " + dirname + "/frpc/arm64 /opt/OGFrp/frpc")
         os.system("cp " + dirname + "/program/arm64 /opt/OGFrp/OGFrp.Linux")
     else:

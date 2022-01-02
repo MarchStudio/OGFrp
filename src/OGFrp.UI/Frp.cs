@@ -53,7 +53,7 @@ namespace OGFrp.UI
             FrpServerModel[] frpServers = frpServer.FrpsServerList(Net.Get("https://api.ogfrp.cn/?action=getnodesidip&token=" + token)).ToArray();
             for (int i = 0; i < frpServers.Length; i++)
             {
-                if (frpServers[i].Address == server)
+                if (frpServers[i].ID == server)
                 {
                     return int.Parse(frpServers[i].ID);
                 }
@@ -91,7 +91,8 @@ namespace OGFrp.UI
         {
             try
             {
-                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get("https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + serverToId(server, token)));
+                string frpciniurl = "https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + serverToId(server, token);
+                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get(frpciniurl));
                 Interaction.Shell(Config.FolderPath + "\\frpc.exe -c \"" + Config.FolderPath + "\\frpc.ini\"", AppWinStyle.NormalFocus);
             }
             catch (Exception ex)

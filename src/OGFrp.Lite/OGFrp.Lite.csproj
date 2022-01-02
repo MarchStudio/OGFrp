@@ -47,6 +47,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Linux|x64'">
     <OutputPath>bin\x64\Linux\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Window|AnyCPU'">
+    <OutputPath>bin\Window\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Window|x64'">
+    <OutputPath>bin\x64\Window\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />

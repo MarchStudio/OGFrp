@@ -50,6 +50,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Linux|AnyCPU'">
     <OutputPath>bin\Linux\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Window|AnyCPU'">
+    <OutputPath>bin\Window\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />

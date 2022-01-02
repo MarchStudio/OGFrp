@@ -33,6 +33,9 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Linux' ">
     <OutputPath>bin\Linux\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Window' ">
+    <OutputPath>bin\Window\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="package.json" />

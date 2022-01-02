@@ -29,7 +29,9 @@ Public Class ServerSelectionWindow
 
     Private Sub bt_launch_Click(sender As Object, e As EventArgs) Handles bt_launch.Click
         Dim SelectedServer As FrpServerModel = Me.cb_Server.SelectedItem
-        Frp.launchFrpc(Me.AccessToken, SelectedServer.ID)
+        If Frp.launchFrpc(Me.AccessToken, SelectedServer.ID) = -1 Then
+            MsgBox("启动失败！", 16, "OGFrp")
+        End If
         Me.Dispose()
     End Sub
 
