@@ -21,6 +21,11 @@ namespace OGFrp.Lite
         {
             printWelcome();
             exePath = Environment.CurrentDirectory;
+            try
+            {
+                FileSystem.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp");
+            }
+            catch { }
             while (true)
             {
                 shell();
@@ -45,7 +50,7 @@ namespace OGFrp.Lite
 
         static void printHelp()
         {
-            Console.Write("-----OGFrp.Linux helper-----\n");
+            Console.Write("-----OGFrp.Lite helper-----\n");
             Console.Write("exit               Quit.\n");
             Console.Write("lsfrps             List available frp servers, access token required.\n");
             Console.Write("start [serverid]   Start frpc on the specified frp server. | serverid: ID of the frp server\n");
