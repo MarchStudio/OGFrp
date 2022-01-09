@@ -1,3 +1,5 @@
+[Readme](https://github.com/OldGodShen/OGFrp/blob/master/README.md#ogfrp)
+
 # Linux端使用方法
 
 ## I.安装
