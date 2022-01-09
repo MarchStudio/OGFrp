@@ -1,6 +1,6 @@
 [Readme](https://github.com/OldGodShen/OGFrp/blob/master/README.md#ogfrp)
 
-# OGFrp.Lite使用方法
+# OGFrp.Lite使用帮助
 
 ## I.安装
 不同于OGFrp.Lite的繁琐安装过程，OGFrp.Lite只需要解压即可。

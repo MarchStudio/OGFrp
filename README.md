@@ -19,6 +19,7 @@ OGFrp官网：https://ogfrp.cn 。
 
 ## 使用帮助
 [OGFrp.Linux使用帮助](https://github.com/OldGodShen/OGFrp/blob/master/github/UseLinux.md#linux%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+[OGFrp.Lite使用帮助](https://github.com/OldGodShen/OGFrp/blob/master/github/UseLite.md#ogfrplite%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 
 ## 研发进度
 

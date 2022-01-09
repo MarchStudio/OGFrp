@@ -1,6 +1,6 @@
 [Readme](https://github.com/OldGodShen/OGFrp/blob/master/README.md#ogfrp)
 
-# OGFrp.Linux使用方法
+# OGFrp.Linux使用帮助
 
 ## I.安装
 ### 1. 解压
