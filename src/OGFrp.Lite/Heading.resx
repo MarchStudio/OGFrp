@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="dotnetfxVersion" xml:space="preserve">
+    <value>4.6</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>1.0.220109</value>
+  </data>
 </root>
