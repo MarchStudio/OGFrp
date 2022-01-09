@@ -27,7 +27,7 @@ OGFrp官网：https://ogfrp.cn 。
 ### 客户端：
 平台 | Headless | GUI
 --- | --- | --- 
-Windows | - | √ 
+Windows | √ | √ 
 Linux | √ | - 
 macOS | - | - 
 
