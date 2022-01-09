@@ -59,8 +59,7 @@ public:
 	}
 
 	void lsfrps() {
-		printf("\n");
-		system(("curl \"https://api.ogfrp.cn/?action=getnodes&token=" + token + "\"").c_str());
+		system(("curl --location --request POST 'https://api.ogfrp.cn' --form 'action=getnodes' --form 'token=" + token + "'").c_str());
 		printf("\n");
 	}
 
@@ -73,7 +72,7 @@ public:
 		cout << "Starting frpc..." << endl;
 		cout << "To stop frpc, please press Ctrl+C" << endl;
 		string iniPath = "~/.OGFrp/frpc.ini";
-		string curlsh = "curl \"https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + nodeid + "\" -o " + iniPath;
+		string curlsh = "curl --location --request POST 'https://api.ogfrp.cn' --form 'action=getconf' --form 'token=" + token + "' --form 'node=" + nodeid + "' -o " + iniPath;
 		system(curlsh.c_str());
 		string frpcsh = exePath + "/frpc -c " + iniPath;
 		system(frpcsh.c_str());
