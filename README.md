@@ -17,6 +17,9 @@ OGFrp官网：https://ogfrp.cn 。
 ## 关于repo
 本repo代码仅供我们内部进行代码的升级和维护(不出意外的话只有GreatHuang2007在干这事)，和对我们编译的客户端不放心的用户自己进行下载编译(由于GreatHuang2007喜欢用master分支来进行debug，所以可能下载的代码编译会报错)；releases的文件基本上都已经过稳定性和安全性测试，可放心下载。
 
+## 使用帮助
+[OGFrp.Linux使用帮助](https://github.com/OldGodShen/OGFrp/blob/master/github/UseLinux.md)
+
 ## 研发进度
 
 ### 客户端：
