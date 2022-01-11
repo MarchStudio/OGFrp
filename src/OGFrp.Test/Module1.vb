@@ -9,14 +9,23 @@ Module Module1
     Dim t As IEnumerable(Of FrpServerModel)
 
     Sub Main()
-        Dim url = "https://api.ogfrp.cn/?action=getnodesidip&token="
-        Console.Write("Token:")
-        Dim token = Console.ReadLine()
-        url = url + token
-        Do
-            Console.WriteLine(frp.serverToId(Console.ReadLine(), token))
-        Loop
-        Shell("cmd /c pause")
+        Console.Write("Frpc location: ")
+        Dim frpc As New Frpc(Console.ReadLine())
+        Console.Write("ini Location: ")
+        frpc.setIniLoca(Console.ReadLine())
+        While True
+            Console.Write("> ")
+            Dim t As String
+            t = Console.ReadLine
+            Select Case t
+                Case "launch"
+                    Console.WriteLine(frpc.Launch())
+                Case "kill"
+                    frpc.Kill()
+                Case "l"
+                    frpc.getLog()
+            End Select
+        End While
     End Sub
 
 End Module
