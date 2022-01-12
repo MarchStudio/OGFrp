@@ -9,7 +9,7 @@
     <Grid x:Name="grid">
         <local:Login x:Name="Login" Margin="0,0,-0.4,0">
             <local:Login.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Background.png"/>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Background.png" Stretch="UniformToFill"/>
             </local:Login.Background>
         </local:Login>
         <local:LoginBox x:Name="LoginBox" Margin="0,0,0,0" Opacity="0" IsEnabled="False" Width="{Binding Width, ElementName=grid}" Height="{Binding Height, ElementName=grid}" Visibility="Hidden"/>

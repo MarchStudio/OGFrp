@@ -26,6 +26,8 @@
 
     OGFrp> token 1a2b3c4d5e6f7890
 
+其中，1a2b3c4d5e6f7890应替换成你的OGFrp用户Token。
+
 当然，OGFrp.Lite有自动检查token的功能，若您收到了这样的提示：
 
     OGFrp> token 123

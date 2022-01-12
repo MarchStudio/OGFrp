@@ -13,12 +13,12 @@
             <RowDefinition Height="49.6"/>
             <RowDefinition Height="79*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="BG" Source="pack://siteoforigin:,,,/Resources/Background.png" Grid.RowSpan="4" Margin="-5" Stretch="UniformToFill" StretchDirection="DownOnly">
+        <Image x:Name="BG" Source="/Resources/Background.png" Grid.RowSpan="4" Margin="-5" Stretch="UniformToFill" StretchDirection="DownOnly">
             <Image.Effect>
                 <BlurEffect Radius="0"/>
             </Image.Effect>
         </Image>
-        <Label x:Name="lb_Welcome" Content="Welcome" Margin="0,2,0,1.6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="48" Foreground="White"/>
+        <Label x:Name="lb_Welcome" Content="Welcome" Margin="0,2,0,1.6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="48" Foreground="Black"/>
         <Button x:Name="bt_Letsgo" Content="Let's go!" HorizontalAlignment="Center" Height="Auto" Margin="0" Width="114"  Grid.Row="2"/>
     </Grid>
 </UserControl>
