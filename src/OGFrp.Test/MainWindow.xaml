@@ -1,0 +1,17 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OGFrp.Test"
+        xmlns:UI="clr-namespace:OGFrp.UI;assembly=OGFrp.UI" x:Class="MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFFFA2A2">
+
+        <UI:FrpcCover x:Name="FrpcCover" HorizontalAlignment="Left" Height="65" Margin="264,109,0,0" VerticalAlignment="Top" Width="362"/>
+        <TextBox x:Name="tb_ini" HorizontalAlignment="Left" Height="207" Margin="178,189,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        <TextBox x:Name="tb_frpc" HorizontalAlignment="Left" Height="18" Margin="474,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="243"/>
+
+    </Grid>
+</Window>

@@ -17,8 +17,33 @@ namespace OGFrp.UI
         /// <summary>
         /// 创建一个frpc实例对象
         /// </summary>
+        public Frpc() { }
+
+        /// <summary>
+        /// 创建一个frpc实例对象
+        /// </summary>
         /// <param name="frpcLoca">frpc.exe的位置</param>
         public Frpc(string frpcLoca)
+        {
+            this.frpcLoca = frpcLoca;
+        }
+
+        /// <summary>
+        /// 创建一个frpc实例对象
+        /// </summary>
+        /// <param name="frpcLoca">frpc.exe的位置</param>
+        /// <param name="iniLoca">frpc.ini的位置</param>
+        public Frpc(string frpcLoca, string iniLoca)
+        {
+            this.frpcLoca = frpcLoca;
+            this.iniLoca = iniLoca;
+        }
+
+        /// <summary>
+        /// 设置frpc.exe的路径
+        /// </summary>
+        /// <param name="frpcLoca"></param>
+        public void setFrpcLoca(string frpcLoca)
         {
             this.frpcLoca = frpcLoca;
         }
@@ -48,7 +73,8 @@ namespace OGFrp.UI
                 p_frpc.StartInfo.FileName = this.frpcLoca;
                 p_frpc.StartInfo.Arguments = "-c " + this.iniLoca;
                 p_frpc.StartInfo.CreateNoWindow = false;
-                p_frpc.StartInfo.UseShellExecute = false;
+                p_frpc.StartInfo.UseShellExecute = true;
+                p_frpc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 p_frpc.Start();
                 isOn = true;
                 return 0;

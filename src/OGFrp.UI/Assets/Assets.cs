@@ -37,7 +37,8 @@ namespace OGFrp.UI
             Downloading = "正在下载...",
             DownloadFailed = "下载失败！",
             LaunchFrpc = "启动隧道",
-            PlzSelectServer = "请选择节点"
+            PlzSelectServer = "请选择节点",
+            ViewLog = "显示日志"
         };
 
         /// <summary>
@@ -65,7 +66,8 @@ namespace OGFrp.UI
             Downloading = "Downloading...",
             DownloadFailed = "Ops! There seems to be something wrong while downloading.",
             LaunchFrpc = "Launch Frpc",
-            PlzSelectServer = "Please select a server:"
+            PlzSelectServer = "Please select a server:",
+            ViewLog = "View Log"
         };
     }
 }

@@ -94,5 +94,9 @@ namespace OGFrp.UI
         /// 面板：请选择服务器
         /// </summary>
         public string PlzSelectServer { get; set; }
+        /// <summary>
+        /// frpc：显示日志
+        /// </summary>
+        public string ViewLog { get; set; }
     }
 }
