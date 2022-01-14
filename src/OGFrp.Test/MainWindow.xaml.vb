@@ -15,4 +15,8 @@
         Me.FrpcCover.SetFrpcLoca(Me.tb_frpc.Text.ToString())
         Me.FrpcCover.SetServerName(Me.FrpcCover.frpcLoca)
     End Sub
+
+    Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
+
+    End Sub
 End Class

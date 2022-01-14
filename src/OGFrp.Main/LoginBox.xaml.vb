@@ -1,4 +1,5 @@
 ﻿Imports OGFrp.UI
+Imports System.IO
 Imports System.Threading
 
 Public Class LoginBox
@@ -14,6 +15,16 @@ Public Class LoginBox
 
     Public Username As String
     Public UserToken As String
+
+    Private Sub SearchHeadImg(email As String)
+        If File.Exists(Gravatar.FolderPath + "\" + email + ".png") Then
+            Try
+                Dim imgBitmap As New System.Drawing.Bitmap(Gravatar.FolderPath + "\" + email + ".png")
+                Me.img_head.Source = UI.Image.BitmapToImageSource(imgBitmap)
+            Catch
+            End Try
+        End If
+    End Sub
 
     Public Sub _init_() Handles Me.Loaded
         Config.ReadConfig()
@@ -35,6 +46,7 @@ Public Class LoginBox
         If Not Config.Username.Val = "" Then
             Me.tb_Username.Text = Config.Username.Val
             Me.tb_Username.Foreground = Brushes.Black
+            SearchHeadImg(Config.Username.Val)
             Me.tb_Password.Focus()
         End If
     End Sub
@@ -50,6 +62,16 @@ Public Class LoginBox
     }
 
     Dim Net As New Net
+
+    ''' <summary>
+    ''' 已获取的用户头像
+    ''' </summary>
+    Public UserImage As System.Drawing.Bitmap
+
+    ''' <summary>
+    ''' 当成功获取用户头像后触发
+    ''' </summary>
+    Public Event GotUserImage()
 
     ''' <summary>
     ''' 登录（返回token）

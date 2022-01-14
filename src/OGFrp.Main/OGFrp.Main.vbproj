@@ -90,6 +90,7 @@
   <ItemGroup>
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -114,6 +115,9 @@
     </Compile>
     <Compile Include="MainPanel.xaml.vb">
       <DependentUpon>MainPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDisplay.xaml.vb">
+      <DependentUpon>UserDisplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="Visual\Panel\ServerSelectionWindow.Designer.vb">
       <DependentUpon>ServerSelectionWindow.vb</DependentUpon>
@@ -141,6 +145,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Import Include="System.Threading.Tasks" />

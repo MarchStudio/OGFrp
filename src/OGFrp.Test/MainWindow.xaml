@@ -12,6 +12,7 @@
         <UI:FrpcCover x:Name="FrpcCover" HorizontalAlignment="Left" Height="65" Margin="264,109,0,0" VerticalAlignment="Top" Width="362"/>
         <TextBox x:Name="tb_ini" HorizontalAlignment="Left" Height="207" Margin="178,189,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
         <TextBox x:Name="tb_frpc" HorizontalAlignment="Left" Height="18" Margin="474,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="243"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="65" Margin="506,265,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click"/>
 
     </Grid>
 </Window>

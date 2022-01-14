@@ -14,7 +14,7 @@
         <Grid.Background>
             <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="0" Grid.ColumnSpan="2" Grid.RowSpan="3">
             <Border.Background>
                 <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
             </Border.Background>
@@ -25,6 +25,14 @@
                 <RectangleGeometry Rect="0,0,250, 5120"/>
             </Border.Clip>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#DB343A40"/>
+        <Grid Background="#DB343A40" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <local:UserDisplay x:Name="ctm_userdisplay" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="1" VerticalAlignment="Stretch"/>
+
+        </Grid>
     </Grid>
 </UserControl>

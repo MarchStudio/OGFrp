@@ -23,7 +23,8 @@
         <Label x:Name="lb_pwdNotice" Content="Password" HorizontalAlignment="Center" Margin="0" Grid.Row="5" Width="300" FontSize="16" VerticalContentAlignment="Center" Cursor="IBeam" BorderThickness="1"/>
         <Button x:Name="bt_login" Content="&gt;" HorizontalAlignment="Center" Height="Auto"  Margin="350,0,0,0" Grid.Row="5" Width="36" RenderTransformOrigin="1.962,0.193" TabIndex="2"/>
         <Label x:Name="lb_info" Content="" HorizontalAlignment="Center" Margin="0" Grid.Row="6" Width="300" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Center" Margin="0" Grid.Row="1" Width="100" Source="/Resources/UserHead.png" Stretch="UniformToFill"/>
+        <Image x:Name="img_head" HorizontalAlignment="Center" Margin="0" Grid.Row="1" Width="100" Source="/Resources/UserHead.png" Stretch="UniformToFill">
+        </Image>
     <Grid.Resources>
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="FontSize" Value="16"/>

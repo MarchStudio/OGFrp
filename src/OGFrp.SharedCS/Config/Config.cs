@@ -50,7 +50,7 @@ namespace OGFrp.UI
         /// <summary>
         /// Appdata/OGFrp的位置
         /// </summary>
-        public readonly string FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp";
+        public static readonly string FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp";
 
         /// <summary>
         /// 创建Appdata文件夹

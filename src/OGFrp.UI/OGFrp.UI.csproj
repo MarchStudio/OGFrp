@@ -83,6 +83,8 @@
   <ItemGroup>
     <Compile Include="Assets\AssetModel.cs" />
     <Compile Include="Assets\Assets.cs" />
+    <Compile Include="Gravatar.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="Visual\FrpcCover.xaml.cs">
       <DependentUpon>FrpcCover.xaml</DependentUpon>
     </Compile>

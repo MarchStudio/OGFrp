@@ -65,6 +65,10 @@ Class MainWindow
         Me.txtTitle.Foreground = Brushes.White
         Me.TitleBar.Background = Brushes.Transparent
         Me.MainPanel.Visibility = Visibility.Visible
+        Me.MainPanel.Username = Me.LoginBox.Username
+        Me.MainPanel.Nickname = Me.LoginBox.Username
+        Me.MainPanel.UserToken = Me.LoginBox.UserToken
+        Me.MainPanel._init_()
         Me.txtTitle.Text = "OGFrp"
     End Sub
 End Class
