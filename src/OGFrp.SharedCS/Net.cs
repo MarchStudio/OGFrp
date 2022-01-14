@@ -10,7 +10,7 @@ namespace OGFrp.UI
 {
     public class Net
     {
-        public string Get(string Url)
+        public static string Get(string Url)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Proxy = null;
@@ -39,14 +39,46 @@ namespace OGFrp.UI
         }
 
         /// <summary>
+        /// 指定Post地址使用Get 方式获取全部字符串
+        /// </summary>
+        /// <param name="url">请求后台地址</param>
+        /// <param name="content">Post提交数据内容(utf-8编码的)</param>
+        /// <returns></returns>
+        public static string Post(string url, string content)
+        {
+            string result = "";
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+
+            #region 添加Post 参数
+            byte[] data = Encoding.UTF8.GetBytes(content);
+            req.ContentLength = data.Length;
+            using (Stream reqStream = req.GetRequestStream())
+            {
+                reqStream.Write(data, 0, data.Length);
+                reqStream.Close();
+            }
+            #endregion
+
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            Stream stream = resp.GetResponseStream();
+            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+            {
+                result = reader.ReadToEnd();
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 获取OGFrp用户的访问密钥
         /// </summary>
         /// <param name="Username">用户名</param>
         /// <param name="Password">密码</param>
         /// <returns></returns>
-        public string GetAccessToken(string Username, string Password)
+        public static string GetAccessToken(string Username, string Password)
         {
-            return Get("https://api.ogfrp.cn/?action=gettoken&username=" + Username + "&password=" + Password);
+            return Post("https://api.ogfrp.cn","action=gettoken&username=" + Username + "&password=" + Password);
         }
 
         public int Download(string source, string localPath, bool forceDownload = false)

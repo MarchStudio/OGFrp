@@ -5,14 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OGFrp.Main"
         mc:Ignorable="d"
-        Title="OGFrp" Height="450" Width="800" MinWidth="800" MinHeight="450">
-    <Grid x:Name="grid">
-        <local:Login x:Name="Login" Margin="0,0,-0.4,0">
-            <local:Login.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Background.png" Stretch="UniformToFill"/>
-            </local:Login.Background>
-        </local:Login>
-        <local:LoginBox x:Name="LoginBox" Margin="0,0,0,0" Opacity="0" IsEnabled="False" Width="{Binding Width, ElementName=grid}" Height="{Binding Height, ElementName=grid}" Visibility="Hidden"/>
-        <local:MainPage x:Name="MainPage" Margin="0" Visibility="Hidden"/>
+        Title="OGFrp" Height="600" Width="1200" MinWidth="800" MinHeight="450" WindowStyle="None" AllowsTransparency="True">
+    <Grid x:Name="MainGrid">
+
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0">
+            <Border.Background>
+                <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
+            </Border.Background>
+            <Border.Effect>
+                <BlurEffect Radius="0"></BlurEffect>
+            </Border.Effect>
+        </Border>
+
+        <local:MainPanel x:Name="MainPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <local:MainPanel.Background>
+                <ImageBrush TileMode="Tile" Stretch="UniformToFill"/>
+            </local:MainPanel.Background>
+        </local:MainPanel>
+
+        <Grid x:Name="TitleBar"  Height="30" DockPanel.Dock="Top" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="White" Width="{Binding Width, ElementName=MainGrid}">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Width" Value="70"/>
+                    <Setter Property="Height" Value="25"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Background" Value="#00FFFFFF"/>
+                    <Setter Property="BorderThickness" Value="1.5"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="FontSize" Value="22"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="8,8,8,8">
+                                    <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#80808080"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#80404040"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="bd_titlefill" BorderThickness="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.ColumnSpan="3"/>
+            <TextBlock x:Name="txtTitle" Margin="1,0,0,0"  Padding="5,3,2,3" Text="OGFrp" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="微软雅黑"  
+                   Foreground="Black" Height="24"/>
+            <Button x:Name="Bt_Close" Content="×" Width="30" Height="Auto" HorizontalAlignment="Center" Grid.Column="3"/>
+            <Button x:Name="Bt_Min" Content="-" Width="30" Height="Auto" HorizontalAlignment="Center" Grid.Column="2"/>
+        </Grid>
+        <local:LoginBox x:Name="LoginBox" Margin="0,30,0,0"/>
     </Grid>
 </Window>

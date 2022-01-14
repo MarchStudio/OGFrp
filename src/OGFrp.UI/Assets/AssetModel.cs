@@ -39,6 +39,10 @@ namespace OGFrp.UI
         /// </summary>
         public string Close { get; set; }
         /// <summary>
+        /// 登录：登录
+        /// </summary>
+        public string Login { get; set; }
+        /// <summary>
         /// 登录：用户名
         /// </summary>
         public string Username { get; set; }

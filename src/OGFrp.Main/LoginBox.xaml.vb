@@ -4,35 +4,37 @@ Imports System.Threading
 Public Class LoginBox
 
     Dim ac As New Assets()  'Temp用ac
-    Dim Assets As New AssetModel
-
-    Dim nextControl As MainPage
-
-    Dim mainWindow As MainWindow
+    Dim Assets As AssetModel
 
     Dim Config As New Config()
 
-    Public Sub _init_(nextControl As MainPage, mainWindow As MainWindow)
-        Me.nextControl = nextControl
+    Dim loginResult As UserControl
+
+    Public Event LoginSucceed()
+
+    Public Username As String
+    Public UserToken As String
+
+    Public Sub _init_() Handles Me.Loaded
         Config.ReadConfig()
         Select Case Config.Lang.Val
             Case "zh_cn"
                 Assets = ac.zh_cn
             Case "en_us"
                 Assets = ac.en_us
+            Case Else
+                Assets = ac.en_us
         End Select
         Me.tb_Username.Text = Config.Username.Val
-        If Me.tb_Username.Text = "" Then
-            Me.tb_Username.Text = Assets.Username
-            Me.tb_Username.Foreground = Brushes.Gray
-        End If
+        Me.tb_Username.Text = Assets.Username
+        Me.tb_Username.Foreground = Brushes.Gray
         Me.lb_pwdNotice.Foreground = Brushes.Gray
         Me.lb_pwdNotice.Content = Assets.Password
         Me.tempfrm.Show()
         Me.tempfrm.Visible = False
-        Me.mainWindow = mainWindow
         If Not Config.Username.Val = "" Then
             Me.tb_Username.Text = Config.Username.Val
+            Me.tb_Username.Foreground = Brushes.Black
             Me.tb_Password.Focus()
         End If
     End Sub
@@ -56,7 +58,9 @@ Public Class LoginBox
         Try
             tempfrm.Invoke(
                 Sub()
-                    nextControl._init_(Net.GetAccessToken(Me.tb_Username.Text, Me.tb_Password.Password), Me.tb_Username.Text, Me.mainWindow)
+                    Me.UserToken = Net.GetAccessToken(Me.tb_Username.Text, Me.tb_Password.Password)
+                    Me.Username = Me.tb_Username.Text
+                    RaiseEvent LoginSucceed()
                     Me.Visibility = Visibility.Hidden
                 End Sub)
         Catch ex As Exception

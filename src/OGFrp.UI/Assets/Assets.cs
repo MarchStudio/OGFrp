@@ -9,7 +9,7 @@ namespace OGFrp.UI
     /// <summary>
     /// 多语言资源
     /// </summary>
-    public partial class Assets
+    public class Assets
     {
 
         /// <summary>
@@ -27,6 +27,7 @@ namespace OGFrp.UI
             Password = "密码",
             ServerAddr = "服务器地址",
             Letsgo = "我们开始吧",
+            Login = "登录",
             Logining = "正在登录",
             LoginFailed = "登录失败！",
             UserInfo = "用户信息",
@@ -56,6 +57,7 @@ namespace OGFrp.UI
             Password = "Password",
             ServerAddr = "Server IP",
             Letsgo = "Let's go!",
+            Login = "Login",
             Logining = "Logining...",
             LoginFailed = "Login failed!",
             UserInfo = "User info",
