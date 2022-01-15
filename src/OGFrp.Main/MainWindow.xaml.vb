@@ -55,6 +55,7 @@ Class MainWindow
         Me.LoginBox.Visibility = Visibility.Visible
         Me.txtTitle.Foreground = Brushes.Black
         Me.txtTitle.Text = Assets.Welcome
+        Me.MainPanel.Assets = Me.Assets
     End Sub
 
     Private Sub MainWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -68,7 +69,7 @@ Class MainWindow
         Me.MainPanel.Username = Me.LoginBox.Username
         Me.MainPanel.Nickname = Me.LoginBox.Username
         Me.MainPanel.UserToken = Me.LoginBox.UserToken
-        Me.MainPanel._init_()
         Me.txtTitle.Text = "OGFrp"
+        Me.MainPanel._init_()
     End Sub
 End Class

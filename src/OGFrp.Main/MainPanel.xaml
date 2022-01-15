@@ -29,10 +29,12 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="100"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <local:UserDisplay x:Name="ctm_userdisplay" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="1" VerticalAlignment="Stretch"/>
-
+            <local:UserDisplay x:Name="ctm_userdisplay" Margin="10,10,10,10" Grid.Row="1"/>
+            <Button x:Name="bt_Home" Content="Home" HorizontalAlignment="Stretch" Height="Auto" Margin="10,10,10,10" Grid.Row="2" VerticalAlignment="Stretch" Width="Auto"/>
         </Grid>
+        <local:HomePage x:Name="ctm_HomePage" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>
     </Grid>
 </UserControl>

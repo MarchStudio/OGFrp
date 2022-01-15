@@ -36,4 +36,12 @@ Public Class UserDisplay
         }
     End Sub
 
+    Private Sub lb_Username_MouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs) Handles lb_Username.MouseLeftButtonUp
+        Process.Start("https://ogfrp.cn/?page=panel&module=profile")
+    End Sub
+
+    Private Sub bd_head_MouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs) Handles bd_head.MouseLeftButtonUp
+        Process.Start("https://ogfrp.cn/?page=panel&module=home")
+    End Sub
+
 End Class

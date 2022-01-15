@@ -6,7 +6,7 @@ using System.Text;
 namespace OGFrp.UI
 {
     /// <summary>
-    /// 语言资源模型
+    /// 多语言资源模型
     /// </summary>
     public class AssetModel
     {
@@ -102,5 +102,13 @@ namespace OGFrp.UI
         /// frpc：显示日志
         /// </summary>
         public string ViewLog { get; set; }
+        /// <summary>
+        /// 面板：主页
+        /// </summary>
+        public string Home { get; set; }
+        /// <summary>
+        /// 主页：欢迎回来
+        /// </summary>
+        public string WelcomeBack { get; set; }
     }
 }

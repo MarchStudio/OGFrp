@@ -19,7 +19,7 @@
                 <EllipseGeometry Center="25 25" RadiusX="25" RadiusY="25"/>
             </Border.Clip>
         </Border>
-        <Label x:Name="lb_Username" Grid.Column="1" Content="Username" HorizontalAlignment="Left" Height="50" Margin="10,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <Label x:Name="lb_Username" Grid.Column="1" Content="Username" HorizontalAlignment="Left" Height="50" Margin="10,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Cursor="Hand"/>
     </Grid>
     <UserControl.Resources>
         <Style TargetType="Label">

@@ -110,6 +110,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FrpcPanel.xaml.vb">
+      <DependentUpon>FrpcPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.xaml.vb">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginBox.xaml.vb">
       <DependentUpon>LoginBox.xaml</DependentUpon>
     </Compile>
@@ -125,6 +131,14 @@
     <Compile Include="Visual\Panel\ServerSelectionWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Page Include="FrpcPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

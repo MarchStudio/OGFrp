@@ -9,6 +9,8 @@ namespace OGFrp.UI
 {
     public class Gravatar
     {
+        public static string ts;
+
         private static string GetMD5(string sDataIn)
         {
             System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
