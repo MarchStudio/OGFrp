@@ -22,18 +22,21 @@ OGFrp官网：https://ogfrp.cn 。
 
 - [OGFrp.Lite使用帮助](https://github.com/OldGodShen/OGFrp/blob/master/github/UseLite.md#ogfrplite%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9)
 
-## 研发进度
+## 客户端研发进度
 
-### 客户端：
-平台 | Headless | GUI
+平台 | 命令行 | 图形化
 --- | --- | --- 
 Windows | √ | √ 
-Linux | √ | - 
+Linux | √ | × 
 macOS | - | - 
+Android | ○ | -
+iOS | × | ×
+FreeBSD | - | ×
 
     “ √ ” 表示已经有成熟的客户端
     “ ○ ” 表示已经进行开发，但是尚未有成熟的客户端
     “ - ” 表示没有着手开发，但是有开发的计划
+    “ × ” 表示到目前为止没有开发的计划
 
 ## 贡献者
 
