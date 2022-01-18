@@ -22,6 +22,8 @@ OGFrp官网：https://ogfrp.cn 。
 
 - [OGFrp.Lite使用帮助](https://github.com/OldGodShen/OGFrp/blob/master/github/UseLite.md#ogfrplite%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9)
 
+- [在Android上使用OGFrp](https://github.com/OldGodShen/OGFrp/blob/master/github/RunOnAndroid.md#%E6%9C%89%E5%85%B3%E5%9C%A8android%E4%B8%8A%E4%BD%BF%E7%94%A8ogfrp)
+
 ## 客户端研发进度
 
 平台 | 命令行 | 图形化
