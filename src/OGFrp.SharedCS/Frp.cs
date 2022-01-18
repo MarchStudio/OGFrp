@@ -93,7 +93,7 @@ namespace OGFrp.UI
             {
                 string frpciniurl = "https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + serverToId(server, token);
                 File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get(frpciniurl));
-                Interaction.Shell(Config.FolderPath + "\\frpc.exe -c \"" + Config.FolderPath + "\\frpc.ini\"", AppWinStyle.NormalFocus);
+                Interaction.Shell(Environment.CurrentDirectory + "\\frpc.exe -c \"" + Config.FolderPath + "\\frpc.ini\"", AppWinStyle.NormalFocus);
             }
             catch (Exception ex)
             {

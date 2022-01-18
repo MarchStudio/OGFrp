@@ -77,18 +77,16 @@ Partial Class ServerSelectionWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.BackColor = System.Drawing.Color.Black
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(548, 334)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("微软雅黑", 18.0!)
         Me.ForeColor = System.Drawing.Color.White
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(8, 9, 8, 9)
         Me.Name = "ServerSelectionWindow"
-        Me.Opacity = 0.8R
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ServerSelectionWindow"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

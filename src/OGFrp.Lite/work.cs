@@ -72,8 +72,7 @@ namespace OGFrp.Lite
                 Console.WriteLine("To stop frpc, please press Ctrl+C");
                 string iniPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp" + "\\frpc.ini";
                 string iniurl = "https://api.ogfrp.cn/?action=getconf&token=" + actoken + "&node=" + nodeid;
-                UI.Net Net = new UI.Net();
-                string iniContent = Net.Get(iniurl);
+                string iniContent = UI.Net.Get(iniurl);
                 FileSystem.WriteAllText(iniPath, iniContent, false);
                 string frpcsh = "cmd /c \"\"" + exePath + "\\frpc.exe\" -c \"" + iniPath + "\"\"";
                 system(frpcsh);
@@ -89,8 +88,7 @@ namespace OGFrp.Lite
         {
             try
             {
-                UI.Net Net = new UI.Net();
-                string frpslist = Net.Get("https://api.ogfrp.cn/?action=getnodes&token=" + token);
+                string frpslist = UI.Net.Get("https://api.ogfrp.cn/?action=getnodes&token=" + token);
                 Console.WriteLine(frpslist);
             }
             catch (Exception ex)

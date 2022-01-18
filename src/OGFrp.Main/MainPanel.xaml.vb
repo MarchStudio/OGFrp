@@ -59,4 +59,10 @@ Public Class MainPanel
         Me.ctm_userdisplay.SetImage(Image)
     End Sub
 
+    Private Sub bt_frpc_Click(sender As Object, e As RoutedEventArgs) Handles bt_frpc.Click
+        Dim nw As New ServerSelectionWindow
+        nw.Assets = Me.Assets
+        nw._init_(Me.UserToken)
+        nw.ShowDialog()
+    End Sub
 End Class
