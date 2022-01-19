@@ -22,9 +22,22 @@ namespace OGFrp.UI
     /// </summary>
     public partial class FrpcCover : UserControl
     {
+
         public FrpcCover()
         {
+            System.Windows.Forms.Timer tmr = new System.Windows.Forms.Timer
+            {
+                Interval = 1000
+            };
+            tmr.Tick += Tmr_Tick;
+            tmr.Start();
             InitializeComponent();
+        }
+
+        private void Tmr_Tick(object sender, EventArgs e)
+        {
+            this.cb_Switch.IsChecked = this.frpc.isOn;
+            this.updateViewLogState();
         }
 
         public string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\OGFrp";
@@ -52,7 +65,7 @@ namespace OGFrp.UI
         /// <summary>
         /// frpc.exe路径
         /// </summary>
-        public string frpcLoca;
+        public string frpcLoca = Environment.CurrentDirectory + "\\frpc.exe";
 
         /// <summary>
         /// 文本前景色
@@ -115,6 +128,21 @@ namespace OGFrp.UI
             this.frpcLoca = frpcLoca;
         }
 
+        /// <summary>
+        /// 根据ini自动设置展示内容
+        /// </summary>
+        public void AutoDisplay()
+        {
+            string serverName = this.iniFile.Split('[').ToArray()[1];
+            serverName = serverName.Split('\n').ToArray()[1];
+            serverName = serverName.Split('=').ToArray()[1];
+            this.SetServerName(serverName);
+            string proxyName = this.iniFile.Split('[').ToArray()[2];
+            proxyName = proxyName.Split(']').ToArray()[0];
+            this.SetProxyName(proxyName);
+            return;
+        }
+
         private void startFrpc()
         {
             try
@@ -140,11 +168,16 @@ namespace OGFrp.UI
 
         private void cb_Switch_Click(object sender, RoutedEventArgs e)
         {
-            this.lb_ViewLog.Visibility = (bool)this.cb_Switch.IsChecked ? Visibility.Visible : Visibility.Hidden;
+            updateViewLogState();
             if (cb_Switch.IsChecked == true)
                 startFrpc();
             else
                 frpc.Kill();
         }
-    };
+
+        public void updateViewLogState()
+        {
+            this.lb_ViewLog.Visibility = (bool)this.cb_Switch.IsChecked ? Visibility.Visible : Visibility.Hidden;
+        }
+    }
 }

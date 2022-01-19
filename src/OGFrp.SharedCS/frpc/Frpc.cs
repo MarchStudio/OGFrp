@@ -62,7 +62,15 @@ namespace OGFrp.UI
         /// <summary>
         /// fprc是否已启动
         /// </summary>
-        bool isOn = false;
+        public bool isOn = false;
+
+        System.Windows.Forms.Form invoker = new System.Windows.Forms.Form
+        {
+            Width = 0,
+            Height = 0,
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None,
+            ShowInTaskbar = false
+        };
 
         public int Start()
         {
@@ -70,13 +78,21 @@ namespace OGFrp.UI
                 return -1;
             try
             {
+                invoker.Show();
+                invoker.Hide();
                 p_frpc.StartInfo.FileName = this.frpcLoca;
                 p_frpc.StartInfo.Arguments = "-c " + this.iniLoca;
                 p_frpc.StartInfo.CreateNoWindow = false;
                 p_frpc.StartInfo.UseShellExecute = true;
-                p_frpc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                p_frpc.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
                 p_frpc.Start();
                 isOn = true;
+                Thread we = new Thread(delegate ()
+                {
+                    p_frpc.WaitForExit();
+                    this.isOn = false;
+                });
+                we.Start();
                 return 0;
             }
             catch
@@ -105,5 +121,5 @@ namespace OGFrp.UI
         {
             return p_frpc.StandardOutput.ReadToEnd();
         }
-    };
+    }
 }

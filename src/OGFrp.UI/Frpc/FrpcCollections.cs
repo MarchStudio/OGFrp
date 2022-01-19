@@ -104,12 +104,18 @@ namespace OGFrp.UI
             return result;
         }
 
-        public IEnumerable<FrpcCover> GetLists()
+        public IEnumerable<FrpcCover> ProxyDisplays()
         {
-            var IniCtn = ServerIniToCtn();
-            int t;
-            t = 1;
-            yield return (new FrpcCover());
+            string[] proxys = GetProxyCtn().ToArray();
+            int len = proxys.ToArray().Length;
+            FrpcCover[] result = new FrpcCover[len];
+            for(int i = 0; i < len; i++)
+            {
+                result[i] = new FrpcCover();
+                result[i].iniFile = proxys[i];
+            }
+            return result;
         }
+
     }
 }

@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="Gd_MainPage">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition/>
@@ -14,7 +18,7 @@
         <Grid.Background>
             <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Border BorderBrush="Black" BorderThickness="0" Grid.ColumnSpan="2" Grid.RowSpan="3">
+        <Border BorderBrush="Black" BorderThickness="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Border.Background>
                 <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
             </Border.Background>
@@ -25,7 +29,7 @@
                 <RectangleGeometry Rect="0,0,250, 5120"/>
             </Border.Clip>
         </Border>
-        <Grid Background="#DB343A40" Grid.RowSpan="3">
+        <Grid Background="#DB343A40" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="100"/>
@@ -35,8 +39,9 @@
             </Grid.RowDefinitions>
             <local:UserDisplay x:Name="ctm_userdisplay" Margin="10,10,10,10" Grid.Row="1"/>
             <Button x:Name="bt_Home" Content="Home" Height="Auto" Margin="10,10,10,10" Grid.Row="2" Width="Auto"/>
-            <Button x:Name="bt_frpc" Content="Frp" Height="Auto" Margin="9,10,11,10" Grid.Row="3" Width="Auto"/>
+            <Button x:Name="bt_frpc" Content="Frp" Height="Auto" Margin="9,10,11,10" Grid.Row="3" Width="Auto" Background="#FF007BFF"/>
         </Grid>
-        <local:HomePage x:Name="ctm_HomePage" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>
+        <local:HomePage x:Name="ctm_HomePage" Grid.Column="1" Grid.RowSpan="2"/>
+        <local:FrpcPanel x:Name="ctm_FrpcPanel" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.Row="1"/>
     </Grid>
 </UserControl>

@@ -69,7 +69,7 @@ Class MainWindow
         Me.MainPanel.Username = Me.LoginBox.Username
         Me.MainPanel.Nickname = Me.LoginBox.Username
         Me.MainPanel.UserToken = Me.LoginBox.UserToken
-        Me.txtTitle.Text = "OGFrp"
+        Me.txtTitle.Text = "OGFrp Beta"
         Me.MainPanel._init_()
     End Sub
 End Class

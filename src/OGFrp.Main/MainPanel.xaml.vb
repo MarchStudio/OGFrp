@@ -10,6 +10,8 @@ Public Class MainPanel
 
     Public Assets As AssetModel
 
+    Dim SelectedBg As Brush
+
     Public Sub _init_()
         'ini user display
         Me.ctm_userdisplay.SetDisplayName(Me.Nickname)
@@ -49,7 +51,27 @@ Public Class MainPanel
             End Sub
         )
         dldtd.Start()
+        Dim proxyLstd As New System.Threading.Thread(
+            Sub()
+                Try
+                    invoker.Invoke(
+                    Sub()
+                        Me.ctm_FrpcPanel._init_(Me.UserToken)
+                    End Sub)
+                Catch
+                    invoker.Invoke(
+                    Sub()
+                        Me.ctm_FrpcPanel.Content = "null"
+                        Me.ctm_FrpcPanel.HorizontalAlignment = HorizontalAlignment.Center
+                    End Sub)
+                End Try
+            End Sub)
+        proxyLstd.Start()
+        Me.SelectedBg = Me.bt_Home.Background
+        selectBtn(bt_Home)
         Me.bt_Home.Content = Assets.Home
+        Me.ctm_HomePage.Visibility = Visibility.Visible
+        Me.ctm_HomePage.IsEnabled = True
         Me.ctm_HomePage.Assets = Me.Assets
         Me.ctm_HomePage.Username = Username
         Me.ctm_HomePage._init_()
@@ -59,10 +81,30 @@ Public Class MainPanel
         Me.ctm_userdisplay.SetImage(Image)
     End Sub
 
+
+    Private Sub selectBtn(ByVal btn As Button)
+        Me.bt_Home.Background = Brushes.Transparent
+        Me.bt_frpc.Background = Brushes.Transparent
+        btn.Background = SelectedBg
+        Me.ctm_HomePage.Visibility = Visibility.Collapsed
+        Me.ctm_FrpcPanel.Visibility = Visibility.Collapsed
+        Me.ctm_HomePage.IsEnabled = False
+        Me.ctm_FrpcPanel.IsEnabled = False
+    End Sub
+
+    Private Sub bt_Home_Click(sender As Object, e As RoutedEventArgs) Handles bt_Home.Click
+        selectBtn(bt_Home)
+        Me.ctm_HomePage.Visibility = Visibility.Visible
+        Me.ctm_HomePage.IsEnabled = True
+    End Sub
+
     Private Sub bt_frpc_Click(sender As Object, e As RoutedEventArgs) Handles bt_frpc.Click
-        Dim nw As New ServerSelectionWindow
-        nw.Assets = Me.Assets
-        nw._init_(Me.UserToken)
-        nw.ShowDialog()
+        'Dim nw As New ServerSelectionWindow
+        'nw.Assets = Me.Assets
+        'nw._init_(Me.UserToken)
+        'nw.ShowDialog()
+        selectBtn(bt_frpc)
+        Me.ctm_FrpcPanel.Visibility = Visibility.Visible
+        Me.ctm_FrpcPanel.IsEnabled = True
     End Sub
 End Class

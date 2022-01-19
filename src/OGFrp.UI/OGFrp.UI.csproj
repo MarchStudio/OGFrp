@@ -85,7 +85,6 @@
     <Compile Include="Assets\AssetModel.cs" />
     <Compile Include="Assets\Assets.cs" />
     <Compile Include="Frpc\FrpcCollections.cs" />
-    <Compile Include="Frpc\SgProxy.cs" />
     <Compile Include="Gravatar.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Frpc\FrpcCover.xaml.cs">
