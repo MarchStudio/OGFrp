@@ -44,7 +44,7 @@ FreeBSD | - | ×
 
 贡献者 | 工作内容
 --- | --- |
-OldGodShen | 服务器运营、维护~~、对客户端进行魔改~~等
+OldGodShen | 服务器运营、维护~~对客户端进行魔改~~等
 GreatHuang2007 | 客户端编写、Readme编写等
 
 ## 结语
