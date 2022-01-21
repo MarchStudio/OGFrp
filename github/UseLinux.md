@@ -7,9 +7,9 @@
     $ unzip OGFrp.Linux.zip
 ### 2. 安装依赖
 #### Debian/Ubuntu：
-    $ sudo apt install python curl
+    $ sudo apt install -y python curl
 #### Red Hat/Fedora：
-    $ sudo yum install python curl
+    $ sudo yum install -y python3 curl
 ### 3. 安装
     $ sudo python install.py
 * 在此处需要注意的是，OGFrp.Linux的安装程序无法在Python 2环境中正常运行，这意味着你需要使用Python 3来启动安装程序
