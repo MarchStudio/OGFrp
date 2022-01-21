@@ -251,5 +251,8 @@
   <ItemGroup>
     <Folder Include="Visual\Login\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Global.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

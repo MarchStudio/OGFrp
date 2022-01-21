@@ -41,7 +41,9 @@ namespace OGFrp.UI
             PlzSelectServer = "请选择节点",
             ViewLog = "显示日志",
             Home = "主页",
-            WelcomeBack = "欢迎回来"
+            WelcomeBack = "欢迎回来",
+            Frp = "映射",
+            RestartRequired = "应用程序需要重启。"
         };
 
         /// <summary>
@@ -73,7 +75,9 @@ namespace OGFrp.UI
             PlzSelectServer = "Please select a server:",
             ViewLog = "View Log",
             Home = "Home",
-            WelcomeBack = "Welcome Back!"
+            WelcomeBack = "Welcome Back!",
+            Frp = "Frp",
+            RestartRequired = "Application requires to be restarted."
         };
     }
 }

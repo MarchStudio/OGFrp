@@ -56,7 +56,7 @@ Public Class MainPanel
                 Try
                     invoker.Invoke(
                     Sub()
-                        Me.ctm_FrpcPanel._init_(Me.UserToken)
+                        Me.ctm_FrpcPanel._init_(Me.UserToken, Me.Assets)
                     End Sub)
                 Catch
                     invoker.Invoke(
@@ -70,6 +70,7 @@ Public Class MainPanel
         Me.SelectedBg = Me.bt_Home.Background
         selectBtn(bt_Home)
         Me.bt_Home.Content = Assets.Home
+        Me.bt_frpc.Content = Assets.Frp
         Me.ctm_HomePage.Visibility = Visibility.Visible
         Me.ctm_HomePage.IsEnabled = True
         Me.ctm_HomePage.Assets = Me.Assets
@@ -85,7 +86,10 @@ Public Class MainPanel
     Private Sub selectBtn(ByVal btn As Button)
         Me.bt_Home.Background = Brushes.Transparent
         Me.bt_frpc.Background = Brushes.Transparent
+        Me.bt_Home.BorderBrush = Brushes.Transparent
+        Me.bt_frpc.BorderBrush = Brushes.Transparent
         btn.Background = SelectedBg
+        btn.BorderBrush = Brushes.White
         Me.ctm_HomePage.Visibility = Visibility.Collapsed
         Me.ctm_FrpcPanel.Visibility = Visibility.Collapsed
         Me.ctm_HomePage.IsEnabled = False

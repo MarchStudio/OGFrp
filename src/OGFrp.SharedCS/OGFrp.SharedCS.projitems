@@ -13,11 +13,32 @@
     <Compile Include="$(MSBuildThisFileDirectory)Config\ConfigModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Frp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Frpc\Frpc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Frpc\FrpcCollections.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Frpc\FrpcCover.xaml.cs">
+      <DependentUpon>FrpcCover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Frpc\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Frpc\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)FrpServer\FrpServer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FrpServer\FrpServerModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Net.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)FrpServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Frpc\FrpcCover.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Frpc\LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

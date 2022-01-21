@@ -4,7 +4,10 @@ Public Class FrpcPanel
 
     Dim fctn As FrpcCollections
 
-    Public Sub _init_(ByVal token As String)
+    Dim Assets As AssetModel
+
+    Public Sub _init_(ByVal token As String, ByVal Assets As AssetModel)
+        Me.Assets = Assets
         fctn = New FrpcCollections(token)
         fctn.getFrpcConfigCollection()
         Dim fcCtn = fctn.ProxyDisplays()
@@ -16,8 +19,15 @@ Public Class FrpcPanel
             fc.Width = Me.Grid.Width - 40
             fc.Height = 80
             fc.Margin = New Thickness(20, 5 + 85 * i, 20, 0)
+            fc.SetViewLogContent(Assets.ViewLog)
             fc.SetTextForeColor(Brushes.Black)
             Me.Grid.Children.Add(fc)
+        Next
+    End Sub
+
+    Public Sub CloseAllFrpc()
+        For Each fc As FrpcCover In Me.Grid.Children
+            fc.frpc.Kill()
         Next
     End Sub
 

@@ -29,17 +29,46 @@
                 <RectangleGeometry Rect="0,0,250, 5120"/>
             </Border.Clip>
         </Border>
-        <Grid Background="#DB343A40" Grid.RowSpan="2">
+        <Grid x:Name="Gd_SidePanel" Background="#DB343A40" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="100"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <local:UserDisplay x:Name="ctm_userdisplay" Margin="10,10,10,10" Grid.Row="1"/>
-            <Button x:Name="bt_Home" Content="Home" Height="Auto" Margin="10,10,10,10" Grid.Row="2" Width="Auto"/>
-            <Button x:Name="bt_frpc" Content="Frp" Height="Auto" Margin="9,10,11,10" Grid.Row="3" Width="Auto" Background="#FF007BFF"/>
+            <Button x:Name="bt_Home" Content="Home" Height="Auto" Margin="10,5,10,7" Grid.Row="2" Width="Auto"/>
+            <Button x:Name="bt_frpc" Content="Frp" Height="Auto" Margin="10,5,10,7" Grid.Row="3" Width="Auto" Background="#FF007BFF"/>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="70"/>
+                    <Setter Property="Height" Value="25"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Background" Value="#FF007BFF"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="White"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="8,8,8,8">
+                                    <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="#FFFFFFFF"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#FF0070EA"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
         </Grid>
         <local:HomePage x:Name="ctm_HomePage" Grid.Column="1" Grid.RowSpan="2"/>
         <local:FrpcPanel x:Name="ctm_FrpcPanel" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.Row="1"/>

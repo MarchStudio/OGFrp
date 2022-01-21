@@ -110,5 +110,13 @@ namespace OGFrp.UI
         /// 主页：欢迎回来
         /// </summary>
         public string WelcomeBack { get; set; }
+        /// <summary>
+        /// 面板：映射
+        /// </summary>
+        public string Frp { get; set; }
+        /// <summary>
+        /// 应用程序：需要重启
+        /// </summary>
+        public string RestartRequired { get; set; }
     }
 }

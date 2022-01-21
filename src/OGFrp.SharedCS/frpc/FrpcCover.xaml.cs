@@ -32,6 +32,12 @@ namespace OGFrp.UI
             tmr.Tick += Tmr_Tick;
             tmr.Start();
             InitializeComponent();
+            this.lb_ViewLog.Visibility = Visibility.Hidden;
+        }
+
+        private void Lb_ViewLog_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            frpc.ShowLog();
         }
 
         private void Tmr_Tick(object sender, EventArgs e)
@@ -45,7 +51,7 @@ namespace OGFrp.UI
         /// <summary>
         /// 对应的frpc
         /// </summary>
-        private Frpc frpc = new Frpc();
+        public Frpc frpc = new Frpc();
 
         /// <summary>
         /// 用于展示的服务器地址

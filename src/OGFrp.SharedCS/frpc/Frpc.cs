@@ -57,6 +57,11 @@ namespace OGFrp.UI
             this.iniLoca = iniLoca;
         }
 
+        LogForm LogForm = new LogForm();
+
+        /// <summary>
+        /// Frpc进程
+        /// </summary>
         Process p_frpc = new Process();
 
         /// <summary>
@@ -72,6 +77,11 @@ namespace OGFrp.UI
             ShowInTaskbar = false
         };
 
+        /// <summary>
+        /// 获取日志的thread
+        /// </summary>
+        Thread LogTd;
+
         public int Start()
         {
             if (isOn)
@@ -83,16 +93,35 @@ namespace OGFrp.UI
                 p_frpc.StartInfo.FileName = this.frpcLoca;
                 p_frpc.StartInfo.Arguments = "-c " + this.iniLoca;
                 p_frpc.StartInfo.CreateNoWindow = false;
-                p_frpc.StartInfo.UseShellExecute = true;
+                p_frpc.StartInfo.UseShellExecute = false;
                 p_frpc.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                p_frpc.StartInfo.RedirectStandardOutput = true;
                 p_frpc.Start();
                 isOn = true;
+                this.LogForm = new LogForm();
                 Thread we = new Thread(delegate ()
                 {
                     p_frpc.WaitForExit();
                     this.isOn = false;
+                    LogTd.Abort();
+                    LogForm.Invoke(new EventHandler(delegate
+                    {
+                        LogForm.Dispose();
+                    }));
                 });
                 we.Start();
+                LogTd = new Thread(delegate ()
+               {
+                   while (true)
+                   {
+                       try
+                       {
+                           this.LogForm.textBox1.Text += (char)p_frpc.StandardOutput.Read();
+                       }
+                       finally { }
+                   }
+               });
+                LogTd.Start();
                 return 0;
             }
             catch
@@ -117,9 +146,9 @@ namespace OGFrp.UI
             }
         }
 
-        public string getLog()
+        public void ShowLog()
         {
-            return p_frpc.StandardOutput.ReadToEnd();
+            this.LogForm.Show();
         }
     }
 }

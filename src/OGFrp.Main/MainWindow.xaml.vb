@@ -59,6 +59,7 @@ Class MainWindow
     End Sub
 
     Private Sub MainWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Me.MainPanel.ctm_FrpcPanel.CloseAllFrpc()
         End
     End Sub
 
@@ -69,7 +70,7 @@ Class MainWindow
         Me.MainPanel.Username = Me.LoginBox.Username
         Me.MainPanel.Nickname = Me.LoginBox.Username
         Me.MainPanel.UserToken = Me.LoginBox.UserToken
-        Me.txtTitle.Text = "OGFrp Beta"
+        Me.txtTitle.Text = "OGFrp Beta Build 2201211557"
         Me.MainPanel._init_()
     End Sub
 End Class
