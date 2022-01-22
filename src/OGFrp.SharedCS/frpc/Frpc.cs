@@ -104,10 +104,20 @@ namespace OGFrp.UI
                     p_frpc.WaitForExit();
                     this.isOn = false;
                     LogTd.Abort();
-                    LogForm.Invoke(new EventHandler(delegate
+                    try
                     {
-                        LogForm.Dispose();
-                    }));
+                        LogForm.Invoke(new EventHandler(delegate
+                        {
+                            LogForm.Dispose();
+                        }));
+                    }
+                    catch (Exception ex)
+                    {
+                        if (!(ex.GetType().ToString() == "System.InvalidOperationException"))
+                        {
+                            throw ex;
+                        }
+                    }
                 });
                 we.Start();
                 LogTd = new Thread(delegate ()

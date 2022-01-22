@@ -13,10 +13,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Config\ConfigModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Frp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Frpc\Frpc.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Frpc\FrpcCollections.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Frpc\FrpcCover.xaml.cs">
-      <DependentUpon>FrpcCover.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Frpc\LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,12 +25,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)FrpServer\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)Frpc\FrpcCover.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Frpc\LogForm.resx">

@@ -84,6 +84,10 @@
   <ItemGroup>
     <Compile Include="Assets\AssetModel.cs" />
     <Compile Include="Assets\Assets.cs" />
+    <Compile Include="Frpc\FrpcCollections.cs" />
+    <Compile Include="Frpc\FrpcCover.xaml.cs">
+      <DependentUpon>FrpcCover.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gravatar.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +102,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Frpc\FrpcCover.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="..\OGFrp.SharedCS\OGFrp.SharedCS.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -84,7 +84,12 @@ namespace OGFrp.UI
         /// <param name="Name"></param>
         public void SetProxyName(string Name)
         {
-            this.lb_ProxyName.Content = Name;
+            this.lb_ProxyName.Content = new TextBlock
+            {
+                FontFamily = this.lb_ProxyName.FontFamily,
+                FontSize = this.lb_ProxyName.FontSize,
+                Text = Name
+            };
         }
 
         /// <summary>
@@ -93,7 +98,12 @@ namespace OGFrp.UI
         /// <param name="Name"></param>
         public void SetServerName(string Name)
         {
-            this.lb_serverName.Content = Name;
+            this.lb_serverName.Content = new TextBlock
+            {
+                FontFamily = this.lb_serverName.FontFamily,
+                FontSize = this.lb_serverName.FontSize,
+                Text = Name
+            };
         }
 
         /// <summary>
