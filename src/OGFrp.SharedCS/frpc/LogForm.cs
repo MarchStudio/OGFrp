@@ -19,7 +19,6 @@ namespace OGFrp.UI
 
         private void LogForm_Load(object sender, EventArgs e)
         {
-            this.FormClosing += LogForm_FormClosing;
         }
 
         private void LogForm_FormClosing(object sender, FormClosingEventArgs e)

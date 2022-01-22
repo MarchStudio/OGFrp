@@ -1,6 +1,6 @@
 ﻿namespace OGFrp.UI
 {
-    partial class LogForm
+    public partial class LogForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("宋体", 12F);
+            this.textBox1.Font = new System.Drawing.Font("Lucida Console", 12F);
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -49,11 +49,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Name = "LogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frpc Log";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.LogForm_Load);
+            this.FormClosing += LogForm_FormClosing;
             this.ResumeLayout(false);
             this.PerformLayout();
 

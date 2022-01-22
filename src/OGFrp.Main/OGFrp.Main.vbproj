@@ -254,5 +254,8 @@
   <ItemGroup>
     <Resource Include="Resources\Global.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

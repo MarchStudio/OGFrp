@@ -115,22 +115,22 @@ namespace OGFrp.UI
                     {
                         if (!(ex.GetType().ToString() == "System.InvalidOperationException"))
                         {
-                            throw ex;
+
                         }
                     }
                 });
                 we.Start();
                 LogTd = new Thread(delegate ()
-               {
-                   while (true)
-                   {
-                       try
-                       {
-                           this.LogForm.textBox1.Text += (char)p_frpc.StandardOutput.Read();
-                       }
-                       finally { }
-                   }
-               });
+                {
+                    while (true)
+                    {
+                        try
+                        {
+                            this.LogForm.textBox1.Text += (char)p_frpc.StandardOutput.Read();
+                        }
+                        finally { }
+                    }
+                });
                 LogTd.Start();
                 return 0;
             }
