@@ -112,6 +112,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="FrpcPanel.xaml.vb">
       <DependentUpon>FrpcPanel.xaml</DependentUpon>
     </Compile>

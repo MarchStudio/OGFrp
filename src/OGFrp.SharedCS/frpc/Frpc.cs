@@ -92,9 +92,9 @@ namespace OGFrp.UI
                 invoker.Hide();
                 p_frpc.StartInfo.FileName = this.frpcLoca;
                 p_frpc.StartInfo.Arguments = "-c " + this.iniLoca;
-                p_frpc.StartInfo.CreateNoWindow = false;
+                p_frpc.StartInfo.CreateNoWindow = true;
                 p_frpc.StartInfo.UseShellExecute = false;
-                p_frpc.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                p_frpc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 p_frpc.StartInfo.RedirectStandardOutput = true;
                 p_frpc.Start();
                 isOn = true;
