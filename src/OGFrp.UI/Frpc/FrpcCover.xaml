@@ -98,8 +98,8 @@
             </Grid.ColumnDefinitions>
             <Label x:Name="lb_ProxyName" Content="ProxyName" HorizontalAlignment="Left" Height="43" VerticalAlignment="Top" Width="334" Foreground="White" FontSize="24" HorizontalContentAlignment="Stretch" Grid.ColumnSpan="2"/>
             <CheckBox x:Name="cb_Switch" Content="" Grid.Column="2" Margin="10,10,10,0" VerticalAlignment="Top" Style="{DynamicResource SliderCheckBox}" Height="20" Click="cb_Switch_Click"/>
-            <Label x:Name="lb_serverName" Content="ServerName" Height="30" VerticalAlignment="Bottom" Foreground="White" FontSize="16" Margin="0,-1,0,0"/>
-            <Label x:Name="lb_ViewLog" Content="ViewLog" Grid.ColumnSpan="3" Height="30" VerticalAlignment="Bottom" Foreground="#FF007BFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Cursor="Hand" Visibility="Visible" FontSize="16" MouseDown="Lb_ViewLog_MouseDown"/>
+            <Label x:Name="lb_serverName" Content="ServerName" Height="30" VerticalAlignment="Bottom" Foreground="White" FontSize="16" Margin="0,-1,0,0" MouseUp="lb_serverName_MouseUp" Cursor="Hand"/>
+            <Label x:Name="lb_ViewLog" Content="ViewLog" Grid.ColumnSpan="3" Height="30" VerticalAlignment="Bottom" Foreground="#FF007BFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Cursor="Hand" Visibility="Visible" FontSize="16" MouseUp="Lb_ViewLog_MouseUp"/>
 
         </Grid>
     </Border>

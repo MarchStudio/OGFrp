@@ -76,30 +76,46 @@ Public Class MainPanel
         Me.ctm_HomePage.Assets = Me.Assets
         Me.ctm_HomePage.Username = Username
         Me.ctm_HomePage._init_()
+        Me.bt_Settings.ToolTip = Assets.Settings
+        Me.ctm_SettingsPage.Assets = Me.Assets
+        'Me.ctm_SettingsPage.Config = MainWindow.Config
+        '在MainWindow初始化时已经传入Config
+        Me.ctm_SettingsPage._init_()
     End Sub
 
     Public Sub SetUserImage(ByVal Image As System.Drawing.Bitmap)
         Me.ctm_userdisplay.SetImage(Image)
     End Sub
 
+    Private Sub SetBtnUnselected(ByVal btn As Button)
+        btn.Background = Brushes.Transparent
+        btn.BorderBrush = Brushes.Transparent
+    End Sub
+
+    Private Sub DisablePage(ByVal page As Control)
+        page.Visibility = Visibility.Collapsed
+        page.IsEnabled = False
+    End Sub
+
+    Private Sub EnablePage(ByVal page As Control)
+        page.Visibility = Visibility.Visible
+        page.IsEnabled = True
+    End Sub
 
     Private Sub selectBtn(ByVal btn As Button)
-        Me.bt_Home.Background = Brushes.Transparent
-        Me.bt_frpc.Background = Brushes.Transparent
-        Me.bt_Home.BorderBrush = Brushes.Transparent
-        Me.bt_frpc.BorderBrush = Brushes.Transparent
+        SetBtnUnselected(bt_Home)
+        SetBtnUnselected(bt_frpc)
+        SetBtnUnselected(Bt_Settings)
         btn.Background = SelectedBg
         btn.BorderBrush = Brushes.White
-        Me.ctm_HomePage.Visibility = Visibility.Collapsed
-        Me.ctm_FrpcPanel.Visibility = Visibility.Collapsed
-        Me.ctm_HomePage.IsEnabled = False
-        Me.ctm_FrpcPanel.IsEnabled = False
+        DisablePage(ctm_HomePage)
+        DisablePage(ctm_FrpcPanel)
+        DisablePage(ctm_SettingsPage)
     End Sub
 
     Private Sub bt_Home_Click(sender As Object, e As RoutedEventArgs) Handles bt_Home.Click
         selectBtn(bt_Home)
-        Me.ctm_HomePage.Visibility = Visibility.Visible
-        Me.ctm_HomePage.IsEnabled = True
+        EnablePage(ctm_HomePage)
     End Sub
 
     Private Sub bt_frpc_Click(sender As Object, e As RoutedEventArgs) Handles bt_frpc.Click
@@ -108,7 +124,11 @@ Public Class MainPanel
         'nw._init_(Me.UserToken)
         'nw.ShowDialog()
         selectBtn(bt_frpc)
-        Me.ctm_FrpcPanel.Visibility = Visibility.Visible
-        Me.ctm_FrpcPanel.IsEnabled = True
+        EnablePage(ctm_FrpcPanel)
+    End Sub
+
+    Private Sub bt_Settings_Click(sender As Object, e As RoutedEventArgs) Handles bt_Settings.Click
+        selectBtn(bt_Settings)
+        EnablePage(ctm_SettingsPage)
     End Sub
 End Class

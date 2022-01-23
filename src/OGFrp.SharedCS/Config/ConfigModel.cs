@@ -49,14 +49,6 @@ namespace OGFrp.UI
         };
 
         /// <summary>
-        /// 设置：Server IP
-        /// </summary>
-        public ConfigModel ServerAddr = new ConfigModel
-        {
-            Name = "ServerAddr"
-        };
-
-        /// <summary>
         /// 设置：记住密码
         /// </summary>
         public ConfigModel RmbPsw = new ConfigModel

@@ -36,10 +36,40 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
+                <RowDefinition Height="65"/>
             </Grid.RowDefinitions>
             <local:UserDisplay x:Name="ctm_userdisplay" Margin="10,10,10,10" Grid.Row="1"/>
-            <Button x:Name="bt_Home" Content="Home" Height="Auto" Margin="10,5,10,7" Grid.Row="2" Width="Auto"/>
-            <Button x:Name="bt_frpc" Content="Frp" Height="Auto" Margin="10,5,10,7" Grid.Row="3" Width="Auto" Background="#FF007BFF"/>
+            <Button x:Name="bt_Home" Content="Home" Height="Auto" Margin="10,5,10,5" Grid.Row="2" Width="Auto"/>
+            <Button x:Name="bt_frpc" Content="Frp" Height="Auto" Margin="10,5,10,5" Grid.Row="3" Width="Auto" Background="#FF007BFF"/>
+            <Grid x:Name="Gd_SmallBtns" HorizontalAlignment="Stretch" Grid.Row="5" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="15"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="bt_Settings" Grid.Column="1" Content="/Resources/Settings.png" HorizontalAlignment="Stretch" Height="Auto" Grid.Row="1" VerticalAlignment="Stretch" Width="Auto">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="8,8,8,8">
+                                <Image Source="/Resources/Settings.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFFFFFFF"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FF0070EA"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
             <Grid.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Width" Value="70"/>
@@ -72,5 +102,6 @@
         </Grid>
         <local:HomePage x:Name="ctm_HomePage" Grid.Column="1" Grid.RowSpan="2"/>
         <local:FrpcPanel x:Name="ctm_FrpcPanel" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.Row="1"/>
+        <local:SettingsPage x:Name="ctm_SettingsPage" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Visibility="Hidden"/>
     </Grid>
 </UserControl>

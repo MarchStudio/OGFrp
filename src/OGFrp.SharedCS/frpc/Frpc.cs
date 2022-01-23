@@ -124,11 +124,15 @@ namespace OGFrp.UI
                 {
                     while (true)
                     {
+                    retry:
                         try
                         {
                             this.LogForm.textBox1.Text += (char)p_frpc.StandardOutput.Read();
                         }
-                        finally { }
+                        catch
+                        {
+                            goto retry;
+                        }
                     }
                 });
                 LogTd.Start();

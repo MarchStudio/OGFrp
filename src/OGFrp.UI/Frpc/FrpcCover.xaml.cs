@@ -35,7 +35,7 @@ namespace OGFrp.UI
             this.lb_ViewLog.Visibility = Visibility.Hidden;
         }
 
-        private void Lb_ViewLog_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Lb_ViewLog_MouseUp(object sender, MouseButtonEventArgs e)
         {
             frpc.ShowLog();
         }
@@ -77,6 +77,11 @@ namespace OGFrp.UI
         /// 文本前景色
         /// </summary>
         private Brush TextForeColor = Brushes.White;
+
+        /// <summary>
+        /// 文字：已复制
+        /// </summary>
+        public string text_Duplicated = "Duplicated";
 
         /// <summary>
         /// 设置用于展示的隧道名称
@@ -145,6 +150,15 @@ namespace OGFrp.UI
         }
 
         /// <summary>
+        /// 设置“点击复制”提示内容
+        /// </summary>
+        /// <param name="content"></param>
+        public void SetDuplicateNotice(string content)
+        {
+            this.lb_serverName.ToolTip = content;
+        }
+
+        /// <summary>
         /// 根据ini自动设置展示内容
         /// </summary>
         public void AutoDisplay()
@@ -152,7 +166,13 @@ namespace OGFrp.UI
             string serverName = this.iniFile.Split('[').ToArray()[1];
             serverName = serverName.Split('\n').ToArray()[1];
             serverName = serverName.Split('=').ToArray()[1];
-            this.SetServerName(serverName);
+            serverName = serverName.Split(' ').ToArray()[1];
+            string portName = this.iniFile.Split('[').ToArray()[2];
+            portName = portName.Split('\n').ToArray()[5];
+            portName = portName.Split('=').ToArray()[1];
+            portName = portName.Split(' ').ToArray()[1];
+            string subTitle = serverName + ":" + portName;
+            this.SetServerName(subTitle);
             string proxyName = this.iniFile.Split('[').ToArray()[2];
             proxyName = proxyName.Split(']').ToArray()[0];
             this.SetProxyName(proxyName);
@@ -195,5 +215,42 @@ namespace OGFrp.UI
         {
             this.lb_ViewLog.Visibility = (bool)this.cb_Switch.IsChecked ? Visibility.Visible : Visibility.Hidden;
         }
+
+
+        #region OldGodShen的操蛋“复制地址”要求
+
+        private void copyAddr()
+        {
+            Clipboard.SetText(((TextBlock)this.lb_serverName.Content).Text);
+        }
+
+        string f_addr;
+
+        System.Windows.Forms.Timer f_timer = new System.Windows.Forms.Timer
+        {
+            Interval = 2000
+        };
+
+        Cursor cursor_hand;
+
+        private void lb_serverName_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            copyAddr();
+            f_addr = ((TextBlock)this.lb_serverName.Content).Text;
+            SetServerName(this.text_Duplicated);
+            cursor_hand = lb_serverName.Cursor;
+            this.lb_serverName.Cursor = Cursor;
+            f_timer.Tick += backToDisplay;
+            f_timer.Start();
+        }
+
+        private void backToDisplay(object sender, EventArgs e)
+        {
+            SetServerName(f_addr);
+            this.lb_serverName.Cursor = cursor_hand;
+            f_timer.Stop();
+        }
+
+        #endregion
     }
 }

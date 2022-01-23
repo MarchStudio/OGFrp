@@ -112,9 +112,6 @@ namespace OGFrp.UI
                     case "Password":
                         this.Password.Val = Right;
                         break;
-                    case "ServerAddr":
-                        this.ServerAddr.Val = Right;
-                        break;
                     default:
                         break;
                 }
@@ -127,14 +124,11 @@ namespace OGFrp.UI
         /// </summary>
         public void WriteConfig()
         {
-            try
-            {
                 CreateFolder();
-                ConfigModel[] ConfigArray = new ConfigModel[4];
+                ConfigModel[] ConfigArray = new ConfigModel[3];
                 ConfigArray[0] = this.Lang;
                 ConfigArray[1] = this.Username;
                 ConfigArray[2] = this.Password;
-                ConfigArray[3] = this.ServerAddr;
                 StreamWriter writer = new StreamWriter(configpath);
                 string content = null;
                 for (int i = 0; i < ConfigArray.Length; i++)
@@ -147,6 +141,8 @@ namespace OGFrp.UI
                 content += "::end=1";
                 writer.Write(content);
                 writer.Close();
+            try
+            {
             }
             catch
             {

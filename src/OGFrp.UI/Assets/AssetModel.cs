@@ -11,6 +11,14 @@ namespace OGFrp.UI
     public class AssetModel
     {
         /// <summary>
+        /// 语言记录名字
+        /// </summary>
+        public string LangNameS { get; set; }
+        /// <summary>
+        /// 语言显示名字
+        /// </summary>
+        public string LangNameD { get; set; }
+        /// <summary>
         /// 欢迎屏幕：Title
         /// </summary>
         public string Welcome { get; set; }
@@ -118,5 +126,21 @@ namespace OGFrp.UI
         /// 应用程序：需要重启
         /// </summary>
         public string RestartRequired { get; set; }
+        /// <summary>
+        /// 面板：设置
+        /// </summary>
+        public string Settings { get; set; }
+        /// <summary>
+        /// 设置：语言
+        /// </summary>
+        public string Language { get; set; }
+        /// <summary>
+        /// FrpcCover：点击复制
+        /// </summary>
+        public string ClickToDuplicate { get; set; }
+        /// <summary>
+        /// FrpcCover：已复制
+        /// </summary>
+        public string Duplicated { get; set; }
     }
 }

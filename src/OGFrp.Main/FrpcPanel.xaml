@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:OGFrp.Main"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid x:Name="Grid">
-            
-    </Grid>
+    <ScrollViewer>
+        <Grid x:Name="Grid" VerticalAlignment="Top" Height="0"/>
+    </ScrollViewer>
 </UserControl>

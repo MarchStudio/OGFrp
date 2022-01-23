@@ -7,7 +7,7 @@ Public Class LoginBox
     Dim ac As New Assets()  'Temp用ac
     Dim Assets As AssetModel
 
-    Dim Config As New Config()
+    Public Config As Config
 
     Dim loginResult As UserControl
 
@@ -26,8 +26,7 @@ Public Class LoginBox
         End If
     End Sub
 
-    Public Sub _init_() Handles Me.Loaded
-        Config.ReadConfig()
+    Public Sub _init_()
         Select Case Config.Lang.Val
             Case "zh_cn"
                 Assets = ac.zh_cn

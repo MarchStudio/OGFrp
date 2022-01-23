@@ -20,9 +20,13 @@ Public Class FrpcPanel
             fc.Height = 80
             fc.Margin = New Thickness(20, 5 + 85 * i, 20, 0)
             fc.SetViewLogContent(Assets.ViewLog)
+            fc.text_Duplicated = Assets.Duplicated
+            fc.SetDuplicateNotice(Assets.ClickToDuplicate)
             fc.SetTextForeColor(Brushes.Black)
             Me.Grid.Children.Add(fc)
+            Me.Grid.Height += 85
         Next
+        Me.Grid.Height += 5
     End Sub
 
     Public Sub CloseAllFrpc()
