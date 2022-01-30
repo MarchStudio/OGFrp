@@ -30,7 +30,7 @@ OGFrp官网：https://ogfrp.cn 。
 --- | --- | --- 
 Windows | √ | √ 
 Linux | √ | × 
-macOS | - | - 
+macOS | √ | - 
 Android | ○ | -
 iOS | × | ×
 FreeBSD | - | ×
