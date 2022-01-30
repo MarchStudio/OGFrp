@@ -35,6 +35,7 @@ Class MainWindow
             Me.WindowState = WindowState.Normal
         End If
     End Sub
+
 #Enable Warning BC42025
 #End Region
 
@@ -68,7 +69,7 @@ Class MainWindow
 
     Private Sub LoginBox_LoginSucceed() Handles LoginBox.LoginSucceed
         Me.txtTitle.Foreground = Brushes.White
-        Me.TitleBar.Background = Brushes.Transparent
+        Me.bd_titlefillL.Visibility = Visibility.Collapsed
         Me.MainPanel.Visibility = Visibility.Visible
         Me.MainPanel.Username = Me.LoginBox.Username
         Me.MainPanel.Nickname = Me.LoginBox.Username

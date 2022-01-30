@@ -33,5 +33,25 @@ ShutdownMode="OnMainWindowClose">
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="window_Border" TargetType="{x:Type Window}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Window">
+                        <Border>
+                            <Border Background="White"
+                                    BorderBrush="White"
+                                    CornerRadius="0 0 0 0"
+                                    BorderThickness="0"
+                                    SnapsToDevicePixels="True">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="10" Direction="0" ShadowDepth="0"/>
+                                </Border.Effect>
+                                <ContentPresenter />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

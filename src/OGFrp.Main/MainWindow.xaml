@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OGFrp.Main"
         mc:Ignorable="d"
-        Title="OGFrp" Height="600" Width="1200" MinWidth="800" MinHeight="250" WindowStyle="None" AllowsTransparency="True">
-    <Grid x:Name="MainGrid">
-
+        Title="OGFrp" Height="600" Width="1200" MinWidth="800" MinHeight="250" WindowStyle="None" AllowsTransparency="True" Style="{StaticResource window_Border}" Background="Transparent">
+    <Grid x:Name="MainGrid" Background="Transparent">
         <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0">
             <Border.Background>
                 <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
@@ -16,14 +15,13 @@
                 <BlurEffect Radius="0"></BlurEffect>
             </Border.Effect>
         </Border>
-
         <local:MainPanel x:Name="MainPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Visibility="Collapsed">
             <local:MainPanel.Background>
                 <ImageBrush TileMode="Tile" Stretch="UniformToFill"/>
             </local:MainPanel.Background>
         </local:MainPanel>
 
-        <Grid x:Name="TitleBar"  Height="30" DockPanel.Dock="Top" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="White" Width="{Binding Width, ElementName=MainGrid}">
+        <Grid x:Name="TitleBar"  Height="30" DockPanel.Dock="Top" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="Transparent" Width="{Binding Width, ElementName=MainGrid}">
             <Grid.Resources>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Width" Value="70"/>
@@ -59,7 +57,8 @@
                 <ColumnDefinition Width="32"/>
                 <ColumnDefinition Width="32"/>
             </Grid.ColumnDefinitions>
-            <Border x:Name="bd_titlefill" BorderThickness="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.ColumnSpan="3"/>
+            <Border x:Name="bd_titlefillL" BorderThickness="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.ColumnSpan="1"/>
+            <Border x:Name="bd_titlefillR" BorderThickness="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.ColumnSpan="3" />
             <TextBlock x:Name="txtTitle" Margin="1,0,0,0"  Padding="5,3,2,3" Text="OGFrp" 
                    HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="微软雅黑"  
                    Foreground="Black" Height="24"/>
