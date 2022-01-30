@@ -5,7 +5,7 @@ dirname, filename = os.path.split(os.path.abspath(__file__))
 def main():
     print("  ____   _____ ______\n / __ \\ / ____|  ____|\n| |  | | |  __| |__ _ __ _ __\n| |  | | | |_ |  __| '__| '_ \\\n| |__| | |__| | |  | |  | |_) |\n \\____/ \\_____|_|  |_|  | .__/\n                        | |\n                        |_|\n")
     print("Welcone to install OGFrp.Linux!")
-    print("Installer: 1.0.211231, based on Python, by GreatHuang2007")
+    print("Installer: 1.0.220130, based on Python")
     arch = input("Please select your arch[x86/amd64/arm/arm64]:")
     os.system("rm -rf /opt/OGFrp")
     os.system("mkdir /opt/OGFrp")
