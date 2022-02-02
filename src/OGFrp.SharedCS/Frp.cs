@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.VisualBasic;
+using static Microsoft.VisualBasic.Interaction;
 
 namespace OGFrp.UI
 {
@@ -91,12 +92,13 @@ namespace OGFrp.UI
         {
             try
             {
-                string frpciniurl = "https://api.ogfrp.cn/?action=getconf&token=" + token + "&node=" + serverToId(server, token);
-                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Get(frpciniurl));
+                string frpciniurl = "action=getconf&token=" + token + "&node=" + serverToId(server, token);
+                File.WriteAllText(Config.FolderPath + "\\frpc.ini", Net.Post("https://api.ogfrp.cn/", frpciniurl));
                 Interaction.Shell(Environment.CurrentDirectory + "\\frpc.exe -c \"" + Config.FolderPath + "\\frpc.ini\"", AppWinStyle.NormalFocus);
             }
             catch (Exception ex)
             {
+                MsgBox("Failure at\n" + ex.ToString(), MsgBoxStyle.Critical, "OGFrp");
                 return -1;
             }
             return 0;

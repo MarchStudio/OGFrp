@@ -29,7 +29,8 @@ namespace OGFrp.UI
         /// </summary>
         public ConfigModel Lang = new ConfigModel
         {
-            Name = "Lang"
+            Name = "Lang",
+            Val = "zh_cn"
         };
 
         /// <summary>
@@ -54,6 +55,15 @@ namespace OGFrp.UI
         public ConfigModel RmbPsw = new ConfigModel
         {
             Name = "RmbPsw"
+        };
+
+        /// <summary>
+        /// 设置：Frpc启动模式
+        /// </summary>
+        public ConfigModel FrpcLaunchMode = new ConfigModel
+        {
+            Name = "FrpcLaunchMode",
+            Val = "proxy"
         };
 
     }

@@ -9,6 +9,7 @@ ShutdownMode="OnMainWindowClose">
             <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="BorderBrush" Value="#c1d0dc"/>
         </Style>
+        <!--
         <Style TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="#FF007BFF"/>
@@ -33,6 +34,7 @@ ShutdownMode="OnMainWindowClose">
                 </Setter.Value>
             </Setter>
         </Style>
+        -->
         <Style x:Key="window_Border" TargetType="{x:Type Window}">
             <Setter Property="Template">
                 <Setter.Value>

@@ -10,18 +10,24 @@ namespace OGFrp.UI
     public partial class Config
     {
 
+
+        ConfigModel[] ConfigArray = new ConfigModel[4];
+
         /// <summary>
         /// 构造函数
         /// </summary>
         public Config()
         {
+            ConfigArray[0] = this.Lang;
+            ConfigArray[1] = this.Username;
+            ConfigArray[2] = this.Password;
+            ConfigArray[3] = this.FrpcLaunchMode;
             try
             {
                 ReadConfig();
             }
             catch
             {
-                this.Lang.Val = "zh_cn";
                 WriteConfig();
                 ReadConfig();
             }
@@ -86,7 +92,7 @@ namespace OGFrp.UI
                 while (true)
                 {
                     temp = reader.Read();
-                    if(Chr(temp) == "=")
+                    if (Chr(temp) == "=")
                     {
                         break;
                     }
@@ -96,7 +102,7 @@ namespace OGFrp.UI
                     }
                 }
                 Right = reader.ReadLine();
-                if(Left == "::end")
+                if (Left == "::end")
                 {
                     reader.Close();
                     return;
@@ -112,6 +118,9 @@ namespace OGFrp.UI
                     case "Password":
                         this.Password.Val = Right;
                         break;
+                    case "FrpcLaunchMode":
+                        this.FrpcLaunchMode.Val = Right;
+                        break;
                     default:
                         break;
                 }
@@ -124,29 +133,19 @@ namespace OGFrp.UI
         /// </summary>
         public void WriteConfig()
         {
-                CreateFolder();
-                ConfigModel[] ConfigArray = new ConfigModel[3];
-                ConfigArray[0] = this.Lang;
-                ConfigArray[1] = this.Username;
-                ConfigArray[2] = this.Password;
-                StreamWriter writer = new StreamWriter(configpath);
-                string content = null;
-                for (int i = 0; i < ConfigArray.Length; i++)
-                {
-                    content += ConfigArray[i].Name;
-                    content += "=";
-                    content += ConfigArray[i].Val;
-                    content += "\n";
-                }
-                content += "::end=1";
-                writer.Write(content);
-                writer.Close();
-            try
+            CreateFolder();
+            StreamWriter writer = new StreamWriter(configpath);
+            string content = null;
+            for (int i = 0; i < ConfigArray.Length; i++)
             {
+                content += ConfigArray[i].Name;
+                content += "=";
+                content += ConfigArray[i].Val;
+                content += "\n";
             }
-            catch
-            {
-            }
+            content += "::end=1";
+            writer.Write(content);
+            writer.Close();
         }
 
     }

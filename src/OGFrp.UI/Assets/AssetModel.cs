@@ -142,5 +142,17 @@ namespace OGFrp.UI
         /// FrpcCover：已复制
         /// </summary>
         public string Duplicated { get; set; }
+        /// <summary>
+        /// 设置：Frpc启动模式
+        /// </summary>
+        public string FrpcLaunchMode { get; set; }
+        /// <summary>
+        /// Frpc启动模式：按隧道
+        /// </summary>
+        public string ByProxy { get; set; }
+        /// <summary>
+        /// Frpc启动模式：按节点
+        /// </summary>
+        public string ByNode { get; set; }
     }
 }

@@ -1,5 +1,3 @@
-[Readme](https://github.com/OldGodShen/OGFrp/blob/master/README.md#ogfrp)
-
 # 有关在Android上使用OGFrp
 
 ## I.引言

@@ -32,9 +32,10 @@ Partial Class ServerSelectionWindow
         'lb_Server
         '
         Me.lb_Server.AutoSize = True
-        Me.lb_Server.Location = New System.Drawing.Point(0, 8)
+        Me.lb_Server.Location = New System.Drawing.Point(0, 10)
+        Me.lb_Server.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_Server.Name = "lb_Server"
-        Me.lb_Server.Size = New System.Drawing.Size(88, 31)
+        Me.lb_Server.Size = New System.Drawing.Size(111, 39)
         Me.lb_Server.TabIndex = 0
         Me.lb_Server.Text = "Label1"
         '
@@ -46,17 +47,19 @@ Partial Class ServerSelectionWindow
         Me.Panel1.Controls.Add(Me.cb_Server)
         Me.Panel1.Controls.Add(Me.lb_Server)
         Me.Panel1.ForeColor = System.Drawing.Color.Black
-        Me.Panel1.Location = New System.Drawing.Point(63, 83)
+        Me.Panel1.Location = New System.Drawing.Point(79, 104)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(423, 168)
+        Me.Panel1.Size = New System.Drawing.Size(529, 210)
         Me.Panel1.TabIndex = 1
         '
         'bt_launch
         '
         Me.bt_launch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.bt_launch.Location = New System.Drawing.Point(217, 113)
+        Me.bt_launch.Location = New System.Drawing.Point(271, 141)
+        Me.bt_launch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.bt_launch.Name = "bt_launch"
-        Me.bt_launch.Size = New System.Drawing.Size(203, 52)
+        Me.bt_launch.Size = New System.Drawing.Size(254, 65)
         Me.bt_launch.TabIndex = 2
         Me.bt_launch.Text = "Button1"
         Me.bt_launch.UseVisualStyleBackColor = True
@@ -68,22 +71,23 @@ Partial Class ServerSelectionWindow
         Me.cb_Server.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_Server.FormattingEnabled = True
         Me.cb_Server.Items.AddRange(New Object() {"hk1.ogfrp.cn", "sh1.ogfrp.cn", "ct1.ogfrp.cn", "bj1.ogfrp.cn", "bj2.ogfrp.cn", "hk2.ogfrp.cn"})
-        Me.cb_Server.Location = New System.Drawing.Point(3, 54)
+        Me.cb_Server.Location = New System.Drawing.Point(4, 68)
+        Me.cb_Server.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cb_Server.Name = "cb_Server"
-        Me.cb_Server.Size = New System.Drawing.Size(417, 39)
+        Me.cb_Server.Size = New System.Drawing.Size(520, 47)
         Me.cb_Server.TabIndex = 1
         '
         'ServerSelectionWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(548, 334)
+        Me.ClientSize = New System.Drawing.Size(685, 418)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("微软雅黑", 18.0!)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(8, 9, 8, 9)
+        Me.Margin = New System.Windows.Forms.Padding(10, 11, 10, 11)
         Me.Name = "ServerSelectionWindow"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

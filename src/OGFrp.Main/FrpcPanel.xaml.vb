@@ -6,7 +6,10 @@ Public Class FrpcPanel
 
     Dim Assets As AssetModel
 
+    Dim ServerSelectionWindow As New ServerSelectionWindow
+
     Public Sub _init_(ByVal token As String, ByVal Assets As AssetModel)
+        Me.Grid.Height = 0
         Me.Assets = Assets
         fctn = New FrpcCollections(token)
         fctn.getFrpcConfigCollection()

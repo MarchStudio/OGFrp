@@ -48,7 +48,10 @@ namespace OGFrp.UI
                 Settings = "设置",
                 Language = "语言",
                 ClickToDuplicate = "点击复制",
-                Duplicated = "已复制"
+                Duplicated = "已复制",
+                FrpcLaunchMode = "Frpc启动模式",
+                ByProxy = "按隧道",
+                ByNode = "按节点"
             },
             new AssetModel
             {
@@ -84,7 +87,10 @@ namespace OGFrp.UI
                 Settings = "Settings",
                 Language = "Language",
                 ClickToDuplicate = "Click to duplicate.",
-                Duplicated = "Duplicated!"
+                Duplicated = "Duplicated!",
+                FrpcLaunchMode = "Frpc launch mode",
+                ByProxy = "By proxy",
+                ByNode = "By node"
             }
         };
 

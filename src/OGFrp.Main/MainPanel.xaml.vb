@@ -9,6 +9,7 @@ Public Class MainPanel
     Public Property UserImage As New System.Drawing.Bitmap(My.Resources.UserHead)
 
     Public Assets As AssetModel
+    Public Config As Config
 
     Dim SelectedBg As Brush
 
@@ -119,12 +120,15 @@ Public Class MainPanel
     End Sub
 
     Private Sub bt_frpc_Click(sender As Object, e As RoutedEventArgs) Handles bt_frpc.Click
-        'Dim nw As New ServerSelectionWindow
-        'nw.Assets = Me.Assets
-        'nw._init_(Me.UserToken)
-        'nw.ShowDialog()
-        selectBtn(bt_frpc)
-        EnablePage(ctm_FrpcPanel)
+        If Config.FrpcLaunchMode.Val = "node" Then
+            Dim nw As New ServerSelectionWindow
+            nw.Assets = Me.Assets
+            nw._init_(Me.UserToken)
+            nw.ShowDialog()
+        Else
+            selectBtn(bt_frpc)
+            EnablePage(ctm_FrpcPanel)
+        End If
     End Sub
 
     Private Sub bt_Settings_Click(sender As Object, e As RoutedEventArgs) Handles bt_Settings.Click
