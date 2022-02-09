@@ -20,6 +20,18 @@ namespace OGFrp.UI
         public Frpc() { }
 
         /// <summary>
+        /// 析构函数
+        /// </summary>
+        ~Frpc()
+        {
+            try
+            {
+                this.p_frpc.Kill();
+            }
+            catch { }
+        }
+
+        /// <summary>
         /// 创建一个frpc实例对象
         /// </summary>
         /// <param name="frpcLoca">frpc.exe的位置</param>

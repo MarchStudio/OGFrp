@@ -63,7 +63,6 @@ Class MainWindow
     End Sub
 
     Private Sub MainWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Me.MainPanel.ctm_FrpcPanel.CloseAllFrpc()
         End
     End Sub
 
