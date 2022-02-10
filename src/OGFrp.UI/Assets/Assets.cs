@@ -51,7 +51,9 @@ namespace OGFrp.UI
                 Duplicated = "已复制",
                 FrpcLaunchMode = "Frpc启动模式",
                 ByProxy = "按隧道",
-                ByNode = "按节点"
+                ByNode = "按节点",
+                Refresh = "刷新",
+                Refreshing = "正在刷新"
             },
             new AssetModel
             {
@@ -90,7 +92,9 @@ namespace OGFrp.UI
                 Duplicated = "Duplicated!",
                 FrpcLaunchMode = "Frpc launch mode",
                 ByProxy = "By proxy",
-                ByNode = "By node"
+                ByNode = "By node",
+                Refresh = "Refresh",
+                Refreshing = "Refreshing..."
             }
         };
 

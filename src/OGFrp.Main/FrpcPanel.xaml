@@ -6,8 +6,11 @@
              xmlns:local="clr-namespace:OGFrp.Main"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ScrollViewer>
-        <Grid x:Name="Grid" VerticalAlignment="Top">
-        </Grid>
-    </ScrollViewer>
+    <Grid>
+        <ScrollViewer>
+            <Grid x:Name="Grid" VerticalAlignment="Top">
+            </Grid>
+        </ScrollViewer>
+        <TextBlock x:Name="lb_Refresh" Foreground="#FF0070EA" Text="refresh" FontSize="20" Margin="20 10 0 0" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </Grid>
 </UserControl>
