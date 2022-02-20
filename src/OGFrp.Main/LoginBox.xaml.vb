@@ -4,8 +4,7 @@ Imports System.Threading
 
 Public Class LoginBox
 
-    Dim ac As New Assets()  'Temp用ac
-    Dim Assets As AssetModel
+    Public Assets As AssetModel
 
     Public Config As Config
 
@@ -27,14 +26,6 @@ Public Class LoginBox
     End Sub
 
     Public Sub _init_()
-        Select Case Config.Lang.Val
-            Case "zh_cn"
-                Assets = ac.zh_cn
-            Case "en_us"
-                Assets = ac.en_us
-            Case Else
-                Assets = ac.en_us
-        End Select
         Me.tb_Username.Text = Config.Username.Val
         Me.tb_Username.Text = Assets.Username
         Me.tb_Username.Foreground = Brushes.Gray
@@ -119,16 +110,6 @@ Public Class LoginBox
     End Sub
 
     Private Sub usrnme_foc() Handles tb_Username.GotFocus
-        Dim Config = New Config()
-        Config.ReadConfig()
-        Dim Assets As New AssetModel
-        Dim ac As New Assets()  'Temp用
-        Select Case Config.Lang.Val
-            Case "zh_cn"
-                Assets = ac.zh_cn
-            Case "en_us"
-                Assets = ac.en_us
-        End Select
         If Me.tb_Username.Text = Assets.Username Then
             Me.tb_Username.Foreground = Brushes.Black
             Me.tb_Username.Text = ""
@@ -136,16 +117,6 @@ Public Class LoginBox
     End Sub
 
     Private Sub usrnme_lfc() Handles tb_Username.LostFocus
-        Dim Config = New Config()
-        Config.ReadConfig()
-        Dim Assets As New AssetModel
-        Dim ac As New Assets()  'Temp用
-        Select Case Config.Lang.Val
-            Case "zh_cn"
-                Assets = ac.zh_cn
-            Case "en_us"
-                Assets = ac.en_us
-        End Select
         If Me.tb_Username.Text = "" Then
             Me.tb_Username.Foreground = Brushes.Gray
             Me.tb_Username.Text = Assets.Username

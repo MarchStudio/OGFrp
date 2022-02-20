@@ -57,6 +57,88 @@ namespace OGFrp.UI
             },
             new AssetModel
             {
+                LangNameS ="zk_tw",
+                LangNameD ="繁體中文（臺灣）",
+                Cancel ="取消",
+                Close ="關閉",
+                Yes ="是",
+                No ="否",
+                Welcome ="歡迎使用OGFrp",
+                Loading ="正在加載…",
+                Username ="用戶名",
+                Password ="密碼",
+                ServerAddr ="伺服器地址",
+                Letsgo ="我們開始吧",
+                Login ="登入",
+                Logining ="正在登入",
+                LoginFailed ="登入失敗！",
+                UserInfo ="用戶資訊",
+                AccessToken ="訪問密鑰",
+                DownloadFrpc ="下載frpc.exe",
+                DownloadingFrpc ="正在下載frpc.exe",
+                DownloadedFrpc ="frpc.exe下載成功！",
+                Downloading ="正在下載…",
+                DownloadFailed ="下載失敗！",
+                LaunchFrpc ="啟動隧道",
+                PlzSelectServer ="請選擇節點",
+                ViewLog ="顯示日誌",
+                Home ="主頁",
+                WelcomeBack ="歡迎回來",
+                Frp ="穿透",
+                RestartRequired ="應用程序需要重啓。",
+                Settings ="設定",
+                Language ="語言",
+                ClickToDuplicate ="點擊複製",
+                Duplicated ="已複製",
+                FrpcLaunchMode ="穿透用戶端啟動模式",
+                ByProxy ="按隧道",
+                ByNode ="按節點",
+                Refresh ="刷新",
+                Refreshing ="正在刷新"
+            },
+            new AssetModel
+            {
+                LangNameS = "zk_hk",
+                LangNameD = "繁體中文（香港）",
+                Cancel = "取消",
+                Close = "關閉",
+                Yes = "是",
+                No = "否",
+                Welcome = "歡迎使用OGFrp",
+                Loading = "正在加載...",
+                Username = "用户名",
+                Password = "密碼",
+                ServerAddr = "服務器地址",
+                Letsgo = "我們開始吧",
+                Login = "登錄",
+                Logining = "正在登錄",
+                LoginFailed = "登錄失敗！",
+                UserInfo = "用户信息",
+                AccessToken = "訪問密鑰",
+                DownloadFrpc = "下載frpc.exe",
+                DownloadingFrpc = "正在下載frpc.exe",
+                DownloadedFrpc = "frpc.exe下載成功！",
+                Downloading = "正在下載...",
+                DownloadFailed = "下載失敗！",
+                LaunchFrpc = "啓動隧道",
+                PlzSelectServer = "請選擇節點",
+                ViewLog = "顯示日誌",
+                Home = "主頁",
+                WelcomeBack = "歡迎回來",
+                Frp = "映射",
+                RestartRequired = "應用程序需要重啓。",
+                Settings = "設置",
+                Language = "語言",
+                ClickToDuplicate = "點擊複製",
+                Duplicated = "已複製",
+                FrpcLaunchMode = "Frpc啓動模式",
+                ByProxy = "按隧道",
+                ByNode = "按節點",
+                Refresh = "刷新",
+                Refreshing = "正在刷新"
+            },
+            new AssetModel
+            {
                 LangNameS = "en_us",
                 LangNameD = "English",
                 Cancel = "Cancel",
@@ -98,20 +180,17 @@ namespace OGFrp.UI
             }
         };
 
-        /// <summary>
-        /// 中文(简体)
-        /// </summary>
-        public AssetModel zh_cn;
-
-        /// <summary>
-        /// English
-        /// </summary>
-        public AssetModel en_us;
-
-        public Assets()
+        public AssetModel SearchAsset(string LangNameS)
         {
-            this.zh_cn = this.AssetCollection[0];
-            this.en_us = this.AssetCollection[1];
+            AssetModel resultNull = this.AssetCollection[0];
+            foreach (var tasset in this.AssetCollection)
+            {
+                if(tasset.LangNameS == LangNameS)
+                {
+                    return tasset;
+                }
+            }
+            return resultNull;
         }
 
         public string LangNameStoD(string LangNameS)

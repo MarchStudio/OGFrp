@@ -45,14 +45,8 @@ Class MainWindow
 
     Private Sub _init_() Handles Me.Loaded
         Config.ReadConfig()
-        Select Case Config.Lang.Val
-            Case "zh_cn"
-                Assets = ac.zh_cn
-            Case "en_us"
-                Assets = ac.en_us
-            Case Else
-                Assets = ac.en_us
-        End Select
+        Me.Assets = ac.SearchAsset(Config.Lang.Val)
+        Me.LoginBox.Assets = Me.Assets
         Me.LoginBox.Visibility = Visibility.Visible
         Me.LoginBox.Config = Me.Config
         Me.LoginBox._init_()
