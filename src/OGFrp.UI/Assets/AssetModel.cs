@@ -154,5 +154,13 @@ namespace OGFrp.UI
         /// Frpc启动模式：按节点
         /// </summary>
         public string ByNode { get; set; }
+        /// <summary>
+        /// 面板：刷新
+        /// </summary>
+        public string Refresh { get; set; }
+        /// <summary>
+        /// 面板：刷新中
+        /// </summary>
+        public string Refreshing { get; set; }
     }
 }
