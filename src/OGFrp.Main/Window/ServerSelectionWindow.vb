@@ -24,8 +24,4 @@ Public Class ServerSelectionWindow
         Frp.launchFrpc(Me.AccessToken, SelectedServer.ID)
         Me.Dispose()
     End Sub
-
-    Private Sub ServerSelectionWindow_Click(sender As Object, e As EventArgs) Handles Me.Click
-        Me.Dispose()
-    End Sub
 End Class

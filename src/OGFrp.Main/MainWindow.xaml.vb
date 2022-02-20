@@ -77,4 +77,16 @@ Class MainWindow
         Me.MainPanel._init_()
         Me.txtTitle.Text = "OGFrp"
     End Sub
+
+    Private Sub MainWindow_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        If Me.bd_titlefillL.Visibility = Visibility.Visible Then
+            Me.txtTitle.Foreground = Brushes.Black
+        Else
+            Me.txtTitle.Foreground = Brushes.White
+        End If
+    End Sub
+
+    Private Sub MainWindow_Deactivated(sender As Object, e As EventArgs) Handles Me.Deactivated
+        Me.txtTitle.Foreground = Brushes.DarkGray
+    End Sub
 End Class

@@ -136,10 +136,10 @@
     <Compile Include="UserDisplay.xaml.vb">
       <DependentUpon>UserDisplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Visual\Window\ServerSelectionWindow.Designer.vb">
+    <Compile Include="Window\ServerSelectionWindow.Designer.vb">
       <DependentUpon>ServerSelectionWindow.vb</DependentUpon>
     </Compile>
-    <Compile Include="Visual\Window\ServerSelectionWindow.vb">
+    <Compile Include="Window\ServerSelectionWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Page Include="FrpcPanel.xaml">
@@ -229,7 +229,7 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="Visual\Window\ServerSelectionWindow.resx">
+    <EmbeddedResource Include="Window\ServerSelectionWindow.resx">
       <DependentUpon>ServerSelectionWindow.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="My Project\app.manifest" />

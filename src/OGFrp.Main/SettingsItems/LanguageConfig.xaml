@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:OGFrp.Main"
              mc:Ignorable="d">
     <Grid>
-        <TextBlock x:Name="lb_Lang" HorizontalAlignment="Left" Margin="10,5,0,3" TextWrapping="Wrap" Text="Language" VerticalAlignment="Top" Foreground="Black" FontSize="18"/>
+        <TextBlock x:Name="lb_Lang" HorizontalAlignment="Left" Margin="10,6,0,0" TextWrapping="Wrap" Text="Language" VerticalAlignment="Top" Foreground="Black" FontSize="18"/>
         <ComboBox x:Name="cb_val" Margin="0,3,10,3" HorizontalAlignment="Right" Width="350" VerticalAlignment="Top" TextBlock.FontSize="18"/>
         <Grid.Resources>
             <Style TargetType="TextBlock">
