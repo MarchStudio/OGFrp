@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:OGFrp.Main"
              mc:Ignorable="d">
     <Grid>
-        <TextBlock x:Name="lb_Lang" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Language" VerticalAlignment="Top" Foreground="Black" FontSize="24"/>
-        <ComboBox x:Name="cb_val" Margin="0,10,10,0" HorizontalAlignment="Right" Width="350" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lb_Lang" HorizontalAlignment="Left" Margin="10,5,0,3" TextWrapping="Wrap" Text="Language" VerticalAlignment="Top" Foreground="Black" FontSize="18"/>
+        <ComboBox x:Name="cb_val" Margin="0,3,10,3" HorizontalAlignment="Right" Width="350" VerticalAlignment="Top" TextBlock.FontSize="18"/>
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="FontSize" Value="20"/>
