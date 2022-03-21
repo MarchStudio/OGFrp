@@ -16,11 +16,11 @@ Uninstall_OGFrp() {
   echo "[x] rm -irf ${ogfrp_install_path}"
   rm -irf ${ogfrp_install_path}
 
-  echo "rm -irf ${ogfrp_install_path}/frpc /usr/bin/frpc"
-  rm -irf ${ogfrp_install_path}/frpc /usr/bin/frpc
+  echo "rm -irf /usr/bin/frpc"
+  rm -irf /usr/bin/frpc
 
-  echo "rm -irf ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp"
-  rm -irf ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp
+  echo "rm -irf /usr/bin/ogfrp"
+  rm -irf /usr/bin/ogfrp
 
   Finish
 }
