@@ -59,11 +59,11 @@ Install_OGFrp() {
   echo "即将开始安装OGFrp.Linux For ${arch}"
   sleep 3
 
-  echo "mkdir ${ogfrp_install_path}"
-  mkdir ${ogfrp_install_path}
-
   echo "[x] rm -irf ${ogfrp_install_path}"
   rm -irf ${ogfrp_install_path}
+
+  echo "mkdir ${ogfrp_install_path}"
+  mkdir ${ogfrp_install_path}
 
   echo "cp ./frpc/${arch} ${ogfrp_install_path}/frpc"
   cp ./frpc/${arch} ${ogfrp_install_path}/frpc
@@ -84,7 +84,7 @@ Install_OGFrp() {
   ln -s ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp
 
   Finish
-
+}
 
 Finish() {
   echo "OGFrp.Linux For ${arch} 已安装完成"
