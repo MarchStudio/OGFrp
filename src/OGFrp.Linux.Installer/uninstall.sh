@@ -38,6 +38,7 @@ Uninstall_OGFrp() {
   ln -s ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp
 
   Finish
+}
 
 
 Finish() {
