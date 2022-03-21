@@ -10,39 +10,24 @@ Red_Error() {
 
 Uninstall_OGFrp() {
   ogfrp_install_path="/opt/OGFrp"
-  echo "即将开始安装OGFrp.Linux For ${arch}"
+  echo "即将开始删除OGFrp.Linux"
   sleep 3
-
-  echo "mkdir ${ogfrp_install_path}"
-  mkdir ${ogfrp_install_path}
 
   echo "[x] rm -irf ${ogfrp_install_path}"
   rm -irf ${ogfrp_install_path}
 
-  echo "cp ./frpc/${arch} ${ogfrp_install_path}/frpc"
-  cp ./frpc/${arch} ${ogfrp_install_path}/frpc
+  echo "rm -irf ${ogfrp_install_path}/frpc /usr/bin/frpc"
+  rm -irf ${ogfrp_install_path}/frpc /usr/bin/frpc
 
-  echo "cp ./program/${arch} ${ogfrp_install_path}/ogfrp"
-  cp ./program/${arch} ${ogfrp_install_path}/ogfrp
-
-  echo "chmod +x ${ogfrp_install_path}/frpc"
-  chmod +x ${ogfrp_install_path}/frpc
-
-  echo "chmod +x ${ogfrp_install_path}/ogfrp"
-  chmod +x ${ogfrp_install_path}/ogfrp
-
-  echo "ln -s ${ogfrp_install_path}/frpc /usr/bin/frpc"
-  ln -s ${ogfrp_install_path}/frpc /usr/bin/frpc
-
-  echo "ln -s ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp"
-  ln -s ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp
+  echo "rm -irf ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp"
+  rm -irf ${ogfrp_install_path}/ogfrp /usr/bin/ogfrp
 
   Finish
 }
 
 
 Finish() {
-  echo "OGFrp.Linux For ${arch} 已卸载完成"
+  echo "OGFrp.Linux 已卸载完成"
   exit
 }
 
