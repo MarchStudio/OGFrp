@@ -53,7 +53,8 @@ namespace OGFrp.UI
                 ByProxy = "按隧道",
                 ByNode = "按节点",
                 Refresh = "刷新",
-                Refreshing = "正在刷新"
+                Refreshing = "正在刷新",
+                About = "关于"
             },
             new AssetModel
             {
@@ -94,7 +95,8 @@ namespace OGFrp.UI
                 ByProxy ="按隧道",
                 ByNode ="按節點",
                 Refresh ="刷新",
-                Refreshing ="正在刷新"
+                Refreshing ="正在刷新",
+                About = "關於"
             },
             new AssetModel
             {
@@ -135,7 +137,8 @@ namespace OGFrp.UI
                 ByProxy = "按隧道",
                 ByNode = "按節點",
                 Refresh = "刷新",
-                Refreshing = "正在刷新"
+                Refreshing = "正在刷新",
+                About = "關於"
             },
             new AssetModel
             {
@@ -176,7 +179,8 @@ namespace OGFrp.UI
                 ByProxy = "By proxy",
                 ByNode = "By node",
                 Refresh = "Refresh",
-                Refreshing = "Refreshing..."
+                Refreshing = "Refreshing...",
+                About = "About"
             }
         };
 

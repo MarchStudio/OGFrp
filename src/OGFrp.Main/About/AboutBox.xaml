@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="AboutBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OGFrp.Main"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer Margin="0,0,-5,0" Grid.RowSpan="2" Background="#CCFFFFFF">
+        <Grid x:Name="Gd_Settings">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25.604"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="OGFrp" VerticalAlignment="Top" FontSize="36" Margin="0,40,0,0"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Text="Copyright MarchStudio 2022"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,119,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"><Run Language="zh-cn" Text="Open source: https://github.com/MarchStudio/OGFrp"/></TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,138,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"><Run Text="Please follow the "/><Run Language="zh-cn" Text="A"/><Run Text="pache"/><Run Language="zh-cn" Text=" "/><Run Text="2.0 license"/><Run Language="zh-cn" Text="."/></TextBlock>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

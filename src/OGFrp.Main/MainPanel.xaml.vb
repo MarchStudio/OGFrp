@@ -78,6 +78,7 @@ Public Class MainPanel
         Me.ctm_HomePage.Username = Username
         Me.ctm_HomePage._init_()
         Me.bt_Settings.ToolTip = Assets.Settings
+        Me.bt_About.ToolTip = Assets.About
         Me.ctm_SettingsPage.Assets = Me.Assets
         'Me.ctm_SettingsPage.Config = MainWindow.Config
         '在MainWindow初始化时已经传入Config
@@ -106,12 +107,14 @@ Public Class MainPanel
     Private Sub selectBtn(ByVal btn As Button)
         SetBtnUnselected(bt_Home)
         SetBtnUnselected(bt_frpc)
-        SetBtnUnselected(Bt_Settings)
+        SetBtnUnselected(bt_Settings)
+        SetBtnUnselected(bt_About)
         btn.Background = SelectedBg
         btn.BorderBrush = Brushes.White
         DisablePage(ctm_HomePage)
         DisablePage(ctm_FrpcPanel)
         DisablePage(ctm_SettingsPage)
+        DisablePage(ctm_About)
     End Sub
 
     Private Sub bt_Home_Click(sender As Object, e As RoutedEventArgs) Handles bt_Home.Click
@@ -134,5 +137,10 @@ Public Class MainPanel
     Private Sub bt_Settings_Click(sender As Object, e As RoutedEventArgs) Handles bt_Settings.Click
         selectBtn(bt_Settings)
         EnablePage(ctm_SettingsPage)
+    End Sub
+
+    Private Sub bt_About_Click(sender As Object, e As RoutedEventArgs) Handles bt_About.Click
+        selectBtn(bt_About)
+        EnablePage(ctm_About)
     End Sub
 End Class

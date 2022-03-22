@@ -162,5 +162,9 @@ namespace OGFrp.UI
         /// 面板：刷新中
         /// </summary>
         public string Refreshing { get; set; }
+        /// <summary>
+        /// 面板：关于
+        /// </summary>
+        public string About { get; set; }
     }
 }

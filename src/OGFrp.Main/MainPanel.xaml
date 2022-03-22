@@ -45,6 +45,8 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="15"/>
                     <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="35"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -52,11 +54,28 @@
                     <RowDefinition Height="35"/>
                     <RowDefinition Height="15"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="bt_Settings" Grid.Column="1" Content="/Resources/Settings.png" HorizontalAlignment="Stretch" Height="Auto" Grid.Row="1" VerticalAlignment="Stretch" Width="Auto">
+                <Button x:Name="bt_Settings" Grid.Column="1" Content="/Resources/Settings.png" Height="Auto" Grid.Row="1" Width="Auto">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="8,8,8,8">
                                 <Image Source="/Resources/Settings.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="6"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFFFFFFF"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FF0070EA"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="bt_About" Grid.Column="3" Content="i" Height="Auto" Grid.Row="1" Width="Auto">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="8,8,8,8">
+                                <TextBlock Text="i" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" FontSize="25.5"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -103,5 +122,6 @@
         <local:HomePage x:Name="ctm_HomePage" Grid.Column="1" Grid.RowSpan="2"/>
         <local:FrpcPanel x:Name="ctm_FrpcPanel" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.Row="1"/>
         <local:SettingsPage x:Name="ctm_SettingsPage" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Visibility="Hidden"/>
+        <local:AboutBox x:Name="ctm_About" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch"/>
     </Grid>
 </UserControl>
