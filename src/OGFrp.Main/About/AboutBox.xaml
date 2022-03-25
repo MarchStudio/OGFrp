@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="OGFrp" VerticalAlignment="Top" FontSize="36" Margin="0,40,0,0"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Text="Copyright MarchStudio 2022"/>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,119,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"><Run Language="zh-cn" Text="Open source: https://github.com/MarchStudio/OGFrp"/></TextBlock>
+            <TextBlock x:Name="Lb_OpenSource" Grid.Column="1" HorizontalAlignment="Center" Margin="0,119,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Cursor="Hand"><Run Language="zh-cn" Text="Open source: https://github.com/MarchStudio/OGFrp"/></TextBlock>
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,138,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"><Run Text="Please follow the "/><Run Language="zh-cn" Text="A"/><Run Text="pache"/><Run Language="zh-cn" Text=" "/><Run Text="2.0 license"/><Run Language="zh-cn" Text="."/></TextBlock>
         </Grid>
     </ScrollViewer>
