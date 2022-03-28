@@ -42,18 +42,25 @@ Class MainWindow
     Dim ac As New Assets()  'Temp用ac
     Dim Assets As AssetModel
     Dim Config As New Config()
+    Dim Theme As New Theme()
 
     Private Sub _init_() Handles Me.Loaded
+        Me.Theme.GetSystemTheme()
         Config.ReadConfig()
         Me.Assets = ac.SearchAsset(Config.Lang.Val)
         Me.LoginBox.Assets = Me.Assets
         Me.LoginBox.Visibility = Visibility.Visible
         Me.LoginBox.Config = Me.Config
         Me.LoginBox._init_()
-        Me.txtTitle.Foreground = Brushes.Black
+        Me.txtTitle.Foreground = Me.Theme.titleActiveTextColor
         Me.txtTitle.Text = Assets.Welcome
         Me.MainPanel.Assets = Me.Assets
         Me.MainPanel.ctm_SettingsPage.Config = Me.Config
+        Me.MainPanel.Theme = Me.Theme
+        Me.bd_titlefillL.Background = Me.Theme.titleActiveColor
+        Me.bd_titlefillR.Background = Me.Theme.titleActiveColor
+        Me.Bt_Close.Foreground = Me.Theme.titleActiveTextColor
+        Me.Bt_Min.Foreground = Me.Theme.titleActiveTextColor
     End Sub
 
     Private Sub MainWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -74,13 +81,21 @@ Class MainWindow
 
     Private Sub MainWindow_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         If Me.bd_titlefillL.Visibility = Visibility.Visible Then
-            Me.txtTitle.Foreground = Brushes.Black
+            Me.txtTitle.Foreground = Me.Theme.titleActiveTextColor
         Else
             Me.txtTitle.Foreground = Brushes.White
         End If
+        Me.bd_titlefillL.Background = Me.Theme.titleActiveColor
+        Me.bd_titlefillR.Background = Me.Theme.titleActiveColor
+        Me.Bt_Close.Foreground = Me.Theme.titleActiveTextColor
+        Me.Bt_Min.Foreground = Me.Theme.titleActiveTextColor
     End Sub
 
     Private Sub MainWindow_Deactivated(sender As Object, e As EventArgs) Handles Me.Deactivated
-        Me.txtTitle.Foreground = Brushes.DarkGray
+        Me.txtTitle.Foreground = Me.Theme.titleInactiveTextColor
+        Me.bd_titlefillL.Background = Me.Theme.titleInactiveColor
+        Me.bd_titlefillR.Background = Me.Theme.titleInactiveColor
+        Me.Bt_Close.Foreground = Me.Theme.titleInactiveTextColor
+        Me.Bt_Min.Foreground = Me.Theme.titleInactiveTextColor
     End Sub
 End Class

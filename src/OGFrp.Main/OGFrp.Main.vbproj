@@ -136,6 +136,7 @@
     <Compile Include="SettingsPage.xaml.vb">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Theme\Theme.vb" />
     <Compile Include="UserDisplay.xaml.vb">
       <DependentUpon>UserDisplay.xaml</DependentUpon>
     </Compile>

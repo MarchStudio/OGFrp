@@ -10,6 +10,7 @@ Public Class MainPanel
 
     Public Assets As AssetModel
     Public Config As Config
+    Public Theme As Theme
 
     Dim SelectedBg As Brush
 
