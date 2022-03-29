@@ -18,7 +18,7 @@
         <Grid.Background>
             <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Border BorderBrush="Black" BorderThickness="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <Border x:Name="bd_LeftsideBlur" BorderBrush="Black" BorderThickness="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Border.Background>
                 <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
             </Border.Background>
@@ -120,8 +120,8 @@
             </Grid.Resources>
         </Grid>
         <local:HomePage x:Name="ctm_HomePage" Grid.Column="1" Grid.RowSpan="2"/>
-        <local:FrpcPanel x:Name="ctm_FrpcPanel" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CCFFFFFF" Grid.Row="1"/>
+        <local:FrpcPanel x:Name="ctm_FrpcPanel" Grid.Column="1" Background="#CCFFFFFF" Grid.Row="1" Margin="0,0,0,0"/>
         <local:SettingsPage x:Name="ctm_SettingsPage" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Visibility="Hidden"/>
-        <local:AboutBox x:Name="ctm_About" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch"/>
+        <local:AboutBox x:Name="ctm_About" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0"/>
     </Grid>
 </UserControl>

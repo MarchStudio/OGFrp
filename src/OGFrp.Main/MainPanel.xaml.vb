@@ -28,6 +28,17 @@ Public Class MainPanel
             Catch
             End Try
         End If
+        'Set theme---
+        Me.ctm_FrpcPanel.Background = Theme.contentBackground
+        Me.ctm_FrpcPanel.Foreground = Theme.contentForeground
+        Me.ctm_SettingsPage.Background = Theme.contentBackground
+        Me.ctm_SettingsPage.Foreground = Theme.contentForeground
+        Me.ctm_About.Background = Theme.contentBackground
+        Me.ctm_About.Foreground = Theme.contentForeground
+        If Theme.isDark Then
+            Me.Gd_SidePanel.Background = New SolidColorBrush(Color.FromArgb(225, 25, 25, 28))
+        End If
+        '---
         Dim invoker As New Forms.Form With {
             .Width = 0,
             .Height = 0,
@@ -143,5 +154,11 @@ Public Class MainPanel
     Private Sub bt_About_Click(sender As Object, e As RoutedEventArgs) Handles bt_About.Click
         selectBtn(bt_About)
         EnablePage(ctm_About)
+    End Sub
+
+    Public Sub FormActive()
+    End Sub
+
+    Public Sub FormDeactive()
     End Sub
 End Class

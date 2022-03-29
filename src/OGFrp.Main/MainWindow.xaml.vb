@@ -69,7 +69,9 @@ Class MainWindow
 
     Private Sub LoginBox_LoginSucceed() Handles LoginBox.LoginSucceed
         Me.txtTitle.Foreground = Brushes.White
-        Me.bd_titlefillL.Visibility = Visibility.Collapsed
+        If Theme.isOriginal Then
+            Me.bd_titlefillL.Visibility = Visibility.Collapsed
+        End If
         Me.MainPanel.Visibility = Visibility.Visible
         Me.MainPanel.Username = Me.LoginBox.Username
         Me.MainPanel.Nickname = Me.LoginBox.Username
@@ -89,6 +91,7 @@ Class MainWindow
         Me.bd_titlefillR.Background = Me.Theme.titleActiveColor
         Me.Bt_Close.Foreground = Me.Theme.titleActiveTextColor
         Me.Bt_Min.Foreground = Me.Theme.titleActiveTextColor
+        Me.MainPanel.FormActive()
     End Sub
 
     Private Sub MainWindow_Deactivated(sender As Object, e As EventArgs) Handles Me.Deactivated
@@ -97,5 +100,6 @@ Class MainWindow
         Me.bd_titlefillR.Background = Me.Theme.titleInactiveColor
         Me.Bt_Close.Foreground = Me.Theme.titleInactiveTextColor
         Me.Bt_Min.Foreground = Me.Theme.titleInactiveTextColor
+        Me.MainPanel.FormDeactive()
     End Sub
 End Class

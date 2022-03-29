@@ -27,13 +27,13 @@ Public Class FrpcPanel
                 fc.VerticalAlignment = VerticalAlignment.Top
                 fc.Width = Me.Grid.Width - 40
                 fc.Height = 80
-                fc.Margin = New Thickness(Me.lb_Refresh.ActualWidth + 10, 5 + 85 * i, Me.lb_Refresh.ActualWidth + 10, 0)
+                fc.Margin = New Thickness(Me.lb_Refresh.ActualWidth + 10, 5 + (fc.Height + 10) * i, Me.lb_Refresh.ActualWidth + 10, 0)
                 fc.SetViewLogContent(Assets.ViewLog)
                 fc.text_Duplicated = Assets.Duplicated
                 fc.SetDuplicateNotice(Assets.ClickToDuplicate)
-                fc.SetTextForeColor(Brushes.Black)
+                fc.SetTextForeColor(Me.Foreground)
                 Me.Grid.Children.Add(fc)
-                Me.Grid.Height += 85
+                Me.Grid.Height += fc.Height + 10
             Next
             Me.Grid.Height += 5
         Catch
