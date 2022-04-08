@@ -19,6 +19,7 @@
             <TextBlock x:Name="lb_title" TextWrapping="Wrap" Text="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" Grid.Column="1" Grid.Row="1"/>
             <local:LanguageConfig x:Name="ctm_lang" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,36,0,0" Grid.Row="1" VerticalAlignment="Top"/>
             <local:FrpcLaunchMode x:Name="ctm_flm" Grid.Column="1" Margin="0,77,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <local:ThemeConfig x:Name="ctm_Theme" Grid.Column="1" Margin="0,117,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         </Grid>
     </ScrollViewer>
 </UserControl>

@@ -9,7 +9,7 @@ namespace OGFrp.UI
     /// <summary>
     /// ConfigModel
     /// </summary>
-    public class ConfigModel 
+    public class ConfigModel
     {
         /// <summary>
         /// 设置：设置名
@@ -66,5 +66,10 @@ namespace OGFrp.UI
             Val = "proxy"
         };
 
+        public ConfigModel Theme = new ConfigModel
+        {
+            Name = "Theme",
+            Val = "System"
+        };
     }
 }

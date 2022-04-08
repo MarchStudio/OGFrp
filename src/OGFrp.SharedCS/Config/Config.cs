@@ -11,7 +11,7 @@ namespace OGFrp.UI
     {
 
 
-        ConfigModel[] ConfigArray = new ConfigModel[4];
+        ConfigModel[] ConfigArray = new ConfigModel[5];
 
         /// <summary>
         /// 构造函数
@@ -22,6 +22,7 @@ namespace OGFrp.UI
             ConfigArray[1] = this.Username;
             ConfigArray[2] = this.Password;
             ConfigArray[3] = this.FrpcLaunchMode;
+            ConfigArray[4] = this.Theme;
             try
             {
                 ReadConfig();
@@ -82,7 +83,7 @@ namespace OGFrp.UI
         {
             StreamReader reader = new StreamReader(configpath);
             string Left = ""; //配置名(等号左边的内容)
-            string Right = "";  //配置值(等号右边的内容)
+            string Right;  //配置值(等号右边的内容)
             while (Left != "::end")
             {
                 Left = "";
@@ -120,6 +121,9 @@ namespace OGFrp.UI
                         break;
                     case "FrpcLaunchMode":
                         this.FrpcLaunchMode.Val = Right;
+                        break;
+                    case "Theme":
+                        this.Theme.Val = Right;
                         break;
                     default:
                         break;

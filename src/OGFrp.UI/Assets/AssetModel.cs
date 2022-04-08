@@ -71,6 +71,10 @@ namespace OGFrp.UI
         /// </summary>
         public string LoginFailed { get; set; }
         /// <summary>
+        /// 登录：用户名或密码错误
+        /// </summary>
+        public string InvaildUorP { get; set;}
+        /// <summary>
         /// 面板：用户信息
         /// </summary>
         public string UserInfo { get; set; }
@@ -166,5 +170,21 @@ namespace OGFrp.UI
         /// 面板：关于
         /// </summary>
         public string About { get; set; }
+        /// <summary>
+        /// 主题：主题
+        /// </summary>
+        public string Theme { get; set; }
+        /// <summary>
+        /// 主题：跟随系统
+        /// </summary>
+        public string ThemeSystem { get; set; }
+        /// <summary>
+        /// 主题：亮色
+        /// </summary>
+        public string ThemeLight { get; set; }
+        /// <summary>
+        /// 主题：暗色
+        /// </summary>
+        public string ThemeDark { get; set; }
     }
 }

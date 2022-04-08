@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="ThemeConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OGFrp.Main"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <TextBlock x:Name="lb_Theme" HorizontalAlignment="Left" Margin="10,6,0,0" TextWrapping="Wrap" Text="Language" VerticalAlignment="Top" FontSize="18"/>
+        <ComboBox x:Name="cb_val" Margin="0,3,10,3" HorizontalAlignment="Right" Width="350" VerticalAlignment="Top" TextBlock.FontSize="18"/>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </Grid.Resources>
+    </Grid>
+</UserControl>

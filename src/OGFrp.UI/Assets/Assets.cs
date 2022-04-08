@@ -31,6 +31,7 @@ namespace OGFrp.UI
                 Login = "登录",
                 Logining = "正在登录",
                 LoginFailed = "登录失败！",
+                InvaildUorP = "用户名或密码错误。",
                 UserInfo = "用户信息",
                 AccessToken = "访问密钥",
                 DownloadFrpc = "下载frpc.exe",
@@ -54,7 +55,11 @@ namespace OGFrp.UI
                 ByNode = "按节点",
                 Refresh = "刷新",
                 Refreshing = "正在刷新",
-                About = "关于"
+                About = "关于",
+                Theme = "主题",
+                ThemeSystem = "自动",
+                ThemeLight = "明亮",
+                ThemeDark = "深邃"
             },
             new AssetModel
             {
@@ -73,6 +78,7 @@ namespace OGFrp.UI
                 Login ="登入",
                 Logining ="正在登入",
                 LoginFailed ="登入失敗！",
+                InvaildUorP = "用戶名或密碼無效。",
                 UserInfo ="用戶資訊",
                 AccessToken ="訪問密鑰",
                 DownloadFrpc ="下載frpc.exe",
@@ -96,7 +102,11 @@ namespace OGFrp.UI
                 ByNode ="按節點",
                 Refresh ="刷新",
                 Refreshing ="正在刷新",
-                About = "關於"
+                About = "關於",
+                Theme = "主題",
+                ThemeSystem = "跟隨系統",
+                ThemeLight = "亮色",
+                ThemeDark = "暗色"
             },
             new AssetModel
             {
@@ -115,6 +125,7 @@ namespace OGFrp.UI
                 Login = "登錄",
                 Logining = "正在登錄",
                 LoginFailed = "登錄失敗！",
+                InvaildUorP = "用戶名或密碼無效。",
                 UserInfo = "用户信息",
                 AccessToken = "訪問密鑰",
                 DownloadFrpc = "下載frpc.exe",
@@ -138,7 +149,11 @@ namespace OGFrp.UI
                 ByNode = "按節點",
                 Refresh = "刷新",
                 Refreshing = "正在刷新",
-                About = "關於"
+                About = "關於",
+                Theme = "主题",
+                ThemeSystem = "跟隨系統",
+                ThemeLight = "亮色",
+                ThemeDark = "暗色"
             },
             new AssetModel
             {
@@ -157,6 +172,7 @@ namespace OGFrp.UI
                 Login = "Login",
                 Logining = "Logining...",
                 LoginFailed = "Login failed!",
+                InvaildUorP = "Invalid username or password.",
                 UserInfo = "User info",
                 AccessToken = "Access Token",
                 DownloadFrpc = "Download frpc.exe",
@@ -180,7 +196,11 @@ namespace OGFrp.UI
                 ByNode = "By node",
                 Refresh = "Refresh",
                 Refreshing = "Refreshing...",
-                About = "About"
+                About = "About",
+                Theme = "Theme",
+                ThemeSystem = "Auto",
+                ThemeLight = "Light",
+                ThemeDark = "Dark"
             }
         };
 

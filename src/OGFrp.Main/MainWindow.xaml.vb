@@ -4,7 +4,6 @@ Imports OGFrp.UI
 Class MainWindow
 
 #Region "自定义标题栏的交互"
-#Disable Warning BC42025
     ''' <summary>
     ''' 窗口拖动
     ''' </summary>
@@ -35,8 +34,6 @@ Class MainWindow
             Me.WindowState = WindowState.Normal
         End If
     End Sub
-
-#Enable Warning BC42025
 #End Region
 
     Dim ac As New Assets()  'Temp用ac
@@ -45,10 +42,24 @@ Class MainWindow
     Dim Theme As New Theme()
 
     Private Sub _init_() Handles Me.Loaded
-        Me.Theme.GetSystemTheme()
         Config.ReadConfig()
+        Select Case Config.Theme.Val
+            Case "System"
+                Me.Theme.GetSystemTheme()
+            Case "Dark"
+                Me.Theme.SetDarkTheme()
+            Case Else
+                Config.Theme.Val = "Light"
+                Config.WriteConfig()
+        End Select
+        If Theme.isDark Then
+            Me.Gd_Bg.Effect = New Media.Effects.BlurEffect With {
+                .KernelType = Effects.KernelType.Gaussian, .Radius = 10}
+        End If
         Me.Assets = ac.SearchAsset(Config.Lang.Val)
+        Me.Theme.SetDisplayName(Assets.ThemeSystem, Assets.ThemeLight, Assets.ThemeDark)
         Me.LoginBox.Assets = Me.Assets
+        Me.LoginBox.Theme = Me.Theme
         Me.LoginBox.Visibility = Visibility.Visible
         Me.LoginBox.Config = Me.Config
         Me.LoginBox._init_()
@@ -56,6 +67,7 @@ Class MainWindow
         Me.txtTitle.Text = Assets.Welcome
         Me.MainPanel.Assets = Me.Assets
         Me.MainPanel.ctm_SettingsPage.Config = Me.Config
+        Me.MainPanel.ctm_SettingsPage.Theme = Me.Theme
         Me.MainPanel.Theme = Me.Theme
         Me.bd_titlefillL.Background = Me.Theme.titleActiveColor
         Me.bd_titlefillR.Background = Me.Theme.titleActiveColor
@@ -72,6 +84,8 @@ Class MainWindow
         If Theme.isOriginal Then
             Me.bd_titlefillL.Visibility = Visibility.Collapsed
         End If
+        Me.Gd_Bg.Effect = New Media.Effects.BlurEffect With {
+                .KernelType = Effects.KernelType.Gaussian, .Radius = 0}
         Me.MainPanel.Visibility = Visibility.Visible
         Me.MainPanel.Username = Me.LoginBox.Username
         Me.MainPanel.Nickname = Me.LoginBox.Username

@@ -5,7 +5,7 @@ Imports System.Threading
 Public Class LoginBox
 
     Public Assets As AssetModel
-
+    Public Theme As Theme
     Public Config As Config
 
     Dim loginResult As UserControl
@@ -27,18 +27,27 @@ Public Class LoginBox
 
     Public Sub _init_()
         Me.tb_Username.Text = Config.Username.Val
-        Me.tb_Username.Text = Assets.Username
-        Me.tb_Username.Foreground = Brushes.Gray
-        Me.lb_pwdNotice.Foreground = Brushes.Gray
+        Me.lb_unmNotice.Content = Assets.Username
         Me.lb_pwdNotice.Content = Assets.Password
+        Me.lb_unmNotice.Foreground = Brushes.Gray
+        Me.lb_pwdNotice.Foreground = Brushes.Gray
         Me.tempfrm.Show()
         Me.tempfrm.Visible = False
         If Not Config.Username.Val = "" Then
             Me.tb_Username.Text = Config.Username.Val
-            Me.tb_Username.Foreground = Brushes.Black
+            Me.lb_unmNotice.Visibility = Visibility.Hidden
             SearchHeadImg(Config.Username.Val)
             Me.tb_Password.Focus()
+            Me.lb_pwdNotice.Visibility = Visibility.Hidden
         End If
+        If Me.Theme.isDark Then
+            Me.Gd_login.Background = Theme.contentBackground
+            Me.tb_Username.Foreground = Theme.contentForeground
+            Me.tb_Password.Foreground = Theme.contentForeground
+            Me.tb_Username.Background = Theme.contentBackground
+            Me.tb_Password.Background = Theme.contentBackground
+        End If
+        Me.lb_info.Foreground = Theme.contentForeground
     End Sub
 
     Dim tempfrm As New Forms.Form With {
@@ -82,6 +91,13 @@ Public Class LoginBox
                     Me.tb_Username.IsEnabled = True
                     Me.tb_Password.IsEnabled = True
                     Me.bt_login.IsEnabled = True
+                    Dim WebException As System.Net.WebException = ex
+                    If WebException.Status = System.Net.WebExceptionStatus.ProtocolError Then
+                        Me.lb_info.Content += " “ + Assets.InvaildUorP
+                    Else
+                        'The following line is for debug only.
+                        MsgBox(ex.ToString())
+                    End If
                 End Sub)
         End Try
     End Sub
@@ -109,18 +125,25 @@ Public Class LoginBox
         End If
     End Sub
 
-    Private Sub usrnme_foc() Handles tb_Username.GotFocus
-        If Me.tb_Username.Text = Assets.Username Then
-            Me.tb_Username.Foreground = Brushes.Black
-            Me.tb_Username.Text = ""
-        End If
+    Private Sub usrnme_foc() Handles lb_unmNotice.MouseDown, tb_Username.GotFocus
+        Me.lb_unmNotice.Visibility = Visibility.Hidden
+        Me.tb_Username.Focus()
     End Sub
 
     Private Sub usrnme_lfc() Handles tb_Username.LostFocus
-        If Me.tb_Username.Text = "" Then
-            Me.tb_Username.Foreground = Brushes.Gray
-            Me.tb_Username.Text = Assets.Username
+        If Me.tb_Username.Text = vbNullString Then
+            Me.lb_unmNotice.Visibility = Visibility.Visible
         End If
+    End Sub
+
+    Private Sub unm_msetr() Handles lb_unmNotice.MouseMove
+        If Me.tb_Password.IsEnabled Then
+            Me.lb_unmNotice.BorderBrush = Me.tb_Username.SelectionBrush
+        End If
+    End Sub
+
+    Private Sub unm_mslv() Handles lb_unmNotice.MouseLeave
+        Me.lb_unmNotice.BorderBrush = Brushes.Transparent
     End Sub
 
     Private Sub pswd_foc() Handles lb_pwdNotice.MouseDown, tb_Password.GotFocus

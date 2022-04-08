@@ -93,7 +93,8 @@ Public Class MainPanel
         Me.bt_About.ToolTip = Assets.About
         Me.ctm_SettingsPage.Assets = Me.Assets
         'Me.ctm_SettingsPage.Config = MainWindow.Config
-        '在MainWindow初始化时已经传入Config
+        'Me.ctm_SettingsPage.Theme = MainWindow.Theme
+        '在MainWindow初始化时已经传入Config与Theme
         Me.ctm_SettingsPage._init_()
     End Sub
 

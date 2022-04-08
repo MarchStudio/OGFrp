@@ -7,13 +7,10 @@
         mc:Ignorable="d"
         Title="OGFrp" Height="500" Width="900" MinWidth="800" MinHeight="250" WindowStyle="None" AllowsTransparency="True" Style="{StaticResource window_Border}" Background="Transparent">
     <Grid x:Name="MainGrid" Background="Transparent">
-        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0">
+        <Border x:Name="Gd_Bg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0">
             <Border.Background>
                 <ImageBrush TileMode="Tile" ImageSource="/Resources/Background.png" Stretch="UniformToFill"/>
             </Border.Background>
-            <Border.Effect>
-                <BlurEffect Radius="0"></BlurEffect>
-            </Border.Effect>
         </Border>
         <local:MainPanel x:Name="MainPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Visibility="Collapsed">
             <local:MainPanel.Background>
@@ -67,4 +64,9 @@
         </Grid>
         <local:LoginBox x:Name="LoginBox" Margin="0,30,0,0"/>
     </Grid>
+    <!--
+    <WindowChrome.WindowChrome>
+        <WindowChrome/>
+    </WindowChrome.WindowChrome>
+    -->
 </Window>

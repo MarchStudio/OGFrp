@@ -22,6 +22,15 @@ Public Class Theme
         isDark = False
     End Sub
 
+    Public Sub SetDarkTheme()
+        Me.titleActiveColor = New SolidColorBrush(Color.FromArgb(204, 0, 0, 0))
+        Me.titleInactiveColor = New SolidColorBrush(Color.FromArgb(255, 50, 50, 50))
+        Me.titleActiveTextColor = Brushes.White
+        Me.contentBackground = New SolidColorBrush(Color.FromArgb(204, 0, 0, 0))
+        Me.contentForeground = New SolidColorBrush(Color.FromArgb(255, 240, 240, 240))
+        isDark = True
+    End Sub
+
     Public Sub CalcBorW(ByVal red As Integer, ByVal green As Integer, ByVal blue As Integer)
         If (red * 0.299 + green * 0.587 + blue * 0.114) > 186 Then
             Me.titleActiveTextColor = Brushes.Black
@@ -31,8 +40,14 @@ Public Class Theme
     End Sub
 
     Function IsDarkTheme()
-        Dim regVal As Boolean = Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1)
-        Return Not(regVal)
+        Dim regVal = Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1)
+        Try
+            regVal.ToString()
+        Catch
+            Return False
+        End Try
+        Dim result As Boolean = regVal
+        Return Not result
     End Function
 
     Public Sub GetSystemTheme()
@@ -41,12 +56,7 @@ Public Class Theme
                 'PASS
             Else 'Windows 8及以上版本的Win系统
                 If IsDarkTheme() Then
-                    Me.titleActiveColor = New SolidColorBrush(Color.FromArgb(204, 0, 0, 0))
-                    Me.titleInactiveColor = New SolidColorBrush(Color.FromArgb(255, 50, 50, 50))
-                    Me.titleActiveTextColor = Brushes.White
-                    Me.contentBackground = New SolidColorBrush(Color.FromArgb(204, 0, 0, 0))
-                    Me.contentForeground = Brushes.White
-                    isDark = True
+                    SetDarkTheme()
                     Exit Sub
                 End If
                 Dim FormTitleColor As Boolean = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM", "ColorPrevalence", True)
@@ -67,5 +77,35 @@ Public Class Theme
             End If
         End If
     End Sub
+
+    Public DisplayItems() As DisplayItem = {
+        New DisplayItem With {.DisplayName = "System", .ClassName = "System"},
+        New DisplayItem With {.DisplayName = "Light", .ClassName = "Light"},
+        New DisplayItem With {.DisplayName = "Dark", .ClassName = "Dark"}
+    }
+
+    Public Sub SetDisplayName(System As String, Light As String, Dark As String)
+        Me.DisplayItems(0).DisplayName = System
+        Me.DisplayItems(1).DisplayName = Light
+        Me.DisplayItems(2).DisplayName = Dark
+    End Sub
+
+    Public Function ClassNameToDisplayName(className As String) As String
+        For Each i In DisplayItems
+            If i.ClassName = className Then
+                Return i.DisplayName
+            End If
+        Next
+        Return "null"
+    End Function
+
+    Public Function DisplayNameToClassName(displayName As String) As String
+        For Each i In DisplayItems
+            If i.DisplayName = displayName Then
+                Return i.ClassName
+            End If
+        Next
+        Return "System"
+    End Function
 
 End Class
